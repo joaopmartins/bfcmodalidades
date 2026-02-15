@@ -274,7 +274,7 @@ function createEscalaoRow(escalao, modalidade) {
     const statusIndicator = getStatusIndicator(atual, anterior);
 
     // Competition name
-    const competicao = atual.divisao || atual.competicao || '-';
+    const competicao = atual.competicao || '-';
 
     // Goals display
     const golosDisplay = atual.golosMarcados !== undefined && atual.golosSofridos !== undefined
@@ -288,7 +288,7 @@ function createEscalaoRow(escalao, modalidade) {
             <span>${escalao.nome}</span>
         </div>
         <div class="w-[200px] text-xs text-gray-500 dark:text-gray-400 hidden md:block">${competicao}</div>
-        <div class="w-10 text-center font-bold">${atual.posição || '-'}º</div>
+        <div class="w-10 text-center font-bold">${atual.posicao || '-'}º</div>
         <div class="w-10 text-center font-semibold">${atual.pontos !== undefined ? atual.pontos : '-'}</div>
         <div class="w-8 text-center text-gray-600 dark:text-gray-400">${atual.jogos !== undefined ? atual.jogos : '-'}</div>
         <div class="w-8 text-center text-green-600 dark:text-green-400">${atual.vitorias !== undefined ? atual.vitorias : '-'}</div>
@@ -307,11 +307,11 @@ function createEscalaoRow(escalao, modalidade) {
 
 // Get status indicator comparing current vs previous season
 function getStatusIndicator(atual, anterior) {
-    if (!anterior || !anterior.posiçãoFinal || !atual || !atual.posição) {
+    if (!anterior || !anterior.posicaoFinal || !atual || !atual.posicao) {
         return { icon: '', title: '' }; // No indicator if no comparison data
     }
 
-    const diff = anterior.posiçãoFinal - atual.posição;
+    const diff = anterior.posicaoFinal - atual.posicao;
 
     if (diff > 2) {
         return { icon: '&#128640;', title: `Muito melhor! Subiu ${diff} posições` }; // Rocket
@@ -327,15 +327,15 @@ function getStatusIndicator(atual, anterior) {
 
 // Calculate difference between current and previous season
 function calculateDiff(atual, anterior) {
-    if (!anterior || !anterior.posiçãoFinal) {
+    if (!anterior || !anterior.posicaoFinal) {
         return { icon: '', class: 'text-gray-400', value: null };
     }
 
-    if (!atual || !atual.posição) {
+    if (!atual || !atual.posicao) {
         return { icon: '', class: 'text-gray-400', value: null };
     }
 
-    const diff = anterior.posiçãoFinal - atual.posição;
+    const diff = anterior.posicaoFinal - atual.posicao;
 
     if (diff > 0) {
         return { icon: '↑', class: 'text-green-500', value: diff };
@@ -389,8 +389,7 @@ function showModal(escalao, modalidade) {
                 <h4 class="font-semibold text-sm text-gray-500 dark:text-gray-400 mb-3">${appData.meta.currentSeason} (atual)</h4>
                 <div class="space-y-2">
                     ${atual.competicao ? `<p class="text-sm">${atual.competicao}</p>` : ''}
-                    ${atual.divisao ? `<p class="text-xs text-gray-500 dark:text-gray-400">${atual.divisao}</p>` : ''}
-                    <p class="text-3xl font-bold">${atual.posição || '-'}º lugar</p>
+                    <p class="text-3xl font-bold">${atual.posicao || '-'}º lugar</p>
                     <p class="text-lg">${atual.pontos !== undefined ? atual.pontos + ' pontos' : '-'}</p>
                     ${atual.jogos ? `<p class="text-sm text-gray-600 dark:text-gray-400">${atual.jogos} jogos</p>` : ''}
                     ${atual.vitorias !== undefined ? `
@@ -406,8 +405,7 @@ function showModal(escalao, modalidade) {
                 <h4 class="font-semibold text-sm text-gray-500 dark:text-gray-400 mb-3">${appData.meta.previousSeason} (anterior)</h4>
                 <div class="space-y-2">
                     ${anterior.competicao ? `<p class="text-sm">${anterior.competicao}</p>` : ''}
-                    ${anterior.divisao ? `<p class="text-xs text-gray-500 dark:text-gray-400">${anterior.divisao}</p>` : ''}
-                    <p class="text-3xl font-bold">${anterior.posiçãoFinal || '-'}º lugar</p>
+                    <p class="text-3xl font-bold">${anterior.posicaoFinal || '-'}º lugar</p>
                     <p class="text-lg">${anterior.pontosFinal !== undefined ? anterior.pontosFinal + ' pontos' : '-'}</p>
                     ${anterior.jogos ? `<p class="text-sm text-gray-600 dark:text-gray-400">${anterior.jogos} jogos</p>` : ''}
                     ${anterior.vitorias !== undefined ? `
@@ -415,7 +413,7 @@ function showModal(escalao, modalidade) {
                             ${anterior.vitorias}V ${anterior.empates}E ${anterior.derrotas}D
                         </p>
                     ` : ''}
-                    ${!anterior.posiçãoFinal ? '<p class="text-sm text-gray-400 italic">Sem dados</p>' : ''}
+                    ${!anterior.posicaoFinal ? '<p class="text-sm text-gray-400 italic">Sem dados</p>' : ''}
                 </div>
             </div>
         </div>
@@ -430,13 +428,6 @@ function showModal(escalao, modalidade) {
             </div>
         ` : ''}
 
-        ${atual.divisao !== anterior.divisao && anterior.divisao ? `
-            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 text-center mt-4">
-                <p class="text-blue-600 dark:text-blue-400 font-medium">
-                    &#9733; Mudou de divisao: ${anterior.divisao} → ${atual.divisao}
-                </p>
-            </div>
-        ` : ''}
     `;
 
     modal.classList.remove('hidden');
@@ -517,16 +508,16 @@ function updateSummaryStats() {
             const atual = escalao.atual || {};
             const anterior = escalao.anterior || {};
 
-            if (!anterior.posiçãoFinal) {
+            if (!anterior.posicaoFinal) {
                 novas++;
                 return;
             }
 
-            if (!atual.posição) {
+            if (!atual.posicao) {
                 return;
             }
 
-            const diff = anterior.posiçãoFinal - atual.posição;
+            const diff = anterior.posicaoFinal - atual.posicao;
 
             if (diff > 0) {
                 melhor++;

@@ -17,7 +17,6 @@
                     "tipo": "senior",
                     "atual": {
                         "competicao": "Liga Hyundai Liga Pro",
-                        "divisao": "Liga Hyundai Liga Pro",
                         "posicao": 18,
                         "jogos": 21,
                         "vitorias": 2,
@@ -30,7 +29,6 @@
                     },
                     "anterior": {
                         "competicao": "Liga Portugal",
-                        "divisao": "Liga Portugal Betclic",
                         "posicaoFinal": 18,
                         "pontosFinal": 24,
                         "golosMarcados": 24,
@@ -41,7 +39,7 @@
                     "id": "equipa-b",
                     "nome": "Equipa B (Clube)",
                     "tipo": "senior",
-		    "status":	"extinta",
+                    "status": "extinta",
                     "atual": null,
                     "anterior": null
                 },
@@ -51,7 +49,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "II Divisão Sub-19 II Fase Manutenção Série B",
-                        "divisao": "II Divisão - Série B",
                         "posicao": 7,
                         "jogos": 4,
                         "vitorias": 0,
@@ -64,7 +61,6 @@
                     },
                     "anterior": {
                         "competicao": "II Divisão Sub-19 II Fase Manutenção Série B",
-                        "divisao": "II Divisão - Série B",
                         "posicaoFinal": 2,
                         "pontosFinal": 35
                     }
@@ -75,7 +71,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "II Divisão Sub-17 II Fase Manutenção Série 2",
-                        "divisao": "II Divisão Sub-17 II Fase Manutenção Série 2",
                         "posicao": 3,
                         "jogos": 4,
                         "vitorias": 2,
@@ -88,7 +83,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional Juvenis",
-                        "divisao": "I Divisão - Série Norte",
                         "posicaoFinal": 4,
                         "pontosFinal": 46
                     }
@@ -99,7 +93,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Distrital Juvenis",
-                        "divisao": "I Divisão - Série 1",
                         "posicao": 1,
                         "jogos": 16,
                         "vitorias": 14,
@@ -112,7 +105,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Distrital Juvenis",
-                        "divisao": "I Divisão - Série 1",
                         "posicaoFinal": 2,
                         "pontosFinal": 48
                     }
@@ -123,7 +115,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Nacional Iniciados",
-                        "divisao": "I Divisão - Série A",
                         "posicao": 5,
                         "jogos": 16,
                         "vitorias": 9,
@@ -136,7 +127,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional Iniciados",
-                        "divisao": "I Divisão - Série A",
                         "posicaoFinal": 3,
                         "pontosFinal": 38
                     }
@@ -147,7 +137,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Distrital Iniciados",
-                        "divisao": "I Divisão - Série 1",
                         "posicao": 3,
                         "jogos": 14,
                         "vitorias": 10,
@@ -160,7 +149,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Distrital Iniciados",
-                        "divisao": "I Divisão - Série 1",
                         "posicaoFinal": 4,
                         "pontosFinal": 35
                     }
@@ -171,7 +159,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Distrital Infantis",
-                        "divisao": "I Divisão - Série 1",
                         "posicao": 2,
                         "jogos": 12,
                         "vitorias": 9,
@@ -184,7 +171,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Distrital Infantis",
-                        "divisao": "I Divisão - Série 1",
                         "posicaoFinal": 3,
                         "pontosFinal": 32
                     }
@@ -203,7 +189,6 @@
                     "tipo": "feminino",
                     "atual": {
                         "competicao": "Campeonato Nacional Feminino",
-                        "divisao": "Liga BPI",
                         "posicao": 6,
                         "jogos": 16,
                         "vitorias": 6,
@@ -216,7 +201,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional Feminino",
-                        "divisao": "Liga BPI",
                         "posicaoFinal": 7,
                         "pontosFinal": 35
                     }
@@ -235,7 +219,6 @@
                     "tipo": "feminino",
                     "atual": {
                         "competicao": "Campeonato Nacional",
-                        "divisao": "II Divisão",
                         "posicao": 4,
                         "jogos": 14,
                         "vitorias": 9,
@@ -246,7 +229,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional",
-                        "divisao": "II Divisão",
                         "posicaoFinal": 5,
                         "pontosFinal": 26
                     }
@@ -257,7 +239,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Nacional Juniores",
-                        "divisao": "Zona Norte",
                         "posicao": 3,
                         "jogos": 12,
                         "vitorias": 8,
@@ -268,7 +249,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional Juniores",
-                        "divisao": "Zona Norte",
                         "posicaoFinal": 4,
                         "pontosFinal": 22
                     }
@@ -279,7 +259,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Regional Juvenis",
-                        "divisao": "AF Porto",
                         "posicao": 2,
                         "jogos": 10,
                         "vitorias": 8,
@@ -290,7 +269,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Regional Juvenis",
-                        "divisao": "AF Porto",
                         "posicaoFinal": 3,
                         "pontosFinal": 20
                     }
@@ -301,7 +279,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Regional Iniciados",
-                        "divisao": "AF Porto",
                         "posicao": 4,
                         "jogos": 10,
                         "vitorias": 6,
@@ -312,7 +289,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Regional Iniciados",
-                        "divisao": "AF Porto",
                         "posicaoFinal": 5,
                         "pontosFinal": 16
                     }
@@ -331,7 +307,6 @@
                     "tipo": "senior",
                     "atual": {
                         "competicao": "Campeonato Nacional",
-                        "divisao": "III Divisão - Série C",
                         "posicao": 3,
                         "jogos": 14,
                         "vitorias": 10,
@@ -344,7 +319,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional",
-                        "divisao": "III Divisão - Série C",
                         "posicaoFinal": 4,
                         "pontosFinal": 35
                     }
@@ -355,7 +329,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Nacional Sub-20",
-                        "divisao": "Zona Norte",
                         "posicao": 5,
                         "jogos": 12,
                         "vitorias": 6,
@@ -368,7 +341,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional Sub-20",
-                        "divisao": "Zona Norte",
                         "posicaoFinal": 6,
                         "pontosFinal": 18
                     }
@@ -379,7 +351,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Regional Juvenis",
-                        "divisao": "AF Porto",
                         "posicao": 2,
                         "jogos": 10,
                         "vitorias": 8,
@@ -392,7 +363,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Regional Juvenis",
-                        "divisao": "AF Porto",
                         "posicaoFinal": 3,
                         "pontosFinal": 22
                     }
@@ -403,7 +373,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Regional Iniciados",
-                        "divisao": "AF Porto",
                         "posicao": 1,
                         "jogos": 10,
                         "vitorias": 10,
@@ -416,7 +385,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Regional Iniciados",
-                        "divisao": "AF Porto",
                         "posicaoFinal": 2,
                         "pontosFinal": 26
                     }
@@ -427,7 +395,6 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Regional Infantis",
-                        "divisao": "AF Porto",
                         "posicao": 3,
                         "jogos": 8,
                         "vitorias": 6,
@@ -440,7 +407,6 @@
                     },
                     "anterior": {
                         "competicao": "Campeonato Regional Infantis",
-                        "divisao": "AF Porto",
                         "posicaoFinal": 4,
                         "pontosFinal": 18
                     }
@@ -461,7 +427,6 @@
                     "atual": null,
                     "anterior": {
                         "competicao": "Campeonato Nacional",
-                        "divisao": "II Divisão - Série B",
                         "posicaoFinal": 6,
                         "pontosFinal": 18
                     }
@@ -474,7 +439,6 @@
                     "atual": null,
                     "anterior": {
                         "competicao": "Campeonato Nacional",
-                        "divisao": "I Divisão",
                         "posicaoFinal": 3,
                         "pontosFinal": 26
                     }
@@ -487,7 +451,6 @@
                     "atual": null,
                     "anterior": {
                         "competicao": "Campeonato Regional",
-                        "divisao": "AF Porto",
                         "posicaoFinal": 2,
                         "pontosFinal": 24
                     }
@@ -500,7 +463,6 @@
                     "atual": null,
                     "anterior": {
                         "competicao": "Campeonato Regional",
-                        "divisao": "AF Porto",
                         "posicaoFinal": 1,
                         "pontosFinal": 20
                     }
