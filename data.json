@@ -7,117 +7,66 @@
     "modalidades": [
         {
             "id": "futebol",
-            "nome": "Futebol",
+            "nome": "Futebol Masculino",
             "icon": "⚽",
             "categoria": "futebol",
             "escaloes": [
                 {
                     "id": "senior-masc",
-                    "nome": "Senior Masculino",
+                    "nome": "Sénior (SAD)",
                     "tipo": "senior",
                     "atual": {
-                        "competicao": "Liga Portugal",
-                        "divisao": "Liga Portugal Betclic",
-                        "posicao": 8,
-                        "jogos": 22,
-                        "vitorias": 8,
-                        "empates": 6,
-                        "derrotas": 8,
-                        "golosMarcados": 28,
-                        "golosSofridos": 30,
-                        "pontos": 30,
-                        "zona": null
-                    },
-                    "anterior": {
-                        "competicao": "Liga Portugal",
-                        "divisao": "Liga Portugal Betclic",
-                        "posicaoFinal": 12,
-                        "pontosFinal": 38,
-                        "jogos": 34,
-                        "vitorias": 9,
-                        "empates": 11,
-                        "derrotas": 14,
-                        "golosMarcados": 35,
-                        "golosSofridos": 48
-                    }
-                },
-                {
-                    "id": "senior-fem",
-                    "nome": "Senior Feminino",
-                    "tipo": "feminino",
-                    "atual": {
-                        "competicao": "Campeonato Nacional Feminino",
-                        "divisao": "Liga BPI",
-                        "posicao": 5,
-                        "jogos": 16,
-                        "vitorias": 7,
+                        "competicao": "Liga Hyundai Liga Pro",
+                        "divisao": "Liga Hyundai Liga Pro",
+                        "posicao": 18,
+                        "jogos": 21,
+                        "vitorias": 2,
                         "empates": 3,
-                        "derrotas": 6,
-                        "golosMarcados": 22,
-                        "golosSofridos": 18,
-                        "pontos": 24,
-                        "zona": null
+                        "derrotas": 16,
+                        "golosMarcados": 21,
+                        "golosSofridos": 53,
+                        "pontos": 9,
+                        "zona": "descida"
                     },
                     "anterior": {
-                        "competicao": "Campeonato Nacional Feminino",
-                        "divisao": "Liga BPI",
-                        "posicaoFinal": 7,
-                        "pontosFinal": 35,
-                        "jogos": 26,
-                        "golosMarcados": 30,
-                        "golosSofridos": 28
+                        "competicao": "Liga Portugal",
+                        "divisao": "Liga Portugal Betclic",
+                        "posicaoFinal": 18,
+                        "pontosFinal": 24,
+                        "golosMarcados": 24,
+                        "golosSofridos": 60
                     }
                 },
                 {
-                    "id": "sub-23",
-                    "nome": "Sub-23",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "Liga Revelacao",
-                        "divisao": "Zona Norte",
-                        "posicao": 4,
-                        "jogos": 18,
-                        "vitorias": 8,
-                        "empates": 4,
-                        "derrotas": 6,
-                        "golosMarcados": 32,
-                        "golosSofridos": 25,
-                        "pontos": 28,
-                        "zona": null
-                    },
-                    "anterior": {
-                        "competicao": "Liga Revelacao",
-                        "divisao": "Zona Norte",
-                        "posicaoFinal": 6,
-                        "pontosFinal": 32,
-                        "golosMarcados": 38,
-                        "golosSofridos": 35
-                    }
+                    "id": "equipa-b",
+                    "nome": "Equipa B (Clube)",
+                    "tipo": "senior",
+		    "status":	"extinta",
+                    "atual": null,
+                    "anterior": null
                 },
                 {
                     "id": "sub-19",
-                    "nome": "Sub-19",
+                    "nome": "Sub-19 (SAD)",
                     "tipo": "formacao",
                     "atual": {
-                        "competicao": "Campeonato Nacional Juniores",
-                        "divisao": "1a Divisao - Zona Norte",
-                        "posicao": 2,
-                        "jogos": 20,
-                        "vitorias": 14,
-                        "empates": 3,
+                        "competicao": "II Divisão Sub-19 II Fase Manutenção Série B",
+                        "divisao": "II Divisão - Série B",
+                        "posicao": 7,
+                        "jogos": 4,
+                        "vitorias": 0,
+                        "empates": 1,
                         "derrotas": 3,
-                        "golosMarcados": 48,
-                        "golosSofridos": 18,
-                        "pontos": 45,
-                        "zona": "titulo"
+                        "golosMarcados": 1,
+                        "golosSofridos": 7,
+                        "pontos": 1,
+                        "zona": "descida"
                     },
                     "anterior": {
-                        "competicao": "Campeonato Nacional Juniores",
-                        "divisao": "1a Divisao - Zona Norte",
-                        "posicaoFinal": 5,
-                        "pontosFinal": 48,
-                        "golosMarcados": 52,
-                        "golosSofridos": 30
+                        "competicao": "II Divisão Sub-19 II Fase Manutenção Série B",
+                        "divisao": "II Divisão - Série B",
+                        "posicaoFinal": 2,
+                        "pontosFinal": 35
                     }
                 },
                 {
@@ -125,25 +74,47 @@
                     "nome": "Sub-17",
                     "tipo": "formacao",
                     "atual": {
-                        "competicao": "Campeonato Nacional Juvenis",
-                        "divisao": "1a Divisao - Zona Norte",
-                        "posicao": 1,
-                        "jogos": 18,
-                        "vitorias": 15,
-                        "empates": 2,
+                        "competicao": "II Divisão Sub-17 II Fase Manutenção Série 2",
+                        "divisao": "II Divisão Sub-17 II Fase Manutenção Série 2",
+                        "posicao": 3,
+                        "jogos": 4,
+                        "vitorias": 2,
+                        "empates": 1,
                         "derrotas": 1,
-                        "golosMarcados": 55,
-                        "golosSofridos": 12,
-                        "pontos": 47,
-                        "zona": "titulo"
+                        "golosMarcados": 7,
+                        "golosSofridos": 7,
+                        "pontos": 7,
+                        "zona": null
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional Juvenis",
-                        "divisao": "1a Divisao - Zona Norte",
-                        "posicaoFinal": 3,
-                        "pontosFinal": 52,
-                        "golosMarcados": 48,
-                        "golosSofridos": 22
+                        "divisao": "I Divisão - Série Norte",
+                        "posicaoFinal": 4,
+                        "pontosFinal": 46
+                    }
+                },
+                {
+                    "id": "sub-16",
+                    "nome": "Sub-16",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Distrital Juvenis",
+                        "divisao": "I Divisão - Série 1",
+                        "posicao": 1,
+                        "jogos": 16,
+                        "vitorias": 14,
+                        "empates": 1,
+                        "derrotas": 1,
+                        "golosMarcados": 52,
+                        "golosSofridos": 10,
+                        "pontos": 43,
+                        "zona": "titulo"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Distrital Juvenis",
+                        "divisao": "I Divisão - Série 1",
+                        "posicaoFinal": 2,
+                        "pontosFinal": 48
                     }
                 },
                 {
@@ -152,114 +123,198 @@
                     "tipo": "formacao",
                     "atual": {
                         "competicao": "Campeonato Nacional Iniciados",
-                        "divisao": "1a Divisao - Zona Norte",
-                        "posicao": 10,
+                        "divisao": "I Divisão - Série A",
+                        "posicao": 5,
                         "jogos": 16,
-                        "vitorias": 4,
-                        "empates": 3,
-                        "derrotas": 9,
-                        "golosMarcados": 18,
-                        "golosSofridos": 32,
-                        "pontos": 15,
-                        "zona": "descida"
+                        "vitorias": 9,
+                        "empates": 2,
+                        "derrotas": 5,
+                        "golosMarcados": 35,
+                        "golosSofridos": 22,
+                        "pontos": 29,
+                        "zona": null
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional Iniciados",
-                        "divisao": "1a Divisao - Zona Norte",
+                        "divisao": "I Divisão - Série A",
+                        "posicaoFinal": 3,
+                        "pontosFinal": 38
+                    }
+                },
+                {
+                    "id": "sub-14",
+                    "nome": "Sub-14",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Distrital Iniciados",
+                        "divisao": "I Divisão - Série 1",
+                        "posicao": 3,
+                        "jogos": 14,
+                        "vitorias": 10,
+                        "empates": 2,
+                        "derrotas": 2,
+                        "golosMarcados": 40,
+                        "golosSofridos": 15,
+                        "pontos": 32,
+                        "zona": "subida"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Distrital Iniciados",
+                        "divisao": "I Divisão - Série 1",
                         "posicaoFinal": 4,
-                        "pontosFinal": 40,
-                        "golosMarcados": 42,
-                        "golosSofridos": 28
+                        "pontosFinal": 35
+                    }
+                },
+                {
+                    "id": "sub-13",
+                    "nome": "Sub-13",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Distrital Infantis",
+                        "divisao": "I Divisão - Série 1",
+                        "posicao": 2,
+                        "jogos": 12,
+                        "vitorias": 9,
+                        "empates": 2,
+                        "derrotas": 1,
+                        "golosMarcados": 38,
+                        "golosSofridos": 12,
+                        "pontos": 29,
+                        "zona": "subida"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Distrital Infantis",
+                        "divisao": "I Divisão - Série 1",
+                        "posicaoFinal": 3,
+                        "pontosFinal": 32
                     }
                 }
             ]
         },
         {
-            "id": "andebol",
-            "nome": "Andebol",
-            "icon": "🤾",
-            "categoria": "pavilhao",
+            "id": "futebol-feminino",
+            "nome": "Futebol Feminino",
+            "icon": "⚽",
+            "categoria": "futebol",
             "escaloes": [
                 {
-                    "id": "senior-masc-andebol",
-                    "nome": "Senior Masculino",
-                    "tipo": "senior",
-                    "status": "extinta",
-                    "atual": null,
+                    "id": "senior-fem",
+                    "nome": "Sénior",
+                    "tipo": "feminino",
+                    "atual": {
+                        "competicao": "Campeonato Nacional Feminino",
+                        "divisao": "Liga BPI",
+                        "posicao": 6,
+                        "jogos": 16,
+                        "vitorias": 6,
+                        "empates": 4,
+                        "derrotas": 6,
+                        "golosMarcados": 20,
+                        "golosSofridos": 22,
+                        "pontos": 22,
+                        "zona": null
+                    },
                     "anterior": {
-                        "competicao": "Campeonato Nacional",
-                        "divisao": "2a Divisao - Serie B",
-                        "posicaoFinal": 6,
-                        "pontosFinal": 18
-                    }
-                },
-                {
-                    "id": "sub-18-andebol",
-                    "nome": "Sub-18",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": {
-                        "competicao": "Campeonato Nacional",
-                        "divisao": "1a Divisao",
-                        "posicaoFinal": 3,
-                        "pontosFinal": 26
-                    }
-                },
-                {
-                    "id": "sub-16-andebol",
-                    "nome": "Sub-16",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": {
-                        "competicao": "Campeonato Regional",
-                        "divisao": "AF Porto",
-                        "posicaoFinal": 4,
-                        "pontosFinal": 24
-                    }
-                },
-                {
-                    "id": "sub-14-andebol",
-                    "nome": "Sub-14",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": {
-                        "competicao": "Campeonato Regional",
-                        "divisao": "AF Porto",
-                        "posicaoFinal": 1,
-                        "pontosFinal": 20
+                        "competicao": "Campeonato Nacional Feminino",
+                        "divisao": "Liga BPI",
+                        "posicaoFinal": 7,
+                        "pontosFinal": 35
                     }
                 }
             ]
         },
         {
             "id": "voleibol",
-            "nome": "Voleibol",
+            "nome": "Voleibol Feminino",
             "icon": "🏐",
             "categoria": "pavilhao",
             "escaloes": [
                 {
-                    "id": "senior-fem-volei",
-                    "nome": "Senior Feminino",
+                    "id": "volei-senior",
+                    "nome": "Sénior",
                     "tipo": "feminino",
                     "atual": {
                         "competicao": "Campeonato Nacional",
-                        "divisao": "2a Divisao",
-                        "posicao": 3,
+                        "divisao": "II Divisão",
+                        "posicao": 4,
                         "jogos": 14,
-                        "vitorias": 10,
+                        "vitorias": 9,
                         "empates": 0,
-                        "derrotas": 4,
-                        "pontos": 30,
-                        "zona": "subida"
+                        "derrotas": 5,
+                        "pontos": 27,
+                        "zona": null
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional",
-                        "divisao": "2a Divisao",
+                        "divisao": "II Divisão",
                         "posicaoFinal": 5,
-                        "pontosFinal": 28
+                        "pontosFinal": 26
+                    }
+                },
+                {
+                    "id": "volei-s19",
+                    "nome": "Sub-19",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Nacional Juniores",
+                        "divisao": "Zona Norte",
+                        "posicao": 3,
+                        "jogos": 12,
+                        "vitorias": 8,
+                        "empates": 0,
+                        "derrotas": 4,
+                        "pontos": 24,
+                        "zona": "subida"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Nacional Juniores",
+                        "divisao": "Zona Norte",
+                        "posicaoFinal": 4,
+                        "pontosFinal": 22
+                    }
+                },
+                {
+                    "id": "volei-s17",
+                    "nome": "Sub-17",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Regional Juvenis",
+                        "divisao": "AF Porto",
+                        "posicao": 2,
+                        "jogos": 10,
+                        "vitorias": 8,
+                        "empates": 0,
+                        "derrotas": 2,
+                        "pontos": 24,
+                        "zona": "subida"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Regional Juvenis",
+                        "divisao": "AF Porto",
+                        "posicaoFinal": 3,
+                        "pontosFinal": 20
+                    }
+                },
+                {
+                    "id": "volei-s15",
+                    "nome": "Sub-15",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Regional Iniciados",
+                        "divisao": "AF Porto",
+                        "posicao": 4,
+                        "jogos": 10,
+                        "vitorias": 6,
+                        "empates": 0,
+                        "derrotas": 4,
+                        "pontos": 18,
+                        "zona": null
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Regional Iniciados",
+                        "divisao": "AF Porto",
+                        "posicaoFinal": 5,
+                        "pontosFinal": 16
                     }
                 }
             ]
@@ -271,57 +326,183 @@
             "categoria": "pavilhao",
             "escaloes": [
                 {
-                    "id": "senior-masc-futsal",
-                    "nome": "Senior Masculino",
+                    "id": "futsal-senior",
+                    "nome": "Sénior",
                     "tipo": "senior",
                     "atual": {
                         "competicao": "Campeonato Nacional",
-                        "divisao": "3a Divisao - Serie C",
-                        "posicao": 2,
-                        "jogos": 12,
-                        "vitorias": 9,
-                        "empates": 1,
+                        "divisao": "III Divisão - Série C",
+                        "posicao": 3,
+                        "jogos": 14,
+                        "vitorias": 10,
+                        "empates": 2,
                         "derrotas": 2,
-                        "golosMarcados": 58,
+                        "golosMarcados": 62,
                         "golosSofridos": 28,
-                        "pontos": 28,
+                        "pontos": 32,
                         "zona": "subida"
                     },
                     "anterior": {
                         "competicao": "Campeonato Nacional",
-                        "divisao": "3a Divisao - Serie C",
+                        "divisao": "III Divisão - Série C",
                         "posicaoFinal": 4,
-                        "pontosFinal": 32
+                        "pontosFinal": 35
+                    }
+                },
+                {
+                    "id": "futsal-s20",
+                    "nome": "Sub-20",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Nacional Sub-20",
+                        "divisao": "Zona Norte",
+                        "posicao": 5,
+                        "jogos": 12,
+                        "vitorias": 6,
+                        "empates": 2,
+                        "derrotas": 4,
+                        "golosMarcados": 38,
+                        "golosSofridos": 30,
+                        "pontos": 20,
+                        "zona": null
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Nacional Sub-20",
+                        "divisao": "Zona Norte",
+                        "posicaoFinal": 6,
+                        "pontosFinal": 18
+                    }
+                },
+                {
+                    "id": "futsal-s17",
+                    "nome": "Sub-17",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Regional Juvenis",
+                        "divisao": "AF Porto",
+                        "posicao": 2,
+                        "jogos": 10,
+                        "vitorias": 8,
+                        "empates": 1,
+                        "derrotas": 1,
+                        "golosMarcados": 45,
+                        "golosSofridos": 18,
+                        "pontos": 25,
+                        "zona": "subida"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Regional Juvenis",
+                        "divisao": "AF Porto",
+                        "posicaoFinal": 3,
+                        "pontosFinal": 22
+                    }
+                },
+                {
+                    "id": "futsal-s15",
+                    "nome": "Sub-15",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Regional Iniciados",
+                        "divisao": "AF Porto",
+                        "posicao": 1,
+                        "jogos": 10,
+                        "vitorias": 10,
+                        "empates": 0,
+                        "derrotas": 0,
+                        "golosMarcados": 58,
+                        "golosSofridos": 12,
+                        "pontos": 30,
+                        "zona": "titulo"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Regional Iniciados",
+                        "divisao": "AF Porto",
+                        "posicaoFinal": 2,
+                        "pontosFinal": 26
+                    }
+                },
+                {
+                    "id": "futsal-s13",
+                    "nome": "Sub-13",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Regional Infantis",
+                        "divisao": "AF Porto",
+                        "posicao": 3,
+                        "jogos": 8,
+                        "vitorias": 6,
+                        "empates": 1,
+                        "derrotas": 1,
+                        "golosMarcados": 35,
+                        "golosSofridos": 15,
+                        "pontos": 19,
+                        "zona": "subida"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Regional Infantis",
+                        "divisao": "AF Porto",
+                        "posicaoFinal": 4,
+                        "pontosFinal": 18
                     }
                 }
             ]
         },
         {
-            "id": "esports",
-            "nome": "Esports",
-            "icon": "🎮",
-            "categoria": "digital",
+            "id": "andebol",
+            "nome": "Andebol",
+            "icon": "🤾",
+            "categoria": "pavilhao",
             "escaloes": [
                 {
-                    "id": "fifa",
-                    "nome": "EA FC (FIFA)",
+                    "id": "andebol-senior",
+                    "nome": "Sénior",
                     "tipo": "senior",
-                    "atual": {
-                        "competicao": "eLiga Portugal",
-                        "divisao": "Fase de Grupos",
-                        "posicao": 6,
-                        "jogos": 8,
-                        "vitorias": 4,
-                        "empates": 1,
-                        "derrotas": 3,
-                        "pontos": 13,
-                        "zona": null
-                    },
+                    "status": "extinta",
+                    "atual": null,
                     "anterior": {
-                        "competicao": "eLiga Portugal",
-                        "divisao": "Fase de Grupos",
-                        "posicaoFinal": 10,
-                        "pontosFinal": 8
+                        "competicao": "Campeonato Nacional",
+                        "divisao": "II Divisão - Série B",
+                        "posicaoFinal": 6,
+                        "pontosFinal": 18
+                    }
+                },
+                {
+                    "id": "andebol-s18",
+                    "nome": "Sub-18",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": {
+                        "competicao": "Campeonato Nacional",
+                        "divisao": "I Divisão",
+                        "posicaoFinal": 3,
+                        "pontosFinal": 26
+                    }
+                },
+                {
+                    "id": "andebol-s16",
+                    "nome": "Sub-16",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": {
+                        "competicao": "Campeonato Regional",
+                        "divisao": "AF Porto",
+                        "posicaoFinal": 2,
+                        "pontosFinal": 24
+                    }
+                },
+                {
+                    "id": "andebol-s14",
+                    "nome": "Sub-14",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": {
+                        "competicao": "Campeonato Regional",
+                        "divisao": "AF Porto",
+                        "posicaoFinal": 1,
+                        "pontosFinal": 20
                     }
                 }
             ]

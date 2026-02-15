@@ -214,7 +214,7 @@ function createCard(modalidade, escaloes) {
     headerRow.innerHTML = `
         <div class="w-8 text-center" title="Estado vs época anterior">Est</div>
         <div class="flex-1 min-w-[120px]">Escalao</div>
-        <div class="w-[140px] hidden md:block">Competicao</div>
+        <div class="w-[200px] hidden md:block">Competição</div>
         <div class="w-10 text-center">Pos</div>
         <div class="w-10 text-center">Pts</div>
         <div class="w-8 text-center">J</div>
@@ -275,7 +275,6 @@ function createEscalaoRow(escalao, modalidade) {
 
     // Competition name
     const competicao = atual.divisao || atual.competicao || '-';
-    const competicaoShort = competicao.length > 18 ? competicao.substring(0, 16) + '...' : competicao;
 
     // Goals display
     const golosDisplay = atual.golosMarcados !== undefined && atual.golosSofridos !== undefined
@@ -288,7 +287,7 @@ function createEscalaoRow(escalao, modalidade) {
             ${zona}
             <span>${escalao.nome}</span>
         </div>
-        <div class="w-[140px] text-xs text-gray-500 dark:text-gray-400 truncate hidden md:block" title="${competicao}">${competicaoShort}</div>
+        <div class="w-[200px] text-xs text-gray-500 dark:text-gray-400 hidden md:block">${competicao}</div>
         <div class="w-10 text-center font-bold">${atual.posição || '-'}º</div>
         <div class="w-10 text-center font-semibold">${atual.pontos !== undefined ? atual.pontos : '-'}</div>
         <div class="w-8 text-center text-gray-600 dark:text-gray-400">${atual.jogos !== undefined ? atual.jogos : '-'}</div>
@@ -308,12 +307,8 @@ function createEscalaoRow(escalao, modalidade) {
 
 // Get status indicator comparing current vs previous season
 function getStatusIndicator(atual, anterior) {
-    if (!anterior || !anterior.posiçãoFinal) {
-        return { icon: '&#127381;', title: 'Nova equipa esta época' }; // NEW emoji
-    }
-
-    if (!atual || !atual.posição) {
-        return { icon: '&#10067;', title: 'Sem dados' }; // Question mark
+    if (!anterior || !anterior.posiçãoFinal || !atual || !atual.posição) {
+        return { icon: '', title: '' }; // No indicator if no comparison data
     }
 
     const diff = anterior.posiçãoFinal - atual.posição;
@@ -547,6 +542,6 @@ function updateSummaryStats() {
     document.getElementById('stat-melhor').textContent = melhor;
     document.getElementById('stat-igual').textContent = igual;
     document.getElementById('stat-pior').textContent = pior;
-    document.getElementById('stat-novas').textContent = novas;
+    // stat-novas removed from UI
     document.getElementById('stat-extintas').textContent = extintas;
 }
