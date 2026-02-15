@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC Modalidades - Boavista Futebol Clube</title>
+    <meta name="description" content="Dashboard com o estado atual de todas as modalidades desportivas do Boavista FC">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        bfc: {
+                            black: '#1a1a1a',
+                            white: '#f5f5f5',
+                            gold: '#d4af37'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <img src="assets/logo.png" alt="Boavista FC" class="w-10 h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-10 h-10 bg-gradient-to-br from-gray-900 to-gray-700 rounded-lg items-center justify-center hidden" style="display: none;">
+                        <span class="text-white font-bold text-sm">BFC</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold">BFC Modalidades</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Boavista Futebol Clube</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <!-- Filters toggle (mobile) -->
+                    <button id="filters-toggle" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Dark mode toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <svg id="theme-icon-light" class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+                        </svg>
+                        <svg id="theme-icon-dark" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filters Bar -->
+    <div id="filters-bar" class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 hidden md:block">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+            <div class="flex flex-wrap items-center gap-4">
+                <!-- Modalidade filter -->
+                <div class="flex items-center gap-2">
+                    <label class="text-sm font-medium text-gray-600 dark:text-gray-400">Modalidade:</label>
+                    <select id="filter-modalidade" class="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm focus:ring-2 focus:ring-bfc-gold focus:border-transparent">
+                        <option value="">Todas</option>
+                    </select>
+                </div>
+
+                <!-- Escalao filter -->
+                <div class="flex items-center gap-2">
+                    <label class="text-sm font-medium text-gray-600 dark:text-gray-400">Tipo:</label>
+                    <select id="filter-tipo" class="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-sm focus:ring-2 focus:ring-bfc-gold focus:border-transparent">
+                        <option value="">Todos</option>
+                        <option value="senior">Senior</option>
+                        <option value="formacao">Formacao</option>
+                        <option value="feminino">Feminino</option>
+                    </select>
+                </div>
+
+                <!-- Quick filter chips -->
+                <div id="filter-chips" class="flex flex-wrap gap-2 ml-auto">
+                    <!-- Chips will be added dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-6">
+        <!-- Intro Section -->
+        <div id="intro-section" class="mb-6 hidden">
+            <!-- Project Description -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-4 mb-4 border border-gray-200 dark:border-gray-700">
+                <p class="text-gray-600 dark:text-gray-300 text-sm">
+                    Dashboard com o estado atual de todas as modalidades desportivas do <strong>Boavista Futebol Clube</strong>.
+                    Acompanha a performance de cada escalao e compara com a epoca anterior.
+                </p>
+            </div>
+
+            <!-- Summary Stats -->
+            <div id="summary-stats" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 mb-4">
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-700 text-center">
+                    <div class="text-2xl font-bold text-gray-900 dark:text-white" id="stat-total">-</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">Total Equipas</div>
+                </div>
+                <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-3 border border-green-200 dark:border-green-800 text-center">
+                    <div class="text-2xl font-bold text-green-600 dark:text-green-400" id="stat-melhor">-</div>
+                    <div class="text-xs text-green-600 dark:text-green-400">Melhor</div>
+                </div>
+                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 border border-blue-200 dark:border-blue-800 text-center">
+                    <div class="text-2xl font-bold text-blue-600 dark:text-blue-400" id="stat-igual">-</div>
+                    <div class="text-xs text-blue-600 dark:text-blue-400">Igual</div>
+                </div>
+                <div class="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-3 border border-orange-200 dark:border-orange-800 text-center">
+                    <div class="text-2xl font-bold text-orange-600 dark:text-orange-400" id="stat-pior">-</div>
+                    <div class="text-xs text-orange-600 dark:text-orange-400">Pior</div>
+                </div>
+                <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-3 border border-purple-200 dark:border-purple-800 text-center">
+                    <div class="text-2xl font-bold text-purple-600 dark:text-purple-400" id="stat-novas">-</div>
+                    <div class="text-xs text-purple-600 dark:text-purple-400">Novas</div>
+                </div>
+                <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-3 border border-red-200 dark:border-red-800 text-center">
+                    <div class="text-2xl font-bold text-red-600 dark:text-red-400" id="stat-extintas">-</div>
+                    <div class="text-xs text-red-600 dark:text-red-400">Extintas</div>
+                </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-700">
+                <div class="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-2">Legenda:</div>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600 dark:text-gray-400">
+                    <span title="Muito melhor que epoca anterior">&#128640; Muito melhor</span>
+                    <span title="Melhor que epoca anterior">&#128994; Melhor</span>
+                    <span title="Igual a epoca anterior">&#128311; Igual</span>
+                    <span title="Pior que epoca anterior">&#128992; Pior</span>
+                    <span title="Muito pior que epoca anterior">&#128308; Muito pior</span>
+                    <span title="Nova equipa esta epoca">&#127381; Nova</span>
+                    <span title="Equipa extinta">&#128683; Extinta</span>
+                    <span class="border-l border-gray-300 dark:border-gray-600 pl-4" title="Zona de titulo">&#127942; Titulo</span>
+                    <span title="Zona de subida">&#9650; Subida</span>
+                    <span title="Zona de descida">&#128680; Descida</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading state -->
+        <div id="loading" class="flex items-center justify-center py-20">
+            <div class="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-bfc-black dark:border-gray-600 dark:border-t-white"></div>
+        </div>
+
+        <!-- Error state -->
+        <div id="error" class="hidden text-center py-20">
+            <p class="text-red-500 dark:text-red-400 text-lg">Erro ao carregar dados</p>
+            <button onclick="loadData()" class="mt-4 px-4 py-2 bg-bfc-black text-white rounded-lg hover:bg-gray-800">
+                Tentar novamente
+            </button>
+        </div>
+
+        <!-- Cards container -->
+        <div id="cards-container" class="hidden space-y-4">
+            <!-- Cards will be rendered here -->
+        </div>
+
+        <!-- Empty state -->
+        <div id="empty" class="hidden text-center py-20">
+            <p class="text-gray-500 dark:text-gray-400 text-lg">Nenhuma modalidade encontrada</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-gray-500 dark:text-gray-400">
+                <p id="last-updated">Ultima atualizacao: --</p>
+                <p>Feito com <span class="text-bfc-black dark:text-white">&#9829;</span> por um Boavisteiro</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Expanded view modal -->
+    <div id="modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div id="modal-content" class="p-6">
+                <!-- Modal content will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* BFC Modalidades - Custom Styles */
+
+/* Card body animation */
+.card-body {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.card-body.collapsed {
+    max-height: 0;
+}
+
+/* Dark mode background for card headers */
+.dark .bg-gray-750 {
+    background-color: rgb(38, 42, 51);
+}
+
+/* Smooth transitions */
+* {
+    transition-property: background-color, border-color, color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+/* Override for animations that need different timing */
+.transition-all {
+    transition-property: all;
+}
+
+.transition-transform {
+    transition-property: transform;
+}
+
+.transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Focus styles */
+button:focus-visible,
+select:focus-visible {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+    background-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Modal backdrop animation */
+#modal {
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#modal > div {
+    animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive table-like layout */
+@media (max-width: 640px) {
+    .card-body > div > div {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    header, footer, #filters-bar, #theme-toggle, #filters-toggle {
+        display: none !important;
+    }
+
+    .card-body {
+        max-height: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}

@@ -1,0 +1,330 @@
+{
+    "meta": {
+        "lastUpdated": "2026-02-15",
+        "currentSeason": "2025-26",
+        "previousSeason": "2024-25"
+    },
+    "modalidades": [
+        {
+            "id": "futebol",
+            "nome": "Futebol",
+            "icon": "⚽",
+            "categoria": "futebol",
+            "escaloes": [
+                {
+                    "id": "senior-masc",
+                    "nome": "Senior Masculino",
+                    "tipo": "senior",
+                    "atual": {
+                        "competicao": "Liga Portugal",
+                        "divisao": "Liga Portugal Betclic",
+                        "posicao": 8,
+                        "jogos": 22,
+                        "vitorias": 8,
+                        "empates": 6,
+                        "derrotas": 8,
+                        "golosMarcados": 28,
+                        "golosSofridos": 30,
+                        "pontos": 30,
+                        "zona": null
+                    },
+                    "anterior": {
+                        "competicao": "Liga Portugal",
+                        "divisao": "Liga Portugal Betclic",
+                        "posicaoFinal": 12,
+                        "pontosFinal": 38,
+                        "jogos": 34,
+                        "vitorias": 9,
+                        "empates": 11,
+                        "derrotas": 14,
+                        "golosMarcados": 35,
+                        "golosSofridos": 48
+                    }
+                },
+                {
+                    "id": "senior-fem",
+                    "nome": "Senior Feminino",
+                    "tipo": "feminino",
+                    "atual": {
+                        "competicao": "Campeonato Nacional Feminino",
+                        "divisao": "Liga BPI",
+                        "posicao": 5,
+                        "jogos": 16,
+                        "vitorias": 7,
+                        "empates": 3,
+                        "derrotas": 6,
+                        "golosMarcados": 22,
+                        "golosSofridos": 18,
+                        "pontos": 24,
+                        "zona": null
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Nacional Feminino",
+                        "divisao": "Liga BPI",
+                        "posicaoFinal": 7,
+                        "pontosFinal": 35,
+                        "jogos": 26,
+                        "golosMarcados": 30,
+                        "golosSofridos": 28
+                    }
+                },
+                {
+                    "id": "sub-23",
+                    "nome": "Sub-23",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Liga Revelacao",
+                        "divisao": "Zona Norte",
+                        "posicao": 4,
+                        "jogos": 18,
+                        "vitorias": 8,
+                        "empates": 4,
+                        "derrotas": 6,
+                        "golosMarcados": 32,
+                        "golosSofridos": 25,
+                        "pontos": 28,
+                        "zona": null
+                    },
+                    "anterior": {
+                        "competicao": "Liga Revelacao",
+                        "divisao": "Zona Norte",
+                        "posicaoFinal": 6,
+                        "pontosFinal": 32,
+                        "golosMarcados": 38,
+                        "golosSofridos": 35
+                    }
+                },
+                {
+                    "id": "sub-19",
+                    "nome": "Sub-19",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Nacional Juniores",
+                        "divisao": "1a Divisao - Zona Norte",
+                        "posicao": 2,
+                        "jogos": 20,
+                        "vitorias": 14,
+                        "empates": 3,
+                        "derrotas": 3,
+                        "golosMarcados": 48,
+                        "golosSofridos": 18,
+                        "pontos": 45,
+                        "zona": "titulo"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Nacional Juniores",
+                        "divisao": "1a Divisao - Zona Norte",
+                        "posicaoFinal": 5,
+                        "pontosFinal": 48,
+                        "golosMarcados": 52,
+                        "golosSofridos": 30
+                    }
+                },
+                {
+                    "id": "sub-17",
+                    "nome": "Sub-17",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Nacional Juvenis",
+                        "divisao": "1a Divisao - Zona Norte",
+                        "posicao": 1,
+                        "jogos": 18,
+                        "vitorias": 15,
+                        "empates": 2,
+                        "derrotas": 1,
+                        "golosMarcados": 55,
+                        "golosSofridos": 12,
+                        "pontos": 47,
+                        "zona": "titulo"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Nacional Juvenis",
+                        "divisao": "1a Divisao - Zona Norte",
+                        "posicaoFinal": 3,
+                        "pontosFinal": 52,
+                        "golosMarcados": 48,
+                        "golosSofridos": 22
+                    }
+                },
+                {
+                    "id": "sub-15",
+                    "nome": "Sub-15",
+                    "tipo": "formacao",
+                    "atual": {
+                        "competicao": "Campeonato Nacional Iniciados",
+                        "divisao": "1a Divisao - Zona Norte",
+                        "posicao": 10,
+                        "jogos": 16,
+                        "vitorias": 4,
+                        "empates": 3,
+                        "derrotas": 9,
+                        "golosMarcados": 18,
+                        "golosSofridos": 32,
+                        "pontos": 15,
+                        "zona": "descida"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Nacional Iniciados",
+                        "divisao": "1a Divisao - Zona Norte",
+                        "posicaoFinal": 4,
+                        "pontosFinal": 40,
+                        "golosMarcados": 42,
+                        "golosSofridos": 28
+                    }
+                }
+            ]
+        },
+        {
+            "id": "andebol",
+            "nome": "Andebol",
+            "icon": "🤾",
+            "categoria": "pavilhao",
+            "escaloes": [
+                {
+                    "id": "senior-masc-andebol",
+                    "nome": "Senior Masculino",
+                    "tipo": "senior",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": {
+                        "competicao": "Campeonato Nacional",
+                        "divisao": "2a Divisao - Serie B",
+                        "posicaoFinal": 6,
+                        "pontosFinal": 18
+                    }
+                },
+                {
+                    "id": "sub-18-andebol",
+                    "nome": "Sub-18",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": {
+                        "competicao": "Campeonato Nacional",
+                        "divisao": "1a Divisao",
+                        "posicaoFinal": 3,
+                        "pontosFinal": 26
+                    }
+                },
+                {
+                    "id": "sub-16-andebol",
+                    "nome": "Sub-16",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": {
+                        "competicao": "Campeonato Regional",
+                        "divisao": "AF Porto",
+                        "posicaoFinal": 4,
+                        "pontosFinal": 24
+                    }
+                },
+                {
+                    "id": "sub-14-andebol",
+                    "nome": "Sub-14",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": {
+                        "competicao": "Campeonato Regional",
+                        "divisao": "AF Porto",
+                        "posicaoFinal": 1,
+                        "pontosFinal": 20
+                    }
+                }
+            ]
+        },
+        {
+            "id": "voleibol",
+            "nome": "Voleibol",
+            "icon": "🏐",
+            "categoria": "pavilhao",
+            "escaloes": [
+                {
+                    "id": "senior-fem-volei",
+                    "nome": "Senior Feminino",
+                    "tipo": "feminino",
+                    "atual": {
+                        "competicao": "Campeonato Nacional",
+                        "divisao": "2a Divisao",
+                        "posicao": 3,
+                        "jogos": 14,
+                        "vitorias": 10,
+                        "empates": 0,
+                        "derrotas": 4,
+                        "pontos": 30,
+                        "zona": "subida"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Nacional",
+                        "divisao": "2a Divisao",
+                        "posicaoFinal": 5,
+                        "pontosFinal": 28
+                    }
+                }
+            ]
+        },
+        {
+            "id": "futsal",
+            "nome": "Futsal",
+            "icon": "🥅",
+            "categoria": "pavilhao",
+            "escaloes": [
+                {
+                    "id": "senior-masc-futsal",
+                    "nome": "Senior Masculino",
+                    "tipo": "senior",
+                    "atual": {
+                        "competicao": "Campeonato Nacional",
+                        "divisao": "3a Divisao - Serie C",
+                        "posicao": 2,
+                        "jogos": 12,
+                        "vitorias": 9,
+                        "empates": 1,
+                        "derrotas": 2,
+                        "golosMarcados": 58,
+                        "golosSofridos": 28,
+                        "pontos": 28,
+                        "zona": "subida"
+                    },
+                    "anterior": {
+                        "competicao": "Campeonato Nacional",
+                        "divisao": "3a Divisao - Serie C",
+                        "posicaoFinal": 4,
+                        "pontosFinal": 32
+                    }
+                }
+            ]
+        },
+        {
+            "id": "esports",
+            "nome": "Esports",
+            "icon": "🎮",
+            "categoria": "digital",
+            "escaloes": [
+                {
+                    "id": "fifa",
+                    "nome": "EA FC (FIFA)",
+                    "tipo": "senior",
+                    "atual": {
+                        "competicao": "eLiga Portugal",
+                        "divisao": "Fase de Grupos",
+                        "posicao": 6,
+                        "jogos": 8,
+                        "vitorias": 4,
+                        "empates": 1,
+                        "derrotas": 3,
+                        "pontos": 13,
+                        "zona": null
+                    },
+                    "anterior": {
+                        "competicao": "eLiga Portugal",
+                        "divisao": "Fase de Grupos",
+                        "posicaoFinal": 10,
+                        "pontosFinal": 8
+                    }
+                }
+            ]
+        }
+    ]
+}
