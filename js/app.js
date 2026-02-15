@@ -212,7 +212,7 @@ function createCard(modalidade, escaloes) {
     const headerRow = document.createElement('div');
     headerRow.className = 'px-4 py-2 bg-gray-100 dark:bg-gray-700 text-xs font-semibold text-gray-600 dark:text-gray-300 flex items-center gap-2';
     headerRow.innerHTML = `
-        <div class="w-8 text-center" title="Estado vs epoca anterior">Est</div>
+        <div class="w-8 text-center" title="Estado vs época anterior">Est</div>
         <div class="flex-1 min-w-[120px]">Escalao</div>
         <div class="w-[140px] hidden md:block">Competicao</div>
         <div class="w-10 text-center">Pos</div>
@@ -289,7 +289,7 @@ function createEscalaoRow(escalao, modalidade) {
             <span>${escalao.nome}</span>
         </div>
         <div class="w-[140px] text-xs text-gray-500 dark:text-gray-400 truncate hidden md:block" title="${competicao}">${competicaoShort}</div>
-        <div class="w-10 text-center font-bold">${atual.posicao || '-'}º</div>
+        <div class="w-10 text-center font-bold">${atual.posição || '-'}º</div>
         <div class="w-10 text-center font-semibold">${atual.pontos !== undefined ? atual.pontos : '-'}</div>
         <div class="w-8 text-center text-gray-600 dark:text-gray-400">${atual.jogos !== undefined ? atual.jogos : '-'}</div>
         <div class="w-8 text-center text-green-600 dark:text-green-400">${atual.vitorias !== undefined ? atual.vitorias : '-'}</div>
@@ -308,39 +308,39 @@ function createEscalaoRow(escalao, modalidade) {
 
 // Get status indicator comparing current vs previous season
 function getStatusIndicator(atual, anterior) {
-    if (!anterior || !anterior.posicaoFinal) {
-        return { icon: '&#127381;', title: 'Nova equipa esta epoca' }; // NEW emoji
+    if (!anterior || !anterior.posiçãoFinal) {
+        return { icon: '&#127381;', title: 'Nova equipa esta época' }; // NEW emoji
     }
 
-    if (!atual || !atual.posicao) {
+    if (!atual || !atual.posição) {
         return { icon: '&#10067;', title: 'Sem dados' }; // Question mark
     }
 
-    const diff = anterior.posicaoFinal - atual.posicao;
+    const diff = anterior.posiçãoFinal - atual.posição;
 
     if (diff > 2) {
-        return { icon: '&#128640;', title: `Muito melhor! Subiu ${diff} posicoes` }; // Rocket
+        return { icon: '&#128640;', title: `Muito melhor! Subiu ${diff} posições` }; // Rocket
     } else if (diff > 0) {
-        return { icon: '&#128994;', title: `Melhor: Subiu ${diff} posicao(oes)` }; // Green circle
+        return { icon: '&#128994;', title: `Melhor: Subiu ${diff} posição(ões)` }; // Green circle
     } else if (diff < -2) {
-        return { icon: '&#128308;', title: `Muito pior! Desceu ${Math.abs(diff)} posicoes` }; // Red circle
+        return { icon: '&#128308;', title: `Muito pior! Desceu ${Math.abs(diff)} posições` }; // Red circle
     } else if (diff < 0) {
-        return { icon: '&#128992;', title: `Pior: Desceu ${Math.abs(diff)} posicao(oes)` }; // Orange circle
+        return { icon: '&#128992;', title: `Pior: Desceu ${Math.abs(diff)} posição(ões)` }; // Orange circle
     }
-    return { icon: '&#128311;', title: 'Igual a epoca anterior' }; // Blue circle (same)
+    return { icon: '&#128311;', title: 'Igual à época anterior' }; // Blue circle (same)
 }
 
 // Calculate difference between current and previous season
 function calculateDiff(atual, anterior) {
-    if (!anterior || !anterior.posicaoFinal) {
+    if (!anterior || !anterior.posiçãoFinal) {
         return { icon: '', class: 'text-gray-400', value: null };
     }
 
-    if (!atual || !atual.posicao) {
+    if (!atual || !atual.posição) {
         return { icon: '', class: 'text-gray-400', value: null };
     }
 
-    const diff = anterior.posicaoFinal - atual.posicao;
+    const diff = anterior.posiçãoFinal - atual.posição;
 
     if (diff > 0) {
         return { icon: '↑', class: 'text-green-500', value: diff };
@@ -354,7 +354,7 @@ function calculateDiff(atual, anterior) {
 function getZonaIndicator(zona) {
     switch (zona) {
         case 'titulo':
-            return '<span class="text-lg" title="Zona de titulo">&#127942;</span>';
+            return '<span class="text-lg" title="Zona de título">&#127942;</span>';
         case 'subida':
             return '<span class="text-lg" title="Zona de subida">&#9650;</span>';
         case 'playoff':
@@ -395,7 +395,7 @@ function showModal(escalao, modalidade) {
                 <div class="space-y-2">
                     ${atual.competicao ? `<p class="text-sm">${atual.competicao}</p>` : ''}
                     ${atual.divisao ? `<p class="text-xs text-gray-500 dark:text-gray-400">${atual.divisao}</p>` : ''}
-                    <p class="text-3xl font-bold">${atual.posicao || '-'}º lugar</p>
+                    <p class="text-3xl font-bold">${atual.posição || '-'}º lugar</p>
                     <p class="text-lg">${atual.pontos !== undefined ? atual.pontos + ' pontos' : '-'}</p>
                     ${atual.jogos ? `<p class="text-sm text-gray-600 dark:text-gray-400">${atual.jogos} jogos</p>` : ''}
                     ${atual.vitorias !== undefined ? `
@@ -412,7 +412,7 @@ function showModal(escalao, modalidade) {
                 <div class="space-y-2">
                     ${anterior.competicao ? `<p class="text-sm">${anterior.competicao}</p>` : ''}
                     ${anterior.divisao ? `<p class="text-xs text-gray-500 dark:text-gray-400">${anterior.divisao}</p>` : ''}
-                    <p class="text-3xl font-bold">${anterior.posicaoFinal || '-'}º lugar</p>
+                    <p class="text-3xl font-bold">${anterior.posiçãoFinal || '-'}º lugar</p>
                     <p class="text-lg">${anterior.pontosFinal !== undefined ? anterior.pontosFinal + ' pontos' : '-'}</p>
                     ${anterior.jogos ? `<p class="text-sm text-gray-600 dark:text-gray-400">${anterior.jogos} jogos</p>` : ''}
                     ${anterior.vitorias !== undefined ? `
@@ -420,7 +420,7 @@ function showModal(escalao, modalidade) {
                             ${anterior.vitorias}V ${anterior.empates}E ${anterior.derrotas}D
                         </p>
                     ` : ''}
-                    ${!anterior.posicaoFinal ? '<p class="text-sm text-gray-400 italic">Sem dados</p>' : ''}
+                    ${!anterior.posiçãoFinal ? '<p class="text-sm text-gray-400 italic">Sem dados</p>' : ''}
                 </div>
             </div>
         </div>
@@ -430,7 +430,7 @@ function showModal(escalao, modalidade) {
             <div class="bg-${diff.icon === '↑' ? 'green' : 'red'}-50 dark:bg-${diff.icon === '↑' ? 'green' : 'red'}-900/20 rounded-lg p-4 text-center">
                 <span class="text-2xl ${diff.class}">${diff.icon}</span>
                 <p class="${diff.class} font-medium">
-                    ${diff.icon === '↑' ? 'Melhorou' : 'Desceu'} ${diff.value} ${diff.value === 1 ? 'posicao' : 'posicoes'} em relacao a epoca anterior
+                    ${diff.icon === '↑' ? 'Melhorou' : 'Desceu'} ${diff.value} ${diff.value === 1 ? 'posição' : 'posições'} em relação à época anterior
                 </p>
             </div>
         ` : ''}
@@ -464,7 +464,7 @@ function updateTimestamp() {
     const timestamp = document.getElementById('last-updated');
     const date = new Date(appData.meta.lastUpdated);
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    timestamp.textContent = `Ultima atualizacao: ${date.toLocaleDateString('pt-PT', options)}`;
+    timestamp.textContent = `Última atualização: ${date.toLocaleDateString('pt-PT', options)}`;
 }
 
 // UI State helpers
@@ -522,16 +522,16 @@ function updateSummaryStats() {
             const atual = escalao.atual || {};
             const anterior = escalao.anterior || {};
 
-            if (!anterior.posicaoFinal) {
+            if (!anterior.posiçãoFinal) {
                 novas++;
                 return;
             }
 
-            if (!atual.posicao) {
+            if (!atual.posição) {
                 return;
             }
 
-            const diff = anterior.posicaoFinal - atual.posicao;
+            const diff = anterior.posiçãoFinal - atual.posição;
 
             if (diff > 0) {
                 melhor++;
