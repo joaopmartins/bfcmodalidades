@@ -2,14 +2,15 @@
     "meta": {
         "fonte": "Programa Eleitoral da Candidatura de Garrido Pereira à Presidência do Boavista FC",
         "dataPosse": "2025-01-18",
-        "mandatoAte": "2027"
+        "mandatoAte": "2027",
+        "fontesAdicionais": "Análise de 1000 posts do r/BoavistaFC (Dez 2024 - Fev 2026)"
     },
     "resumo": {
-        "total": 59,
+        "total": 68,
         "cumpridas": 2,
         "parciais": 4,
-        "nao_cumpridas": 39,
-        "oposto": 14
+        "nao_cumpridas": 38,
+        "oposto": 24
     },
     "categorias": [
         {
@@ -19,14 +20,14 @@
             "promessas": [
                 {
                     "texto": "Criação de uma estrutura profissional para apoio na gestão das modalidades",
-                    "status": "nao_cumprida",
-                    "nota": "Não foi criada nenhuma estrutura. Foram extintas 15 equipas.",
+                    "status": "oposto",
+                    "nota": "Não foi criada nenhuma estrutura. Pelo contrário: a direcção do departamento de andebol demitiu-se em bloco (Set 2025) denunciando 'ausência de projecto', 'promessas não cumpridas' e 'incompetência'. O andebol desistiu da competição em Set 2025. O futsal desistiu em 2 escalões (Out 2025) e sofreu derrotas humilhantes (16-0 em Fev 2026). A equipa técnica do futsal foi dispensada antes do início da época 2025/26. Foram extintas mais de 15 equipas.",
                     "pagina": 26
                 },
                 {
                     "texto": "Procura activa para o lançamento de novas modalidades desportivas",
                     "status": "oposto",
-                    "nota": "Não foram lançadas novas modalidades. Pelo contrário, foram extintas equipas de andebol, futsal e futebol.",
+                    "nota": "Não foram lançadas novas modalidades. O clube contratou dois jogadores surdos para o futsal (Ago 2025), mas esta iniciativa positiva foi eclipsada pela extinção de equipas em andebol (Set 2025), futsal (Out 2025) e futebol sénior (Out 2025). O comunicado da direcção do andebol denunciou abandono completo por parte da direcção do clube.",
                     "pagina": 28
                 },
                 {
@@ -44,7 +45,7 @@
                 {
                     "texto": "Reforço da infra-estrutura desportiva e modernização das instalações para todas as modalidades",
                     "status": "oposto",
-                    "nota": "Estádio do Bessa interditado pela Proteção Civil por questões de segurança (Agosto 2025).",
+                    "nota": "Estádio do Bessa interditado pela ANEPC (Ago 2025). Equipa do Clube joga no campo do Inatel. SAD joga em Ramalde. O acordo para horários de pavilhão para o andebol falhou, resultando na 'perda total dos horários' (comunicado demissão andebol, Set 2025). O Bessa tornou-se 'antro de venda de droga' segundo moradores (JN, Jan 2026).",
                     "pagina": 27
                 },
                 {
@@ -69,13 +70,13 @@
                 {
                     "texto": "Criação e desenvolvimento do portal do clube para acesso a relatórios, actividades e resultados",
                     "status": "parcial",
-                    "nota": "O site boavistafc.pt existe mas não houve transformação digital significativa.",
+                    "nota": "O site boavistafc.pt existe e publica comunicados, mas não é um portal funcional. Adeptos dependem do Reddit e Facebook para saber horários de jogos. Um adepto dos EUA relatou semanas sem resposta a contactos via site, Facebook e Instagram (Ago 2025). Até Out 2025, não havia divulgação dos jogos da formação. A loja online também apresenta problemas graves de serviço.",
                     "pagina": 8
                 },
                 {
                     "texto": "Publicação regular de relatórios sobre actividades, decisões e resultados",
                     "status": "nao_cumprida",
-                    "nota": "Sem relatórios públicos regulares.",
+                    "nota": "Sem relatórios públicos regulares. A comunicação é episódica e reactiva. Em Dez 2025, o presidente foi descrito como 'incontactável' em momento crítico de pagamento de dívidas. Em Jan 2026, adeptos questionam o silêncio da direcção. Em Ago 2025, não havia informação sobre a formação nas redes sociais. O comunicado de demissão do andebol (Set 2025) denuncia 'omissões e mentiras constantes' e ausência de interlocutor.",
                     "pagina": 8
                 },
                 {
@@ -100,13 +101,13 @@
                 {
                     "texto": "Garantir alinhamento da gestão da SAD com os interesses do Clube e dos Sócios",
                     "status": "oposto",
-                    "nota": "SAD entrou em insolvência (Jul 2025). Clube afastou-se da SAD. Conflito aberto entre as duas entidades.",
+                    "nota": "SAD entrou em insolvência (Jul 2025). Conflito aberto entre as duas entidades. A SAD continua a usar as instalações do Bessa apesar da interdição (confirmado por múltiplos posts de Ago-Dez 2025). A direcção do clube não conseguiu expulsar a SAD das instalações. O filho do presidente da SAD (Fary) foi nomeado treinador (Ago 2025), num acto de nepotismo. A SAD colocou bens em leilão incluindo taças (Nov 2025). Os sócios consideram a convivência Clube-SAD no Bessa inaceitável.",
                     "pagina": 34
                 },
                 {
                     "texto": "Negociações com Jogo Bonito ou novo accionista para parceria sustentável",
                     "status": "oposto",
-                    "nota": "Nenhum acordo alcançado. SAD falhou inscrição na II Liga e Liga 3. Caiu para distritais.",
+                    "nota": "Nenhum acordo alcançado. Gerard Lopez é unanimemente considerado 'o pior empresário da história do futebol' pelos adeptos, tendo destruído Mouscron (extinto 2022), Bordeaux (relegado para 4.ª divisão) e agora Boavista (distritais). The Guardian publicou artigo detalhado (Ago 2025). SAD caiu para os distritais e opera com equipa de jovens. Em Set 2025, credores aprovaram continuidade da SAD contra vontade do clube.",
                     "pagina": 36
                 },
                 {
@@ -124,7 +125,7 @@
                 {
                     "texto": "Aposta forte na integração de jogadores da formação na equipa principal",
                     "status": "oposto",
-                    "nota": "A equipa senior da SAD caiu para os distritais (18.º lugar, 1 ponto em 5 jornadas). Clube desistiu dos distritais por FIFA Bans.",
+                    "nota": "A equipa sénior da SAD caiu para os distritais. O clube desistiu dos distritais por FIFA Bans (Out 2025). Os jovens da formação são usados como 'escudo' da SAD nos distritais, enfrentando equipas amadoras sem condições adequadas. Em Jan 2026, post 'Entregaste os miúdos ao maior flagelo' (score 46) denunciou a exposição de jovens atletas a ambientes degradantes. Os Sub-19 arriscam descida para a 3.ª Divisão (Fev 2026). Nota positiva: Sub-17 e Sub-15 tiveram vitórias importantes (Fev 2026).",
                     "pagina": 35
                 },
                 {
@@ -138,6 +139,18 @@
                     "status": "nao_cumprida",
                     "nota": "Sem evidência de acções legais concretas.",
                     "pagina": 36
+                },
+                {
+                    "texto": "Resolução dos conflitos jurídicos e financeiros com entidades internacionais (FIFA) para garantir a participação competitiva",
+                    "status": "oposto",
+                    "nota": "O clube acumulou pelo menos 5 FIFA Transfer Bans herdados da SAD, que impediram a inscrição de jogadores. Em Out 2025, o Boavista FC (clube) desistiu do Campeonato Distrital I Divisão por não conseguir inscrever jogadores. A equipa sénior do clube teve apenas 1 ponto em 5 jornadas antes de desistir.",
+                    "pagina": null
+                },
+                {
+                    "texto": "Estratégia clara para o regresso do Boavista ao futebol profissional",
+                    "status": "nao_cumprida",
+                    "nota": "Não existe estratégia pública para o regresso ao futebol profissional. Em Fev 2026, surgiram notícias de interesse numa fusão com a SAD do Santa Clara, mas sem confirmação oficial. O clube está a 7 divisões da I Liga.",
+                    "pagina": null
                 }
             ]
         },
@@ -149,13 +162,13 @@
                 {
                     "texto": "Reestruturação da situação financeira através de investimento e negociação de dívida",
                     "status": "oposto",
-                    "nota": "Clube em processo de insolvência. Dívida de ~99-156 milhões de euros. Risco real de encerramento.",
+                    "nota": "Clube em processo de insolvência com dívida ao Estado de 20,4 milhões EUR (Nov 2025). Em Dez 2025, foi alcançado um acordo temporário com credores para evitar encerramento. No entanto, em Jan 2026, os credores requereram o afastamento da direcção actual e ameaçaram com encerramento. O clube paga tranches mensais (~53.000€) financiadas por doações dos sócios. A situação é precária e não estrutural.",
                     "pagina": 7
                 },
                 {
                     "texto": "Criação e implementação de melhores práticas de gestão financeira",
                     "status": "oposto",
-                    "nota": "Campanha 'Salvar o Boavista' (Dez 2025) para angariar fundos de sobrevivência. Pagamentos mensais de ~96.000€ dependem de doações de adeptos.",
+                    "nota": "Em vez de melhores práticas, o clube lançou uma campanha de doações ('Salvar o Boavista', Dez 2025) para sobrevivência mensal. Sócios manifestam desconfiança total na gestão financeira, com muitos a recusar doar por considerar o dinheiro 'um buraco negro'. Pagamentos mensais de ~53.000-96.000€ dependem inteiramente de doações. Post 'Eu sou culpado!' (score 46, Nov 2025) resume sentimento: Garrido é 'o coveiro que coloca a lápide' após Loureiro e Murta.",
                     "pagina": 7
                 },
                 {
@@ -169,6 +182,18 @@
                     "status": "nao_cumprida",
                     "nota": "Sem qualquer evidência de implementação tecnológica na gestão financeira.",
                     "pagina": 23
+                },
+                {
+                    "texto": "Gestão competente e transparente do processo de insolvência do clube",
+                    "status": "oposto",
+                    "nota": "A administradora de insolvência requereu o encerramento imediato do clube em Nov 2025. A direcção de Garrido foi 'surpreendida' pelo requerimento, demonstrando falta de acompanhamento do processo. Em Jan 2026, os credores exigiram o afastamento da direcção como condição para acordo. O clube dependeu de doações de sócios (~53.000€/mês) para pagar credores e evitar encerramento.",
+                    "pagina": null
+                },
+                {
+                    "texto": "Sustentabilidade financeira sem dependência de doações extraordinárias dos sócios",
+                    "status": "oposto",
+                    "nota": "A partir de Dez 2025, o clube lançou a campanha 'Salvar o Boavista', pedindo doações aos sócios para cobrir pagamentos mensais aos credores (~53.000€ a 96.000€/mês). O modelo de sobrevivência depende inteiramente da generosidade dos adeptos. Muitos sócios manifestaram frustração por terem de financiar erros da direcção. O presidente Garrido ficou 'incontactável' durante o período crítico (Dez 2025).",
+                    "pagina": null
                 }
             ]
         },
@@ -180,7 +205,7 @@
                 {
                     "texto": "Programa de recuperação de sócios com condições especiais",
                     "status": "oposto",
-                    "nota": "Em vez de programas de fidelização, os sócios foram mobilizados para salvar o clube da insolvência com donativos.",
+                    "nota": "Em vez de programas de recuperação, os sócios foram mobilizados para salvar o clube com doações (Dez 2025). Novos adeptos manifestam confusão sobre como se tornar sócios (posts de Ago 2025). Post 'A culpa não é dos adeptos' (score 50, Nov 2025) reflecte sentimento geral de frustração: 'Querem união PARA QUÊ e PORQUÊ?'. O post 'Liquidação do Boavista: e se a verdadeira já tiver acontecido?' (score 29, Out 2025) levanta questão sobre 'morte funcional' dos sócios por desligamento.",
                     "pagina": 13
                 },
                 {
@@ -198,13 +223,13 @@
                 {
                     "texto": "Criação do projecto Acolhimento do Adepto no Estádio do Bessa",
                     "status": "oposto",
-                    "nota": "Estádio interditado pela Proteção Civil. Não há estádio para acolher adeptos.",
+                    "nota": "Estádio interditado pela Protecção Civil (Ago 2025). Não há estádio para acolher adeptos. Múltiplos posts com 'saudades do Bessa' (scores 29-44) demonstram a angústia dos sócios. O Bessa tornou-se local de venda de droga (JN, Jan 2026). A loja oficial não tem stock de merchandising básico como ímanes do símbolo.",
                     "pagina": 17
                 },
                 {
                     "texto": "Apoio logístico à Associação Panteras Negras e canal de comunicação directo",
-                    "status": "nao_cumprida",
-                    "nota": "Sem evidência pública de implementação.",
+                    "status": "oposto",
+                    "nota": "A relação com os Panteras Negras deteriorou-se completamente. A claque cisou-se do clube, criando o PNFC que joga na mesma divisão. A sede do PNFC permanece nas instalações do Bessa com consentimento implícito da direcção. Houve incidentes violentos (cuspo na cara de Garrido, Dez 2025). A direcção não conseguiu nem manter a relação nem cortar definitivamente os laços.",
                     "pagina": 20
                 },
                 {
@@ -218,6 +243,12 @@
                     "status": "nao_cumprida",
                     "nota": "Sem calendário público de eventos.",
                     "pagina": 11
+                },
+                {
+                    "texto": "Gestão da relação com grupos organizados de adeptos e prevenção de cisões internas",
+                    "status": "oposto",
+                    "nota": "A claque histórica (Panteras Negras) cisou-se do clube e criou o próprio clube de futebol (PNFC), que compete na mesma divisão distrital. O presidente dos Panteras Negras apoiou inicialmente a candidatura de Garrido mas virou-se contra o clube. A sede do PNFC continua nas instalações do Bessa. Novos grupos de adeptos surgiram organicamente no Reddit e Instagram (Ago 2025).",
+                    "pagina": null
                 }
             ]
         },
@@ -229,7 +260,7 @@
                 {
                     "texto": "Criação dos Grupos de Trabalho compostos por voluntários especializados",
                     "status": "nao_cumprida",
-                    "nota": "Sem evidência pública de criação.",
+                    "nota": "Sem evidência de criação de grupos de trabalho. Adeptos descrevem a direcção como 'inerte' e 'inoperante' (posts de Out 2025). Uma reunião com sócios em Dez 2025 foi opaca e sem resultados públicos. Os sócios auto-organizam-se no Reddit e Facebook para partilhar informações que a direcção não comunica.",
                     "pagina": 17
                 },
                 {
@@ -253,7 +284,7 @@
                 {
                     "texto": "Introdução de políticas de compliance, gestão de risco e auditorias independentes",
                     "status": "nao_cumprida",
-                    "nota": "Sem evidência de implementação.",
+                    "nota": "Sem evidência de implementação. Pelo contrário, há suspeitas públicas de corrupção sem respostas (Dez 2025). O administrador de insolvência anteriormente nomeado para o Boavista apareceu ligado a esquemas fraudulentos (reportagem SIC, Dez 2025). Questões sobre um acordo confidencial de apenas 1,2M€ com a FPF após 6 anos de desclassificação ilegal permanecem sem resposta.",
                     "pagina": 15
                 },
                 {
@@ -261,6 +292,12 @@
                     "status": "nao_cumprida",
                     "nota": "Sem evidência de transformação digital.",
                     "pagina": 22
+                },
+                {
+                    "texto": "Critérios de idoneidade e transparência na contratação de quadros para o clube",
+                    "status": "oposto",
+                    "nota": "A direcção contratou Queco Huerta como 'conselheiro de internacionalização' (Dez 2025). Um post detalhado no Reddit revelou que Huerta foi destituído da Associação de Directores Desportivos de Espanha por 'actuações opacas', uso indevido de fundos e tentativa de concentração de poder. O jornal El Mundo chamou-lhe 'o Pequeno Nicolás do futebol espanhol'. Também foi contratado António Feijóo (ex-presidente do CD Lemos). A escolha reflecte falta de due diligence da direcção.",
+                    "pagina": null
                 }
             ]
         },
@@ -272,7 +309,7 @@
                 {
                     "texto": "Manutenção e modernização do Estádio do Bessa",
                     "status": "oposto",
-                    "nota": "Estádio interditado pela ANEPC (Ago 2025) por questões de segurança. Boavista impedido de jogar em casa.",
+                    "nota": "Estádio interditado pela ANEPC (Ago 2025) por questões de segurança. Boavista impedido de jogar em casa. Instalações degradadas excepto relvado (Set 2025). Bingo do Boavista na Av. Boavista fechado e para arrendar (Ago 2025). Reportagens televisivas (SporTV, Fev 2026) documentam a degradação. Zona envolvente tornou-se ponto de venda de droga (JN, Jan 2026). Nenhum plano público de reabilitação.",
                     "pagina": 41
                 },
                 {
@@ -302,7 +339,7 @@
                 {
                     "texto": "Recuperação das visitas regulares ao Estádio do Bessa",
                     "status": "oposto",
-                    "nota": "Estádio interditado. Sem visitas possíveis.",
+                    "nota": "Estádio interditado. Em Fev 2026, um jornalista estrangeiro relatou no Reddit que planeava visitar o Boavista mas descobriu que 'não parece haver nada agendado'. O Bessa está vazio, degradado e inacessível.",
                     "pagina": 42
                 },
                 {
@@ -310,6 +347,12 @@
                     "status": "nao_cumprida",
                     "nota": "Sem qualquer progresso ou parceria identificada.",
                     "pagina": 45
+                },
+                {
+                    "texto": "Garantia da segurança e da imagem do Estádio do Bessa e zonas envolventes",
+                    "status": "oposto",
+                    "nota": "Em Jan 2026, o Jornal de Notícias noticiou que as imediações do Bessa se tornaram um 'antro de venda de droga', com moradores preocupados. O estádio interditado e abandonado contribuiu para a degradação da zona.",
+                    "pagina": null
                 }
             ]
         },
@@ -321,7 +364,7 @@
                 {
                     "texto": "Criação do Fundo Gerações de apoio ao futebol formação",
                     "status": "parcial",
-                    "nota": "Programa Gerações anunciado (Jun 2025) mas sem resultados concretos ou investimento captado.",
+                    "nota": "Programa Gerações anunciado (Jun 2025) mas sem resultados concretos ou investimento captado. Não gerou nenhuma discussão ou reconhecimento no Reddit (0 menções em 1000 posts), sugerindo nulo impacto junto dos adeptos.",
                     "pagina": 32
                 },
                 {
@@ -352,7 +395,7 @@
                 {
                     "texto": "Plano de marketing da marca Boavista à escala global",
                     "status": "oposto",
-                    "nota": "Marca Boavista associada internacionalmente a colapso financeiro. Artigos internacionais descrevem 'freefall' e 'kiss of death'.",
+                    "nota": "Marca Boavista associada internacionalmente a colapso financeiro. The Guardian publicou artigo sobre 'crise sob Gerard Lopez' (Ago 2025). Artigo espanhol sobre 'resiliência' do Boavista foi classificado como 'Humor' pelos próprios adeptos (Jan 2026). Post viral comparando Gerard Lopez ao 'pior empresário do futebol' alcançou score 67 (Jan 2026). Um jornalista estrangeiro propõe fazer documentário sobre a crise (Fev 2026). A página da Wikipedia foi corrigida por um adepto de outro clube (Dez 2025) por erros.",
                     "pagina": 7
                 },
                 {
@@ -364,8 +407,14 @@
                 {
                     "texto": "Iniciativas que envolvam antigos atletas e dirigentes na celebração do legado",
                     "status": "parcial",
-                    "nota": "Litos (capitão do título 2000/01) apoiou publicamente a candidatura, mas sem programa estruturado.",
+                    "nota": "Houve um jogo solidário de veteranos Boavista x FC Porto (Nov 2025). Ex-jogadores como Bracali e Jaime Pacheco deram entrevistas nostálgicas. No entanto, não existe programa estruturado. As iniciativas são orgânicas e não promovidas pela direcção.",
                     "pagina": 7
+                },
+                {
+                    "texto": "Protecção e preservação do património histórico e trofeístico do Boavista FC",
+                    "status": "oposto",
+                    "nota": "Em Nov 2025, a SAD colocou bens em leilão, incluindo taças e equipamentos. Os adeptos manifestaram preocupação com a venda do património histórico. A direcção do clube não conseguiu impedir a alienação destes bens.",
+                    "pagina": null
                 }
             ]
         },
@@ -395,7 +444,7 @@
                 {
                     "texto": "Parcerias com clubes e organizações desportivas internacionais",
                     "status": "nao_cumprida",
-                    "nota": "Sem novas parcerias internacionais conhecidas.",
+                    "nota": "Em vez de parcerias credíveis, a direcção contratou figuras controversas como Queco Huerta (destituído da Associação de Directores Desportivos de Espanha) e António Feijóo (ex-presidente do CD Lemos). Nenhuma parceria institucional com clubes ou organizações internacionais foi concretizada.",
                     "pagina": 61
                 }
             ]
@@ -408,7 +457,7 @@
                 {
                     "texto": "Aprofundar a associação do Ciclismo ao Clube",
                     "status": "cumprida",
-                    "nota": "Equipa Feira dos Sofás - Boavista Cycling Team ativa com 12 atletas para 2026.",
+                    "nota": "Equipa Feira dos Sofás - Boavista Cycling Team activa com 12 atletas para 2026. Lucas Lopes alcançou o 5.º lugar na classificação geral da Volta a Portugal 2025, com 4.º lugar na etapa Bragança-Mondim de Basto (Ago 2025). A participação gerou orgulho nos adeptos (post com score 32).",
                     "pagina": 39
                 },
                 {
@@ -445,8 +494,21 @@
                 {
                     "texto": "Valorização dos colaboradores com reconhecimento justo e condições motivadoras",
                     "status": "oposto",
-                    "nota": "Salários em atraso. Situação laboral precária.",
+                    "nota": "Salários em atraso. Situação laboral precária. O histórico Alfredo Castro foi despedido devido à insolvência (Out 2025). O comunicado de demissão do andebol (Set 2025) referiu 'falta de respeito pelo trabalho desenvolvido'.",
                     "pagina": 6
+                }
+            ]
+        },
+        {
+            "id": "relacoes-institucionais",
+            "nome": "Relações Institucionais",
+            "icon": "🏛️",
+            "promessas": [
+                {
+                    "texto": "Relação institucional activa com a Câmara Municipal do Porto para apoio ao clube e ao estádio",
+                    "status": "oposto",
+                    "nota": "A relação com a CMP não produziu resultados concretos. Segundo notícia de Jan 2026, a CMP diz que 'não pode fazer mais'. Enquanto isso, outros clubes da cidade recebem terrenos e apoios. A interdição do Bessa pela Protecção Civil (Ago 2025) não foi resolvida com apoio municipal.",
+                    "pagina": null
                 }
             ]
         }
