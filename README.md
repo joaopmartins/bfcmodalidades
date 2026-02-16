@@ -27,7 +27,7 @@ Acompanha a performance de cada escalao e compara com a epoca anterior.
 | Futebol Feminino | 2 (Senior, Sub-19) | Futebol |
 | Voleibol Feminino | 4 (Senior, Sub-19, Sub-17, Sub-15) | Pavilhao |
 | Futsal | 7 (Senior, Sub-19 a Sub-11) | Pavilhao |
-| Andebol | 4 (todas extintas) | Pavilhao |
+| Andebol | 11 (todas extintas) | Pavilhao |
 
 ## Tech Stack
 

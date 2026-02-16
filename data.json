@@ -303,6 +303,22 @@
                     }
                 },
                 {
+                    "id": "andebol-senior-b",
+                    "nome": "Sénior B",
+                    "tipo": "senior",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": null
+                },
+                {
+                    "id": "andebol-s20",
+                    "nome": "Sub-20",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": null
+                },
+                {
                     "id": "andebol-s18",
                     "nome": "Sub-18",
                     "tipo": "formacao",
@@ -313,6 +329,14 @@
                         "posicaoFinal": 3,
                         "pontosFinal": 26
                     }
+                },
+                {
+                    "id": "andebol-s18b",
+                    "nome": "Sub-18 B",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": null
                 },
                 {
                     "id": "andebol-s16",
@@ -327,6 +351,22 @@
                     }
                 },
                 {
+                    "id": "andebol-s16b",
+                    "nome": "Sub-16 B",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": null
+                },
+                {
+                    "id": "andebol-s16c",
+                    "nome": "Sub-16 C",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": null
+                },
+                {
                     "id": "andebol-s14",
                     "nome": "Sub-14",
                     "tipo": "formacao",
@@ -337,6 +377,22 @@
                         "posicaoFinal": 1,
                         "pontosFinal": 20
                     }
+                },
+                {
+                    "id": "andebol-s14b",
+                    "nome": "Sub-14 B",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": null
+                },
+                {
+                    "id": "andebol-s12",
+                    "nome": "Sub-12",
+                    "tipo": "formacao",
+                    "status": "extinta",
+                    "atual": null,
+                    "anterior": null
                 }
             ]
         },
