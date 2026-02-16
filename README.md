@@ -54,10 +54,7 @@ bfcmodalidades/
 
 ## Como Usar
 
-1. Clonar o repositorio:
-   ```bash
-   git clone https://github.com/joaopmartins/bfcmodalidades.git
-   ```
+1. Clonar o repositorio
 
 2. Abrir `index.html` no browser, ou servir com qualquer servidor HTTP:
    ```bash
