@@ -264,13 +264,15 @@
                     "nome": "Sub-19",
                     "tipo": "formacao",
                     "atual": {
-                        "competicao": "II Divisão FemininaSub-19",
+                        "competicao": "II Divisão Feminina Sub-19",
                         "posicao": 9,
                         "jogos": 4,
                         "vitorias": 0,
                         "empates": 0,
                         "derrotas": 4,
                         "pontos": 0,
+                        "golosMarcados": 3,
+                        "golosSofridos": 14,
                         "zona": null,
                         "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-feminina-sub-19-ii-fase-serie-norte-2025-26/211134"
                     },
