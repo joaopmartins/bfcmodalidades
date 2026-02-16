@@ -10,23 +10,24 @@ Acompanha a performance de cada escalao e compara com a epoca anterior.
 
 - **Dashboard** com todas as modalidades e escaloes do clube
 - **Comparacao** entre a epoca atual e a anterior (posicao, pontos, resultados)
-- **Filtros** por modalidade e tipo (senior, formacao, feminino)
+- **Comparacao inteligente** — detecta mudanca de competicao (descida de divisao = pior)
+- **Links para zerozero** — competicoes com link direto para a tabela classificativa
 - **Indicadores visuais** de performance (melhor, pior, igual, extinta)
 - **Zonas** de titulo, subida, playoff e descida
 - **Vista detalhada** (modal) com comparacao lado a lado
-- **Dark mode** com detecao automatica de preferencia do sistema
-- **Responsivo** (mobile, tablet, desktop)
+- **Responsivo** (mobile com scroll horizontal, tablet, desktop)
 - **Boavistometro** — seccao satirica sobre o estado do clube
+- **FAQ** — perguntas frequentes sobre o projeto
 
 ## Modalidades Incluidas
 
 | Modalidade | Escaloes | Categoria |
 |---|---|---|
-| Futebol Masculino | 8 (Senior, Equipa B, Sub-19 a Sub-13) | Futebol |
-| Futebol Feminino | 1 (Senior) | Futebol |
+| Futebol Masculino | 15 (Senior, Sub-19 a Sub-6) | Futebol |
+| Futebol Feminino | 2 (Senior, Sub-19) | Futebol |
 | Voleibol Feminino | 4 (Senior, Sub-19, Sub-17, Sub-15) | Pavilhao |
-| Futsal | 5 (Senior, Sub-20, Sub-17, Sub-15, Sub-13) | Pavilhao |
-| Andebol | 4 (Senior, Sub-18, Sub-16, Sub-14) | Pavilhao |
+| Futsal | 7 (Senior, Sub-19 a Sub-11) | Pavilhao |
+| Andebol | 4 (todas extintas) | Pavilhao |
 
 ## Tech Stack
 
@@ -44,7 +45,7 @@ bfcmodalidades/
 ├── index.html          # Pagina principal
 ├── data.json           # Dados de todas as modalidades/escaloes
 ├── css/
-│   └── styles.css      # Estilos custom (animacoes, dark mode, print)
+│   └── styles.css      # Estilos custom (animacoes, scroll, print)
 ├── js/
 │   └── app.js          # Logica da aplicacao
 └── assets/
@@ -77,7 +78,7 @@ Os dados estao em `data.json`. Para atualizar resultados, editar diretamente o f
 ```json
 {
   "meta": {
-    "lastUpdated": "2026-02-15",
+    "lastUpdated": "2026-02-16",
     "currentSeason": "2025-26",
     "previousSeason": "2024-25"
   },
@@ -94,7 +95,8 @@ Os dados estao em `data.json`. Para atualizar resultados, editar diretamente o f
           "tipo": "senior",
           "status": null,
           "atual": {
-            "competicao": "Liga Portugal",
+            "competicao": "Liga Hyundai Liga Pro",
+            "competicaoLink": "https://www.zerozero.pt/edicao/...",
             "posicao": 18,
             "jogos": 21,
             "vitorias": 2,
@@ -108,9 +110,7 @@ Os dados estao em `data.json`. Para atualizar resultados, editar diretamente o f
           "anterior": {
             "competicao": "Liga Portugal",
             "posicaoFinal": 18,
-            "pontosFinal": 24,
-            "golosMarcados": 24,
-            "golosSofridos": 60
+            "pontosFinal": 24
           }
         }
       ]
@@ -128,6 +128,7 @@ Os dados estao em `data.json`. Para atualizar resultados, editar diretamente o f
 | `tipo` | `"senior"`, `"formacao"`, ou `"feminino"` | Sim |
 | `status` | `"extinta"` se a equipa foi extinta, `null` caso contrario | Nao |
 | `atual.competicao` | Nome da competicao atual | Sim |
+| `atual.competicaoLink` | URL da tabela classificativa (zerozero) | Nao |
 | `atual.posicao` | Posicao na classificacao | Sim |
 | `atual.jogos` | Jogos disputados | Sim |
 | `atual.vitorias` | Vitorias | Sim |
@@ -174,11 +175,11 @@ Definir `"status": "extinta"` e `"atual": null`:
 
 | Indicador | Significado |
 |---|---|
-| 🚀 | Muito melhor que a epoca anterior (subiu 3+ posicoes) |
-| 🟢 | Melhor que a epoca anterior |
+| 🚀 | Muito melhor que a epoca anterior (subiu 3+ posicoes na mesma competicao) |
+| 🟢 | Melhor que a epoca anterior (subiu 1-2 posicoes na mesma competicao) |
 | 🔵 | Igual a epoca anterior |
-| 🟠 | Pior que a epoca anterior |
-| 🔴 | Muito pior (desceu 3+ posicoes) |
+| 🟠 | Pior que a epoca anterior (desceu 1-2 posicoes) |
+| 🔴 | Muito pior ou mudou de competicao (descida de divisao) |
 | 🚫 | Equipa extinta |
 | 🏆 | Zona de titulo |
 | ▲ | Zona de subida |

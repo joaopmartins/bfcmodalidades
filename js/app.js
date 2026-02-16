@@ -91,24 +91,37 @@ function createCard(modalidade, escaloes) {
         </svg>
     `;
 
+    // Scroll wrapper with fade hint
+    const scrollWrapper = document.createElement('div');
+    scrollWrapper.className = 'relative scroll-hint';
+
     const body = document.createElement('div');
-    body.className = 'card-body';
+    body.className = 'card-body overflow-x-auto';
+
+    // Hide fade when scrolled to the end
+    body.addEventListener('scroll', () => {
+        const atEnd = body.scrollLeft + body.clientWidth >= body.scrollWidth - 5;
+        scrollWrapper.classList.toggle('scroll-hint', !atEnd);
+    });
+
+    const inner = document.createElement('div');
+    inner.className = 'min-w-[600px]';
 
     const headerRow = document.createElement('div');
     headerRow.className = 'px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-600 flex items-center gap-2';
     headerRow.innerHTML = `
-        <div class="w-8 text-center" title="Estado vs época anterior">Est</div>
-        <div class="flex-1 min-w-[120px]">Escalao</div>
-        <div class="w-[200px] hidden md:block">Competição</div>
+        <div class="w-8 text-center" title="Estado vs época anterior"></div>
+        <div class="w-[140px] min-w-[120px]">Escalao</div>
+        <div class="flex-1 min-w-[150px]">Competição</div>
         <div class="w-10 text-center">Pos</div>
         <div class="w-10 text-center">Pts</div>
         <div class="w-8 text-center">J</div>
         <div class="w-8 text-center">V</div>
         <div class="w-8 text-center">E</div>
         <div class="w-8 text-center">D</div>
-        <div class="w-12 text-center hidden sm:block">Golos</div>
+        <div class="w-12 text-center ">Golos</div>
     `;
-    body.appendChild(headerRow);
+    inner.appendChild(headerRow);
 
     const table = document.createElement('div');
     table.className = 'divide-y divide-gray-100';
@@ -118,15 +131,17 @@ function createCard(modalidade, escaloes) {
         table.appendChild(row);
     });
 
-    body.appendChild(table);
+    inner.appendChild(table);
+    body.appendChild(inner);
 
     header.addEventListener('click', () => {
         body.classList.toggle('collapsed');
         header.querySelector('.card-chevron').classList.toggle('rotate-180');
     });
 
+    scrollWrapper.appendChild(body);
     card.appendChild(header);
-    card.appendChild(body);
+    card.appendChild(scrollWrapper);
 
     return card;
 }
@@ -143,8 +158,15 @@ function createEscalaoRow(escalao, modalidade) {
     if (escalao.status === 'extinta') {
         row.innerHTML = `
             <div class="w-8 text-center text-lg" title="Extinta, obrigado Garrido">&#128683;</div>
-            <div class="flex-1 min-w-[120px] font-medium text-gray-400 line-through">${escalao.nome}</div>
-            <div class="text-xs text-red-500 italic">Extinta no mandato de Garrido Pereira</div>
+            <div class="w-[140px] min-w-[120px] font-medium text-gray-400 line-through">${escalao.nome}</div>
+            <div class="flex-1 min-w-[150px] text-xs text-red-500 italic">Extinta no mandato de Garrido Pereira</div>
+            <div class="w-10"></div>
+            <div class="w-10"></div>
+            <div class="w-8"></div>
+            <div class="w-8"></div>
+            <div class="w-8"></div>
+            <div class="w-8"></div>
+            <div class="w-12"></div>
         `;
         row.classList.add('opacity-60');
         return row;
@@ -168,18 +190,18 @@ function createEscalaoRow(escalao, modalidade) {
 
     row.innerHTML = `
         <div class="w-8 text-center text-lg" title="${statusIndicator.title}">${statusIndicator.icon}</div>
-        <div class="flex-1 min-w-[120px] font-medium truncate flex items-center gap-1" title="${escalao.nome}">
+        <div class="w-[140px] min-w-[120px] font-medium truncate flex items-center gap-1" title="${escalao.nome}">
             ${zona}
             <span>${escalao.nome}</span>
         </div>
-        <div class="w-[200px] text-xs text-gray-500 hidden md:block">${competicaoHtml}</div>
+        <div class="flex-1 min-w-[150px] text-xs text-gray-500">${competicaoHtml}</div>
         <div class="w-10 text-center font-bold">${atual.posicao || '-'}º</div>
         <div class="w-10 text-center font-semibold">${atual.pontos !== undefined ? atual.pontos : '-'}</div>
         <div class="w-8 text-center text-gray-600">${atual.jogos !== undefined ? atual.jogos : '-'}</div>
         <div class="w-8 text-center text-green-600">${atual.vitorias !== undefined ? atual.vitorias : '-'}</div>
         <div class="w-8 text-center text-yellow-600">${atual.empates !== undefined ? atual.empates : '-'}</div>
         <div class="w-8 text-center text-red-600">${atual.derrotas !== undefined ? atual.derrotas : '-'}</div>
-        <div class="w-12 text-center text-gray-600 hidden sm:block" title="Golos: ${atual.golosMarcados || 0} marcados, ${atual.golosSofridos || 0} sofridos">${golosDisplay}</div>
+        <div class="w-12 text-center text-gray-600" title="Golos: ${atual.golosMarcados || 0} marcados, ${atual.golosSofridos || 0} sofridos">${golosDisplay}</div>
     `;
 
     row.addEventListener('click', () => {

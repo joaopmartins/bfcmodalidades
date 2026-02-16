@@ -85,12 +85,22 @@ button:focus-visible {
     }
 }
 
-/* Responsive table-like layout */
-@media (max-width: 640px) {
-    .card-body > div > div {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
+/* Horizontal scroll */
+.card-body {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Scroll fade hint */
+.scroll-hint::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(to left, rgba(255,255,255,0.95), transparent);
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* Print styles */
