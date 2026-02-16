@@ -1,62 +1,17 @@
 // BFC Modalidades - Main Application
 
 let appData = null;
-let currentFilters = {
-    modalidade: '',
-    tipo: ''
-};
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
-    setupDarkMode();
     setupEventListeners();
     await loadData();
 }
 
-// Dark mode setup
-function setupDarkMode() {
-    // Check system preference
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-    }
-
-    // Listen for system preference changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (e.matches) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    });
-
-    // Theme toggle button
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle?.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-    });
-}
-
 // Event listeners
 function setupEventListeners() {
-    // Filters
-    document.getElementById('filter-modalidade')?.addEventListener('change', (e) => {
-        currentFilters.modalidade = e.target.value;
-        renderCards();
-    });
-
-    document.getElementById('filter-tipo')?.addEventListener('change', (e) => {
-        currentFilters.tipo = e.target.value;
-        renderCards();
-    });
-
-    // Mobile filters toggle
-    document.getElementById('filters-toggle')?.addEventListener('click', () => {
-        const filtersBar = document.getElementById('filters-bar');
-        filtersBar?.classList.toggle('hidden');
-    });
-
     // Modal close on backdrop click
     document.getElementById('modal')?.addEventListener('click', (e) => {
         if (e.target.id === 'modal') {
@@ -82,7 +37,6 @@ async function loadData() {
 
         appData = await response.json();
 
-        setupFilters();
         renderCards();
         updateTimestamp();
         updateSummaryStats();
@@ -97,58 +51,6 @@ async function loadData() {
     }
 }
 
-// Setup filter dropdowns
-function setupFilters() {
-    if (!appData) return;
-
-    const modalidadeSelect = document.getElementById('filter-modalidade');
-    const chipsContainer = document.getElementById('filter-chips');
-
-    // Clear existing options (except "Todas")
-    while (modalidadeSelect.options.length > 1) {
-        modalidadeSelect.remove(1);
-    }
-
-    // Add modalidade options
-    appData.modalidades.forEach(mod => {
-        const option = document.createElement('option');
-        option.value = mod.id;
-        option.textContent = `${mod.icon} ${mod.nome}`;
-        modalidadeSelect.appendChild(option);
-    });
-
-    // Create filter chips
-    if (chipsContainer) {
-        chipsContainer.innerHTML = '';
-        appData.modalidades.slice(0, 4).forEach(mod => {
-            const chip = document.createElement('button');
-            chip.className = 'px-3 py-1 rounded-full text-xs font-medium border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors';
-            chip.textContent = mod.icon + ' ' + mod.nome;
-            chip.dataset.modalidade = mod.id;
-            chip.addEventListener('click', () => {
-                currentFilters.modalidade = currentFilters.modalidade === mod.id ? '' : mod.id;
-                document.getElementById('filter-modalidade').value = currentFilters.modalidade;
-                updateChipStyles();
-                renderCards();
-            });
-            chipsContainer.appendChild(chip);
-        });
-    }
-}
-
-function updateChipStyles() {
-    const chips = document.querySelectorAll('#filter-chips button');
-    chips.forEach(chip => {
-        if (chip.dataset.modalidade === currentFilters.modalidade) {
-            chip.classList.add('bg-bfc-black', 'text-white', 'dark:bg-white', 'dark:text-gray-900');
-            chip.classList.remove('border-gray-300', 'dark:border-gray-600');
-        } else {
-            chip.classList.remove('bg-bfc-black', 'text-white', 'dark:bg-white', 'dark:text-gray-900');
-            chip.classList.add('border-gray-300', 'dark:border-gray-600');
-        }
-    });
-}
-
 // Render cards
 function renderCards() {
     if (!appData) return;
@@ -156,28 +58,14 @@ function renderCards() {
     const container = document.getElementById('cards-container');
     container.innerHTML = '';
 
-    // Filter modalidades
-    let modalidades = appData.modalidades;
-
-    if (currentFilters.modalidade) {
-        modalidades = modalidades.filter(m => m.id === currentFilters.modalidade);
-    }
-
-    // Render each modalidade
-    modalidades.forEach(modalidade => {
-        // Filter escaloes by tipo
-        let escaloes = modalidade.escaloes;
-        if (currentFilters.tipo) {
-            escaloes = escaloes.filter(e => e.tipo === currentFilters.tipo);
-        }
-
+    appData.modalidades.forEach(modalidade => {
+        const escaloes = modalidade.escaloes;
         if (escaloes.length === 0) return;
 
         const card = createCard(modalidade, escaloes);
         container.appendChild(card);
     });
 
-    // Show empty state if no results
     if (container.children.length === 0) {
         showEmpty();
     } else {
@@ -188,9 +76,8 @@ function renderCards() {
 // Create a modalidade card
 function createCard(modalidade, escaloes) {
     const card = document.createElement('div');
-    card.className = 'bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300';
+    card.className = 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300';
 
-    // Card header - FIXED: explicit text color for dark mode
     const header = document.createElement('div');
     header.className = 'px-4 py-3 bg-gray-900 text-white border-b border-gray-700 flex items-center justify-between cursor-pointer hover:bg-gray-800 transition-colors';
     header.innerHTML = `
@@ -204,13 +91,11 @@ function createCard(modalidade, escaloes) {
         </svg>
     `;
 
-    // Card body (escaloes list)
     const body = document.createElement('div');
     body.className = 'card-body';
 
-    // Column headers row - using flex for better control
     const headerRow = document.createElement('div');
-    headerRow.className = 'px-4 py-2 bg-gray-100 dark:bg-gray-700 text-xs font-semibold text-gray-600 dark:text-gray-300 flex items-center gap-2';
+    headerRow.className = 'px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-600 flex items-center gap-2';
     headerRow.innerHTML = `
         <div class="w-8 text-center" title="Estado vs época anterior">Est</div>
         <div class="flex-1 min-w-[120px]">Escalao</div>
@@ -225,9 +110,8 @@ function createCard(modalidade, escaloes) {
     `;
     body.appendChild(headerRow);
 
-    // Table for escaloes
     const table = document.createElement('div');
-    table.className = 'divide-y divide-gray-100 dark:divide-gray-700';
+    table.className = 'divide-y divide-gray-100';
 
     escaloes.forEach(escalao => {
         const row = createEscalaoRow(escalao, modalidade);
@@ -236,7 +120,6 @@ function createCard(modalidade, escaloes) {
 
     body.appendChild(table);
 
-    // Toggle expand/collapse
     header.addEventListener('click', () => {
         body.classList.toggle('collapsed');
         header.querySelector('.card-chevron').classList.toggle('rotate-180');
@@ -251,7 +134,7 @@ function createCard(modalidade, escaloes) {
 // Create a row for each escalao
 function createEscalaoRow(escalao, modalidade) {
     const row = document.createElement('div');
-    row.className = 'px-4 py-2.5 flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer transition-colors text-sm';
+    row.className = 'px-4 py-2.5 flex items-center gap-2 hover:bg-gray-50 cursor-pointer transition-colors text-sm';
 
     const atual = escalao.atual || {};
     const anterior = escalao.anterior || {};
@@ -259,9 +142,9 @@ function createEscalaoRow(escalao, modalidade) {
     // Check if team is extinct
     if (escalao.status === 'extinta') {
         row.innerHTML = `
-            <div class="w-8 text-center text-lg">&#128683;</div>
+            <div class="w-8 text-center text-lg" title="Extinta, obrigado Garrido">&#128683;</div>
             <div class="flex-1 min-w-[120px] font-medium text-gray-400 line-through">${escalao.nome}</div>
-            <div class="text-xs text-red-500 dark:text-red-400 italic">Equipa extinta</div>
+            <div class="text-xs text-red-500 italic">Extinta no mandato de Garrido Pereira</div>
         `;
         row.classList.add('opacity-60');
         return row;
@@ -269,12 +152,14 @@ function createEscalaoRow(escalao, modalidade) {
 
     const diff = calculateDiff(atual, anterior);
     const zona = getZonaIndicator(atual.zona);
-
-    // Status indicator (better/worse/same vs last season)
     const statusIndicator = getStatusIndicator(atual, anterior);
 
-    // Competition name
-    const competicao = atual.competicao || '-';
+    // Competition name (with optional link)
+    const competicaoNome = atual.competicao || '-';
+    const competicaoLink = atual.competicaoLink;
+    const competicaoHtml = competicaoLink
+        ? `<a href="${competicaoLink}" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-bfc-gold" onclick="event.stopPropagation()">${competicaoNome}</a>`
+        : competicaoNome;
 
     // Goals display
     const golosDisplay = atual.golosMarcados !== undefined && atual.golosSofridos !== undefined
@@ -287,17 +172,16 @@ function createEscalaoRow(escalao, modalidade) {
             ${zona}
             <span>${escalao.nome}</span>
         </div>
-        <div class="w-[200px] text-xs text-gray-500 dark:text-gray-400 hidden md:block">${competicao}</div>
+        <div class="w-[200px] text-xs text-gray-500 hidden md:block">${competicaoHtml}</div>
         <div class="w-10 text-center font-bold">${atual.posicao || '-'}º</div>
         <div class="w-10 text-center font-semibold">${atual.pontos !== undefined ? atual.pontos : '-'}</div>
-        <div class="w-8 text-center text-gray-600 dark:text-gray-400">${atual.jogos !== undefined ? atual.jogos : '-'}</div>
-        <div class="w-8 text-center text-green-600 dark:text-green-400">${atual.vitorias !== undefined ? atual.vitorias : '-'}</div>
-        <div class="w-8 text-center text-yellow-600 dark:text-yellow-400">${atual.empates !== undefined ? atual.empates : '-'}</div>
-        <div class="w-8 text-center text-red-600 dark:text-red-400">${atual.derrotas !== undefined ? atual.derrotas : '-'}</div>
-        <div class="w-12 text-center text-gray-600 dark:text-gray-400 hidden sm:block" title="Golos: ${atual.golosMarcados || 0} marcados, ${atual.golosSofridos || 0} sofridos">${golosDisplay}</div>
+        <div class="w-8 text-center text-gray-600">${atual.jogos !== undefined ? atual.jogos : '-'}</div>
+        <div class="w-8 text-center text-green-600">${atual.vitorias !== undefined ? atual.vitorias : '-'}</div>
+        <div class="w-8 text-center text-yellow-600">${atual.empates !== undefined ? atual.empates : '-'}</div>
+        <div class="w-8 text-center text-red-600">${atual.derrotas !== undefined ? atual.derrotas : '-'}</div>
+        <div class="w-12 text-center text-gray-600 hidden sm:block" title="Golos: ${atual.golosMarcados || 0} marcados, ${atual.golosSofridos || 0} sofridos">${golosDisplay}</div>
     `;
 
-    // Click to show details
     row.addEventListener('click', () => {
         showModal(escalao, modalidade);
     });
@@ -308,21 +192,26 @@ function createEscalaoRow(escalao, modalidade) {
 // Get status indicator comparing current vs previous season
 function getStatusIndicator(atual, anterior) {
     if (!anterior || !anterior.posicaoFinal || !atual || !atual.posicao) {
-        return { icon: '', title: '' }; // No indicator if no comparison data
+        return { icon: '', title: '' };
+    }
+
+    // If competition changed, the team moved division — that's worse
+    if (anterior.competicao && atual.competicao && anterior.competicao !== atual.competicao) {
+        return { icon: '&#128308;', title: `Pior que na época passada — mudou de competição (${anterior.competicao} → ${atual.competicao})` };
     }
 
     const diff = anterior.posicaoFinal - atual.posicao;
 
     if (diff > 2) {
-        return { icon: '&#128640;', title: `Muito melhor! Subiu ${diff} posições` }; // Rocket
+        return { icon: '&#128640;', title: `Muito melhor! Subiu ${diff} posições` };
     } else if (diff > 0) {
-        return { icon: '&#128994;', title: `Melhor: Subiu ${diff} posição(ões)` }; // Green circle
+        return { icon: '&#128994;', title: `Melhor: Subiu ${diff} posição(ões)` };
     } else if (diff < -2) {
-        return { icon: '&#128308;', title: `Muito pior! Desceu ${Math.abs(diff)} posições` }; // Red circle
+        return { icon: '&#128308;', title: `Muito pior! Desceu ${Math.abs(diff)} posições` };
     } else if (diff < 0) {
-        return { icon: '&#128992;', title: `Pior: Desceu ${Math.abs(diff)} posição(ões)` }; // Orange circle
+        return { icon: '&#128992;', title: `Pior: Desceu ${Math.abs(diff)} posição(ões)` };
     }
-    return { icon: '&#128311;', title: 'Igual à época anterior' }; // Blue circle (same)
+    return { icon: '&#128311;', title: 'Igual à época anterior' };
 }
 
 // Calculate difference between current and previous season
@@ -374,9 +263,9 @@ function showModal(escalao, modalidade) {
         <div class="flex items-center justify-between mb-6">
             <div>
                 <h3 class="text-xl font-bold">${escalao.nome}</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400">${modalidade.icon} ${modalidade.nome}</p>
+                <p class="text-sm text-gray-500">${modalidade.icon} ${modalidade.nome}</p>
             </div>
-            <button onclick="closeModal()" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+            <button onclick="closeModal()" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
@@ -384,32 +273,30 @@ function showModal(escalao, modalidade) {
         </div>
 
         <div class="grid grid-cols-2 gap-4 mb-6">
-            <!-- Current Season -->
-            <div class="bg-gray-50 dark:bg-gray-750 rounded-lg p-4">
-                <h4 class="font-semibold text-sm text-gray-500 dark:text-gray-400 mb-3">${appData.meta.currentSeason} (atual)</h4>
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h4 class="font-semibold text-sm text-gray-500 mb-3">${appData.meta.currentSeason} (atual)</h4>
                 <div class="space-y-2">
-                    ${atual.competicao ? `<p class="text-sm">${atual.competicao}</p>` : ''}
+                    ${atual.competicao ? (atual.competicaoLink ? `<p class="text-sm"><a href="${atual.competicaoLink}" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-bfc-gold">${atual.competicao}</a></p>` : `<p class="text-sm">${atual.competicao}</p>`) : ''}
                     <p class="text-3xl font-bold">${atual.posicao || '-'}º lugar</p>
                     <p class="text-lg">${atual.pontos !== undefined ? atual.pontos + ' pontos' : '-'}</p>
-                    ${atual.jogos ? `<p class="text-sm text-gray-600 dark:text-gray-400">${atual.jogos} jogos</p>` : ''}
+                    ${atual.jogos ? `<p class="text-sm text-gray-600">${atual.jogos} jogos</p>` : ''}
                     ${atual.vitorias !== undefined ? `
-                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                        <p class="text-sm text-gray-600">
                             ${atual.vitorias}V ${atual.empates}E ${atual.derrotas}D
                         </p>
                     ` : ''}
                 </div>
             </div>
 
-            <!-- Previous Season -->
-            <div class="bg-gray-50 dark:bg-gray-750 rounded-lg p-4">
-                <h4 class="font-semibold text-sm text-gray-500 dark:text-gray-400 mb-3">${appData.meta.previousSeason} (anterior)</h4>
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h4 class="font-semibold text-sm text-gray-500 mb-3">${appData.meta.previousSeason} (anterior)</h4>
                 <div class="space-y-2">
                     ${anterior.competicao ? `<p class="text-sm">${anterior.competicao}</p>` : ''}
                     <p class="text-3xl font-bold">${anterior.posicaoFinal || '-'}º lugar</p>
                     <p class="text-lg">${anterior.pontosFinal !== undefined ? anterior.pontosFinal + ' pontos' : '-'}</p>
-                    ${anterior.jogos ? `<p class="text-sm text-gray-600 dark:text-gray-400">${anterior.jogos} jogos</p>` : ''}
+                    ${anterior.jogos ? `<p class="text-sm text-gray-600">${anterior.jogos} jogos</p>` : ''}
                     ${anterior.vitorias !== undefined ? `
-                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                        <p class="text-sm text-gray-600">
                             ${anterior.vitorias}V ${anterior.empates}E ${anterior.derrotas}D
                         </p>
                     ` : ''}
@@ -418,9 +305,8 @@ function showModal(escalao, modalidade) {
             </div>
         </div>
 
-        <!-- Comparison summary -->
         ${diff.value ? `
-            <div class="bg-${diff.icon === '↑' ? 'green' : 'red'}-50 dark:bg-${diff.icon === '↑' ? 'green' : 'red'}-900/20 rounded-lg p-4 text-center">
+            <div class="bg-${diff.icon === '↑' ? 'green' : 'red'}-50 rounded-lg p-4 text-center">
                 <span class="text-2xl ${diff.class}">${diff.icon}</span>
                 <p class="${diff.class} font-medium">
                     ${diff.icon === '↑' ? 'Melhorou' : 'Desceu'} ${diff.value} ${diff.value === 1 ? 'posição' : 'posições'} em relação à época anterior
@@ -493,8 +379,8 @@ function updateSummaryStats() {
     let melhor = 0;
     let igual = 0;
     let pior = 0;
-    let novas = 0;
     let extintas = 0;
+    let emRisco = 0;
 
     appData.modalidades.forEach(modalidade => {
         modalidade.escaloes.forEach(escalao => {
@@ -508,12 +394,18 @@ function updateSummaryStats() {
             const atual = escalao.atual || {};
             const anterior = escalao.anterior || {};
 
-            if (!anterior.posicaoFinal) {
-                novas++;
+            // Count teams in descida zone
+            if (atual.zona === 'descida') {
+                emRisco++;
+            }
+
+            if (!anterior.posicaoFinal || !atual.posicao) {
                 return;
             }
 
-            if (!atual.posicao) {
+            // If competition changed, it's worse
+            if (anterior.competicao && atual.competicao && anterior.competicao !== atual.competicao) {
+                pior++;
                 return;
             }
 
@@ -533,6 +425,11 @@ function updateSummaryStats() {
     document.getElementById('stat-melhor').textContent = melhor;
     document.getElementById('stat-igual').textContent = igual;
     document.getElementById('stat-pior').textContent = pior;
-    // stat-novas removed from UI
     document.getElementById('stat-extintas').textContent = extintas;
+
+    // Update Boavistómetro counters
+    const elExtintas = document.getElementById('equipas-extintas');
+    if (elExtintas) elExtintas.textContent = extintas;
+    const elRisco = document.getElementById('equipas-risco');
+    if (elRisco) elRisco.textContent = emRisco;
 }
