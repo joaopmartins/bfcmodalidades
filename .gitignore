@@ -1,0 +1,7 @@
+# PDF
+*.pdf
+
+# Reddit scraper/analysis
+reddit_*.json
+reddit_*.py
+reddit_*.md
