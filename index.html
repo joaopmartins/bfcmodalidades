@@ -91,6 +91,35 @@
                     <span class="text-gray-500 ml-1">paciência esgotada dos Boavisteiros</span>
                 </div>
             </div>
+
+            <!-- Promessas do Programa Eleitoral -->
+            <div class="mt-6 pt-6 border-t border-gray-300">
+                <div class="flex items-center justify-between cursor-pointer" id="promessas-toggle">
+                    <div>
+                        <h3 class="text-base font-bold text-gray-700">Programa Eleitoral: Promessas vs Realidade</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">O que Garrido Pereira prometeu vs o que realmente fez desde Janeiro 2025</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-right hidden sm:block">
+                            <span class="text-sm font-bold text-red-500" id="promessas-score">--</span>
+                        </div>
+                        <svg class="w-5 h-5 text-gray-400 transition-transform duration-300" id="promessas-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="mt-3 flex gap-1 h-3 rounded-full overflow-hidden bg-gray-200" id="promessas-bar">
+                </div>
+                <div class="flex justify-between text-xs text-gray-500 mt-1" id="promessas-bar-legend">
+                </div>
+
+                <!-- Promessas content (collapsed by default) -->
+                <div id="promessas-content" class="mt-4 space-y-3">
+                </div>
+            </div>
+
         </div>
     </section>
 

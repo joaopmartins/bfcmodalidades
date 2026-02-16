@@ -1,0 +1,454 @@
+{
+    "meta": {
+        "fonte": "Programa Eleitoral da Candidatura de Garrido Pereira à Presidência do Boavista FC",
+        "dataPosse": "2025-01-18",
+        "mandatoAte": "2027"
+    },
+    "resumo": {
+        "total": 59,
+        "cumpridas": 2,
+        "parciais": 4,
+        "nao_cumpridas": 39,
+        "oposto": 14
+    },
+    "categorias": [
+        {
+            "id": "modalidades",
+            "nome": "Modalidades Desportivas",
+            "icon": "🏐",
+            "promessas": [
+                {
+                    "texto": "Criação de uma estrutura profissional para apoio na gestão das modalidades",
+                    "status": "nao_cumprida",
+                    "nota": "Não foi criada nenhuma estrutura. Foram extintas 8 equipas de formação.",
+                    "pagina": 26
+                },
+                {
+                    "texto": "Procura activa para o lançamento de novas modalidades desportivas",
+                    "status": "oposto",
+                    "nota": "Não foram lançadas novas modalidades. Pelo contrário, foram extintas equipas de andebol, futsal e futebol.",
+                    "pagina": 28
+                },
+                {
+                    "texto": "Investimento em instalações para modalidades emergentes (Padel, Esports, etc.)",
+                    "status": "nao_cumprida",
+                    "nota": "Zero investimento em novas instalações ou modalidades.",
+                    "pagina": 28
+                },
+                {
+                    "texto": "Parcerias estratégicas com federações para modalidades emergentes",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de parcerias.",
+                    "pagina": 28
+                },
+                {
+                    "texto": "Reforço da infra-estrutura desportiva e modernização das instalações para todas as modalidades",
+                    "status": "oposto",
+                    "nota": "Estádio do Bessa interditado pela Proteção Civil por questões de segurança (Agosto 2025).",
+                    "pagina": 27
+                },
+                {
+                    "texto": "Parcerias com patrocinadores e entidades locais para apoiar o crescimento das modalidades",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de novas parcerias.",
+                    "pagina": 27
+                }
+            ]
+        },
+        {
+            "id": "comunicacao",
+            "nome": "Comunicação",
+            "icon": "📺",
+            "promessas": [
+                {
+                    "texto": "Lançamento da Boavista TV como serviço de streaming com conteúdos exclusivos",
+                    "status": "nao_cumprida",
+                    "nota": "A Boavista TV nunca foi lançada.",
+                    "pagina": 8
+                },
+                {
+                    "texto": "Criação e desenvolvimento do portal do clube para acesso a relatórios, actividades e resultados",
+                    "status": "parcial",
+                    "nota": "O site boavistafc.pt existe mas não houve transformação digital significativa.",
+                    "pagina": 8
+                },
+                {
+                    "texto": "Publicação regular de relatórios sobre actividades, decisões e resultados",
+                    "status": "nao_cumprida",
+                    "nota": "Sem relatórios públicos regulares.",
+                    "pagina": 8
+                },
+                {
+                    "texto": "Transmissão de jogos e eventos ao vivo (onde os direitos estejam disponíveis)",
+                    "status": "nao_cumprida",
+                    "nota": "Sem transmissões. Boavista TV nunca lançada.",
+                    "pagina": 8
+                },
+                {
+                    "texto": "Produção digital integrada e filmagem assistida por Inteligência Artificial",
+                    "status": "nao_cumprida",
+                    "nota": "Sem qualquer evidência de implementação.",
+                    "pagina": 9
+                }
+            ]
+        },
+        {
+            "id": "sad-futebol",
+            "nome": "SAD & Futebol Profissional",
+            "icon": "⚽",
+            "promessas": [
+                {
+                    "texto": "Garantir alinhamento da gestão da SAD com os interesses do Clube e dos Sócios",
+                    "status": "oposto",
+                    "nota": "SAD entrou em insolvência (Jul 2025). Clube afastou-se da SAD. Conflito aberto entre as duas entidades.",
+                    "pagina": 34
+                },
+                {
+                    "texto": "Negociações com Jogo Bonito ou novo accionista para parceria sustentável",
+                    "status": "oposto",
+                    "nota": "Nenhum acordo alcançado. SAD falhou inscrição na II Liga e Liga 3. Caiu para distritais.",
+                    "pagina": 36
+                },
+                {
+                    "texto": "Relatório periódico dos resultados do futebol profissional",
+                    "status": "nao_cumprida",
+                    "nota": "Sem relatórios periódicos públicos.",
+                    "pagina": 35
+                },
+                {
+                    "texto": "Projecto e desenvolvimento de um Centro de Alto Rendimento para o futebol",
+                    "status": "nao_cumprida",
+                    "nota": "Zero progresso. Sem terreno, projecto ou financiamento. Claramente inviável dada a situação financeira.",
+                    "pagina": 37
+                },
+                {
+                    "texto": "Aposta forte na integração de jogadores da formação na equipa principal",
+                    "status": "oposto",
+                    "nota": "A equipa senior da SAD caiu para os distritais (18.º lugar, 1 ponto em 5 jornadas). Clube desistiu dos distritais por FIFA Bans.",
+                    "pagina": 35
+                },
+                {
+                    "texto": "Comunicação regular e envolvimento dos Sócios em momentos cruciais da SAD",
+                    "status": "nao_cumprida",
+                    "nota": "A relação Clube-SAD deteriorou-se completamente. Sócios sem qualquer voz na SAD.",
+                    "pagina": 35
+                },
+                {
+                    "texto": "Resposta firme contra acções de desestabilização com pedidos de indemnização",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de acções legais concretas.",
+                    "pagina": 36
+                }
+            ]
+        },
+        {
+            "id": "financas",
+            "nome": "Investimento & Finanças",
+            "icon": "💰",
+            "promessas": [
+                {
+                    "texto": "Reestruturação da situação financeira através de investimento e negociação de dívida",
+                    "status": "oposto",
+                    "nota": "Clube em processo de insolvência. Dívida de ~99-156 milhões de euros. Risco real de encerramento.",
+                    "pagina": 7
+                },
+                {
+                    "texto": "Criação e implementação de melhores práticas de gestão financeira",
+                    "status": "oposto",
+                    "nota": "Campanha 'Salvar o Boavista' (Dez 2025) para angariar fundos de sobrevivência. Pagamentos mensais de ~96.000€ dependem de doações de adeptos.",
+                    "pagina": 7
+                },
+                {
+                    "texto": "Identificação de novas fontes de receita e parcerias estratégicas",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de novas receitas ou parcerias. Clube depende de donativos dos sócios para sobreviver.",
+                    "pagina": 6
+                },
+                {
+                    "texto": "Gestão financeira formal baseada em novas tecnologias e soluções FinTech",
+                    "status": "nao_cumprida",
+                    "nota": "Sem qualquer evidência de implementação tecnológica na gestão financeira.",
+                    "pagina": 23
+                }
+            ]
+        },
+        {
+            "id": "socios",
+            "nome": "Sócios & Comunidade",
+            "icon": "👥",
+            "promessas": [
+                {
+                    "texto": "Programa de recuperação de sócios com condições especiais",
+                    "status": "oposto",
+                    "nota": "Em vez de programas de fidelização, os sócios foram mobilizados para salvar o clube da insolvência com donativos.",
+                    "pagina": 13
+                },
+                {
+                    "texto": "Remodelação total do formato de Sócio Correspondente",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de mudanças.",
+                    "pagina": 13
+                },
+                {
+                    "texto": "Participação em Assembleias Gerais de forma remota através de plataformas digitais",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de implementação.",
+                    "pagina": 13
+                },
+                {
+                    "texto": "Criação do projecto Acolhimento do Adepto no Estádio do Bessa",
+                    "status": "oposto",
+                    "nota": "Estádio interditado pela Proteção Civil. Não há estádio para acolher adeptos.",
+                    "pagina": 17
+                },
+                {
+                    "texto": "Apoio logístico à Associação Panteras Negras e canal de comunicação directo",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência pública de implementação.",
+                    "pagina": 20
+                },
+                {
+                    "texto": "Expansão e criação de novas filiais em Portugal e no estrangeiro",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de novas filiais.",
+                    "pagina": 19
+                },
+                {
+                    "texto": "Promoção e divulgação do calendário anual de eventos e comemorações",
+                    "status": "nao_cumprida",
+                    "nota": "Sem calendário público de eventos.",
+                    "pagina": 11
+                }
+            ]
+        },
+        {
+            "id": "governanca",
+            "nome": "Governança & Estrutura",
+            "icon": "🏛️",
+            "promessas": [
+                {
+                    "texto": "Criação dos Grupos de Trabalho compostos por voluntários especializados",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência pública de criação.",
+                    "pagina": 17
+                },
+                {
+                    "texto": "Manutenção e reforço do Conselho Consultivo com novos membros",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência pública de implementação.",
+                    "pagina": 16
+                },
+                {
+                    "texto": "Criação do Conselho de Presidentes (relação com ex-presidentes)",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de criação.",
+                    "pagina": 18
+                },
+                {
+                    "texto": "Actualização regular e progressiva dos Estatutos do Clube",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de revisão estatutária.",
+                    "pagina": 15
+                },
+                {
+                    "texto": "Introdução de políticas de compliance, gestão de risco e auditorias independentes",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de implementação.",
+                    "pagina": 15
+                },
+                {
+                    "texto": "Transformação digital com integração de tecnologias em todas as áreas do clube",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de transformação digital.",
+                    "pagina": 22
+                }
+            ]
+        },
+        {
+            "id": "estadio",
+            "nome": "Estádio & Infraestrutura",
+            "icon": "🏟️",
+            "promessas": [
+                {
+                    "texto": "Manutenção e modernização do Estádio do Bessa",
+                    "status": "oposto",
+                    "nota": "Estádio interditado pela ANEPC (Ago 2025) por questões de segurança. Boavista impedido de jogar em casa.",
+                    "pagina": 41
+                },
+                {
+                    "texto": "Exploração comercial do estádio: lojas, restaurantes e áreas de convívio",
+                    "status": "oposto",
+                    "nota": "Estádio interditado. Zero exploração comercial.",
+                    "pagina": 41
+                },
+                {
+                    "texto": "Sustentabilidade ambiental: painéis solares, reaproveitamento de água",
+                    "status": "nao_cumprida",
+                    "nota": "Nenhum investimento em sustentabilidade.",
+                    "pagina": 41
+                },
+                {
+                    "texto": "Conectividade digital no estádio: Internet, bilhética digital, plataformas interactivas",
+                    "status": "nao_cumprida",
+                    "nota": "Estádio interditado. Nenhum investimento digital.",
+                    "pagina": 41
+                },
+                {
+                    "texto": "Projecto Boavista Sports District centrado no Bessa",
+                    "status": "nao_cumprida",
+                    "nota": "Zero progresso. Claramente inviável.",
+                    "pagina": 51
+                },
+                {
+                    "texto": "Recuperação das visitas regulares ao Estádio do Bessa",
+                    "status": "oposto",
+                    "nota": "Estádio interditado. Sem visitas possíveis.",
+                    "pagina": 42
+                },
+                {
+                    "texto": "Criação de um Moderno Complexo Desportivo do Bessa com parceria internacional",
+                    "status": "nao_cumprida",
+                    "nota": "Sem qualquer progresso ou parceria identificada.",
+                    "pagina": 45
+                }
+            ]
+        },
+        {
+            "id": "academia",
+            "nome": "Academia & Formação",
+            "icon": "🎓",
+            "promessas": [
+                {
+                    "texto": "Criação do Fundo Gerações de apoio ao futebol formação",
+                    "status": "parcial",
+                    "nota": "Programa Gerações anunciado (Jun 2025) mas sem resultados concretos ou investimento captado.",
+                    "pagina": 32
+                },
+                {
+                    "texto": "Modernização das infra-estruturas da Academia",
+                    "status": "nao_cumprida",
+                    "nota": "Sem investimento visível nas infra-estruturas.",
+                    "pagina": 31
+                },
+                {
+                    "texto": "Programas educativos que combinem formação desportiva com sucesso académico",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de programas educativos.",
+                    "pagina": 31
+                },
+                {
+                    "texto": "Programa de mentoria com antigos jogadores envolvidos no crescimento de novos talentos",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de programa de mentoria estruturado.",
+                    "pagina": 32
+                }
+            ]
+        },
+        {
+            "id": "identidade",
+            "nome": "Identidade & Marca",
+            "icon": "🏁",
+            "promessas": [
+                {
+                    "texto": "Plano de marketing da marca Boavista à escala global",
+                    "status": "oposto",
+                    "nota": "Marca Boavista associada internacionalmente a colapso financeiro. Artigos internacionais descrevem 'freefall' e 'kiss of death'.",
+                    "pagina": 7
+                },
+                {
+                    "texto": "Digitalização do património histórico do clube",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de programa de digitalização.",
+                    "pagina": 7
+                },
+                {
+                    "texto": "Iniciativas que envolvam antigos atletas e dirigentes na celebração do legado",
+                    "status": "parcial",
+                    "nota": "Litos (capitão do título 2000/01) apoiou publicamente a candidatura, mas sem programa estruturado.",
+                    "pagina": 7
+                }
+            ]
+        },
+        {
+            "id": "internacionalizacao",
+            "nome": "Internacionalização",
+            "icon": "🌍",
+            "promessas": [
+                {
+                    "texto": "Desenvolvimento e expansão do Boavista Innovation Lab",
+                    "status": "parcial",
+                    "nota": "O Innovation Lab (criado em 2019) continua a existir, mas sem novos projetos sob este mandato.",
+                    "pagina": 57
+                },
+                {
+                    "texto": "Licenciamento e merchandising internacional com produtos exclusivos",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de expansão comercial internacional.",
+                    "pagina": 60
+                },
+                {
+                    "texto": "Campanhas de marketing para mercados da América Latina, Ásia e EUA",
+                    "status": "nao_cumprida",
+                    "nota": "Sem qualquer campanha internacional.",
+                    "pagina": 61
+                },
+                {
+                    "texto": "Parcerias com clubes e organizações desportivas internacionais",
+                    "status": "nao_cumprida",
+                    "nota": "Sem novas parcerias internacionais conhecidas.",
+                    "pagina": 61
+                }
+            ]
+        },
+        {
+            "id": "ciclismo",
+            "nome": "Ciclismo",
+            "icon": "🚴",
+            "promessas": [
+                {
+                    "texto": "Aprofundar a associação do Ciclismo ao Clube",
+                    "status": "cumprida",
+                    "nota": "Equipa Feira dos Sofás - Boavista Cycling Team ativa com 12 atletas para 2026.",
+                    "pagina": 39
+                },
+                {
+                    "texto": "Apoiar a equipa de Ciclismo na busca de novos patrocínios",
+                    "status": "cumprida",
+                    "nota": "Equipa mantém patrocinadores (Feira dos Sofás) e compete activamente.",
+                    "pagina": 39
+                },
+                {
+                    "texto": "Eventos partilhados e provas amadoras abertas aos Sócios",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de eventos conjuntos clube-ciclismo para sócios.",
+                    "pagina": 39
+                }
+            ]
+        },
+        {
+            "id": "pessoas",
+            "nome": "Pessoas & Capital Humano",
+            "icon": "👔",
+            "promessas": [
+                {
+                    "texto": "Criação de estrutura profissional de suporte e desenvolvimento do capital humano",
+                    "status": "nao_cumprida",
+                    "nota": "Sem evidência de nova estrutura profissional.",
+                    "pagina": 6
+                },
+                {
+                    "texto": "Formação contínua dos dirigentes com alinhamento estratégico",
+                    "status": "nao_cumprida",
+                    "nota": "Sem programa de formação conhecido.",
+                    "pagina": 6
+                },
+                {
+                    "texto": "Valorização dos colaboradores com reconhecimento justo e condições motivadoras",
+                    "status": "oposto",
+                    "nota": "Salários em atraso (regularizados por Victor Murta antes de sair). Situação laboral precária.",
+                    "pagina": 6
+                }
+            ]
+        }
+    ]
+}

@@ -1,6 +1,7 @@
 // BFC Modalidades - Main Application
 
 let appData = null;
+let promessasData = null;
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', init);
@@ -40,6 +41,17 @@ async function loadData() {
         renderCards();
         updateTimestamp();
         updateSummaryStats();
+
+        // Load promessas
+        try {
+            const promessasResponse = await fetch('promessas.json');
+            if (promessasResponse.ok) {
+                promessasData = await promessasResponse.json();
+                renderPromessas();
+            }
+        } catch (e) {
+            console.error('Error loading promessas:', e);
+        }
 
         hideLoading();
         showIntro();
@@ -454,4 +466,123 @@ function updateSummaryStats() {
     if (elExtintas) elExtintas.textContent = extintas;
     const elRisco = document.getElementById('equipas-risco');
     if (elRisco) elRisco.textContent = emRisco;
+}
+
+// Promessas rendering
+function renderPromessas() {
+    if (!promessasData) return;
+
+    const statusConfig = {
+        cumprida: { icon: '✅', label: 'Cumprida', color: 'text-green-600', bg: 'bg-green-500' },
+        parcial: { icon: '🟡', label: 'Parcial', color: 'text-yellow-600', bg: 'bg-yellow-500' },
+        nao_cumprida: { icon: '❌', label: 'Não cumprida', color: 'text-red-600', bg: 'bg-red-500' },
+        oposto: { icon: '💀', label: 'Fez o oposto', color: 'text-gray-900', bg: 'bg-gray-900' }
+    };
+
+    // Count totals
+    let counts = { cumprida: 0, parcial: 0, nao_cumprida: 0, oposto: 0 };
+    let total = 0;
+    promessasData.categorias.forEach(cat => {
+        cat.promessas.forEach(p => {
+            counts[p.status]++;
+            total++;
+        });
+    });
+
+    // Score text
+    const scoreEl = document.getElementById('promessas-score');
+    if (scoreEl) {
+        scoreEl.textContent = `${counts.cumprida} de ${total} cumpridas`;
+    }
+
+    // Progress bar
+    const bar = document.getElementById('promessas-bar');
+    if (bar) {
+        bar.innerHTML = '';
+        const segments = [
+            { key: 'cumprida', count: counts.cumprida },
+            { key: 'parcial', count: counts.parcial },
+            { key: 'nao_cumprida', count: counts.nao_cumprida },
+            { key: 'oposto', count: counts.oposto }
+        ];
+        segments.forEach(seg => {
+            if (seg.count === 0) return;
+            const div = document.createElement('div');
+            const pct = (seg.count / total) * 100;
+            div.style.width = pct + '%';
+            div.className = statusConfig[seg.key].bg;
+            div.title = `${statusConfig[seg.key].label}: ${seg.count}`;
+            bar.appendChild(div);
+        });
+    }
+
+    // Bar legend
+    const legend = document.getElementById('promessas-bar-legend');
+    if (legend) {
+        legend.innerHTML = `
+            <span>${statusConfig.cumprida.icon} ${counts.cumprida} cumpridas</span>
+            <span>${statusConfig.parcial.icon} ${counts.parcial} parciais</span>
+            <span>${statusConfig.nao_cumprida.icon} ${counts.nao_cumprida} não cumpridas</span>
+            <span>${statusConfig.oposto.icon} ${counts.oposto} fez o oposto</span>
+        `;
+    }
+
+    // Toggle
+    const toggle = document.getElementById('promessas-toggle');
+    const content = document.getElementById('promessas-content');
+    const chevron = document.getElementById('promessas-chevron');
+    if (toggle && content) {
+        toggle.addEventListener('click', () => {
+            content.classList.toggle('hidden');
+            chevron.classList.toggle('rotate-180');
+        });
+    }
+
+    // Render categories
+    if (!content) return;
+    content.innerHTML = '';
+
+    promessasData.categorias.forEach(cat => {
+        const catDiv = document.createElement('details');
+        catDiv.className = 'bg-white rounded-lg border border-gray-200 overflow-hidden';
+
+        const catCounts = { cumprida: 0, parcial: 0, nao_cumprida: 0, oposto: 0 };
+        cat.promessas.forEach(p => catCounts[p.status]++);
+
+        const summary = document.createElement('summary');
+        summary.className = 'px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors flex items-center justify-between';
+        summary.innerHTML = `
+            <span class="font-medium text-sm">
+                <span class="mr-1">${cat.icon}</span> ${cat.nome}
+                <span class="text-gray-400 text-xs ml-1">(${cat.promessas.length})</span>
+            </span>
+            <span class="flex gap-1 text-xs">
+                ${catCounts.cumprida ? `<span class="bg-green-100 text-green-700 px-1.5 py-0.5 rounded">${catCounts.cumprida} ✅</span>` : ''}
+                ${catCounts.parcial ? `<span class="bg-yellow-100 text-yellow-700 px-1.5 py-0.5 rounded">${catCounts.parcial} 🟡</span>` : ''}
+                ${catCounts.nao_cumprida ? `<span class="bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded">${catCounts.nao_cumprida} ❌</span>` : ''}
+                ${catCounts.oposto ? `<span class="bg-red-100 text-red-700 px-1.5 py-0.5 rounded">${catCounts.oposto} 💀</span>` : ''}
+            </span>
+        `;
+        catDiv.appendChild(summary);
+
+        const list = document.createElement('div');
+        list.className = 'px-4 pb-3 space-y-2';
+
+        cat.promessas.forEach(p => {
+            const cfg = statusConfig[p.status];
+            const item = document.createElement('div');
+            item.className = 'flex items-start gap-2 text-sm';
+            item.innerHTML = `
+                <span class="text-base flex-shrink-0 mt-0.5" title="${cfg.label}">${cfg.icon}</span>
+                <div>
+                    <span class="${cfg.color}">${p.texto}</span>
+                    ${p.nota ? `<p class="text-xs text-gray-400 mt-0.5">${p.nota}</p>` : ''}
+                </div>
+            `;
+            list.appendChild(item);
+        });
+
+        catDiv.appendChild(list);
+        content.appendChild(catDiv);
+    });
 }
