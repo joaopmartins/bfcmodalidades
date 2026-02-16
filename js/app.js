@@ -84,7 +84,7 @@ function createCard(modalidade, escaloes) {
         <div class="flex items-center gap-2">
             <span class="text-2xl">${modalidade.icon}</span>
             <h2 class="font-bold text-lg uppercase tracking-wide">${modalidade.nome}</h2>
-            <span class="text-xs text-gray-300">(${escaloes.length} escaloes)</span>
+            <span class="text-xs text-gray-300">(${escaloes.length} escalões)</span>
         </div>
         <svg class="w-5 h-5 transition-transform duration-300 card-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -111,7 +111,7 @@ function createCard(modalidade, escaloes) {
     headerRow.className = 'px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-600 flex items-center gap-2';
     headerRow.innerHTML = `
         <div class="w-8 text-center" title="Estado vs época anterior"></div>
-        <div class="w-[140px] min-w-[120px]">Escalao</div>
+        <div class="w-[140px] min-w-[120px]">Escalão</div>
         <div class="flex-1 min-w-[150px]">Competição</div>
         <div class="w-10 text-center">Pos</div>
         <div class="w-10 text-center">Pts</div>
@@ -227,11 +227,11 @@ function getStatusIndicator(atual, anterior) {
     if (diff > 2) {
         return { icon: '&#128640;', title: `Muito melhor! Subiu ${diff} posições` };
     } else if (diff > 0) {
-        return { icon: '&#128994;', title: `Melhor: Subiu ${diff} posição(ões)` };
+        return { icon: '&#128994;', title: `Melhor: Subiu ${diff} posições` };
     } else if (diff < -2) {
         return { icon: '&#128308;', title: `Muito pior! Desceu ${Math.abs(diff)} posições` };
     } else if (diff < 0) {
-        return { icon: '&#128992;', title: `Pior: Desceu ${Math.abs(diff)} posição(ões)` };
+        return { icon: '&#128992;', title: `Pior: Desceu ${Math.abs(diff)} posições` };
     }
     return { icon: '&#128311;', title: 'Igual à época anterior' };
 }
