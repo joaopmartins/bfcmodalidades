@@ -3,14 +3,14 @@
         "fonte": "Programa Eleitoral da Candidatura de Garrido Pereira à Presidência do Boavista FC",
         "dataPosse": "2025-01-18",
         "mandatoAte": "2027",
-        "fontesAdicionais": "Análise de 1000 posts do r/BoavistaFC (Dez 2024 - Fev 2026)"
+        "fontesAdicionais": "Análise de 1000 posts do r/BoavistaFC (Dez 2024 - Fev 2026) e 14 comunicados oficiais do boavistafc.pt (Jan 2025 - Jan 2026)"
     },
     "resumo": {
-        "total": 68,
+        "total": 70,
         "cumpridas": 2,
         "parciais": 4,
-        "nao_cumpridas": 38,
-        "oposto": 24
+        "nao_cumpridas": 39,
+        "oposto": 25
     },
     "categorias": [
         {
@@ -76,7 +76,7 @@
                 {
                     "texto": "Publicação regular de relatórios sobre actividades, decisões e resultados",
                     "status": "nao_cumprida",
-                    "nota": "Sem relatórios públicos regulares. A comunicação é episódica e reactiva. Em Dez 2025, o presidente foi descrito como 'incontactável' em momento crítico de pagamento de dívidas. Em Jan 2026, adeptos questionam o silêncio da direcção. Em Ago 2025, não havia informação sobre a formação nas redes sociais. O comunicado de demissão do andebol (Set 2025) denuncia 'omissões e mentiras constantes' e ausência de interlocutor.",
+                    "nota": "Análise de 14 comunicados oficiais (Jan 2025 - Jan 2026) confirma padrão exclusivamente reactivo: a direcção só comunica em resposta a crises, nunca proactivamente. Os comunicados são vagos e retóricos ('compromisso', 'dedicação', 'superação'). O comunicado de 3 Out 2025 é o exemplo extremo: reafirma 'compromisso com abertura, dedicação e superação' sem qualquer conteúdo substantivo. Em Dez 2025, o presidente foi descrito como 'incontactável'. O comunicado de demissão do andebol (Set 2025) denuncia 'omissões e mentiras constantes'.",
                     "pagina": 8
                 },
                 {
@@ -101,7 +101,7 @@
                 {
                     "texto": "Garantir alinhamento da gestão da SAD com os interesses do Clube e dos Sócios",
                     "status": "oposto",
-                    "nota": "SAD entrou em insolvência (Jul 2025). Conflito aberto entre as duas entidades. A SAD continua a usar as instalações do Bessa apesar da interdição (confirmado por múltiplos posts de Ago-Dez 2025). A direcção do clube não conseguiu expulsar a SAD das instalações. A SAD colocou bens em leilão incluindo taças (Nov 2025). Os sócios consideram a convivência Clube-SAD no Bessa inaceitável.",
+                    "nota": "SAD entrou em insolvência (Jul 2025). No comunicado de Jun 2025, a direcção afirmou ter tentado 'diálogo com a SAD mas ter sido ignorada' — apesar de governar desde Jan 2025 e ter tido 5 meses para estabelecer esse diálogo. A retórica de 'surpresa' com a falha da SAD é contraditória com a obrigação da direcção de acompanhar activamente a situação. A SAD colocou bens em leilão incluindo taças (Nov 2025).",
                     "pagina": 34
                 },
                 {
@@ -147,6 +147,12 @@
                     "pagina": null
                 },
                 {
+                    "texto": "Retomar a actividade da equipa sénior e 'iniciar a caminhada de volta aos palcos maiores do futebol Português e Europeu'",
+                    "status": "nao_cumprida",
+                    "nota": "Promessa feita no comunicado oficial de desistência dos distritais (Out 2025). Em Fev 2026, quatro meses depois, o clube continua sem equipa sénior de futebol. A referência a 'palcos maiores do futebol Europeu' é particularmente irónica: o clube estava na I Divisão Distrital (7.º escalão) quando fez esta promessa — e desistiu por não conseguir inscrever jogadores.",
+                    "pagina": null
+                },
+                {
                     "texto": "Estratégia clara para o regresso do Boavista ao futebol profissional",
                     "status": "nao_cumprida",
                     "nota": "Não existe estratégia pública para o regresso ao futebol profissional. Em Fev 2026, surgiram notícias de interesse numa fusão com a SAD do Santa Clara, mas sem confirmação oficial. O clube está a 7 divisões da I Liga.",
@@ -186,7 +192,13 @@
                 {
                     "texto": "Gestão competente e transparente do processo de insolvência do clube",
                     "status": "oposto",
-                    "nota": "A administradora de insolvência requereu o encerramento imediato do clube em Nov 2025. A direcção de Garrido foi 'surpreendida' pelo requerimento, demonstrando falta de acompanhamento do processo. Em Jan 2026, os credores exigiram o afastamento da direcção como condição para acordo. O clube dependeu de doações de sócios (~53.000€/mês) para pagar credores e evitar encerramento.",
+                    "nota": "A direcção diz-se repetidamente 'surpreendida': em Jun 2025 com a falha da SAD na Liga 2, em Nov 2025 com o pedido de encerramento. Uma direcção competente nunca é 'surpreendida' por desfechos previsíveis. O comunicado pós-liquidação (Set 2025) afirma que 'todos os credores excepto três votaram favoravelmente pela recuperação' — quando o resultado real foi votarem pela liquidação. Desinformação activa dos sócios. Em Jan 2026, credores exigiram afastamento da direcção. Comunicado de resposta datado '2025' por engano.",
+                    "pagina": null
+                },
+                {
+                    "texto": "Diálogo com credores e atracção de novos parceiros e investidores para salvar o clube",
+                    "status": "oposto",
+                    "nota": "Promessa repetida ciclicamente em pelo menos 4 comunicados oficiais (Jul, Set, Dez 2025, Jan 2026) sem nunca se concretizar. Jul 2025: 'atrair novos parceiros e investidores'. Set 2025 (pós-liquidação): 'apoio do Estado e município'. Jan 2026 (pós-incumprimento): 'trabalhar com investidores'. As únicas 'parcerias' visíveis foram a contratação de Queco Huerta (destituído em Espanha) e a visita do CEO da Blocksport (Abr 2025, sem resultados).",
                     "pagina": null
                 },
                 {
@@ -290,7 +302,7 @@
                 {
                     "texto": "Transformação digital com integração de tecnologias em todas as áreas do clube",
                     "status": "nao_cumprida",
-                    "nota": "Sem evidência de transformação digital.",
+                    "nota": "Em Abril de 2025, o clube recebeu Vladimir Liulka, CEO da Blocksport, descrito como 'parceiro estratégico na área digital'. O comunicado oficial prometia 'colaboração digital futura'. Nenhum resultado concreto emergiu desta parceria — é o único exemplo de acção concreta relacionada com transformação digital, e resultou em nada.",
                     "pagina": 22
                 },
                 {

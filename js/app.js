@@ -2,6 +2,7 @@
 
 let appData = null;
 let promessasData = null;
+let cronologiaData = null;
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', init);
@@ -41,6 +42,17 @@ async function loadData() {
         renderCards();
         updateTimestamp();
         updateSummaryStats();
+
+        // Load cronologia
+        try {
+            const cronologiaResponse = await fetch('cronologia.json');
+            if (cronologiaResponse.ok) {
+                cronologiaData = await cronologiaResponse.json();
+                renderCronologia();
+            }
+        } catch (e) {
+            console.error('Error loading cronologia:', e);
+        }
 
         // Load promessas
         try {
@@ -466,6 +478,56 @@ function updateSummaryStats() {
     if (elExtintas) elExtintas.textContent = extintas;
     const elRisco = document.getElementById('equipas-risco');
     if (elRisco) elRisco.textContent = emRisco;
+}
+
+// Cronologia rendering
+function renderCronologia() {
+    if (!cronologiaData || !cronologiaData.eventos) return;
+
+    const content = document.getElementById('cronologia-content');
+    if (!content) return;
+
+    const typeConfig = {
+        governanca: { color: 'bg-gray-400', label: 'Governança' },
+        financas: { color: 'bg-red-500', label: 'Finanças' },
+        modalidades: { color: 'bg-orange-500', label: 'Modalidades' },
+        estadio: { color: 'bg-yellow-500', label: 'Estádio' },
+        sad: { color: 'bg-purple-500', label: 'SAD' },
+        positivo: { color: 'bg-green-500', label: 'Positivo' }
+    };
+
+    const eventos = cronologiaData.eventos.sort((a, b) => a.data.localeCompare(b.data));
+
+    const timeline = document.createElement('div');
+    timeline.className = 'relative pl-6 border-l-2 border-gray-200 space-y-4';
+
+    eventos.forEach(evento => {
+        const cfg = typeConfig[evento.tipo] || typeConfig.governanca;
+        const date = new Date(evento.data);
+        const dateStr = date.toLocaleDateString('pt-PT', { day: 'numeric', month: 'short', year: 'numeric' });
+
+        const item = document.createElement('div');
+        item.className = 'relative';
+        item.innerHTML = `
+            <div class="absolute -left-[25px] top-1 w-3 h-3 rounded-full ${cfg.color} border-2 border-white"></div>
+            <div class="text-xs text-gray-400">${dateStr}</div>
+            <div class="text-sm font-semibold text-gray-800">${evento.titulo}</div>
+            <div class="text-xs text-gray-500 mt-0.5">${evento.descricao}</div>
+        `;
+        timeline.appendChild(item);
+    });
+
+    content.appendChild(timeline);
+
+    // Toggle
+    const toggle = document.getElementById('cronologia-toggle');
+    const chevron = document.getElementById('cronologia-chevron');
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            content.classList.toggle('hidden');
+            chevron.classList.toggle('rotate-180');
+        });
+    }
 }
 
 // Promessas rendering

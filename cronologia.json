@@ -1,0 +1,196 @@
+{
+    "eventos": [
+        {
+            "data": "2025-01-18",
+            "titulo": "Garrido Pereira toma posse",
+            "descricao": "Eleito presidente do Boavista FC com ~80% dos votos.",
+            "tipo": "governanca"
+        },
+        {
+            "data": "2025-04-05",
+            "titulo": "CEO da Blocksport visita o Bessa",
+            "descricao": "Vladimir Liulka, CEO da Blocksport, descrito como 'parceiro estratégico na área digital'. Promessas vagas de colaboração futura que nunca se concretizaram.",
+            "tipo": "governanca"
+        },
+        {
+            "data": "2025-04-11",
+            "titulo": "Sócios chumbam contas de 2022",
+            "descricao": "AG Ordinária: sócios rejeitam Relatório e Contas de 2022. Primeira fricção formal com a direcção.",
+            "tipo": "governanca"
+        },
+        {
+            "data": "2025-05-18",
+            "titulo": "Boavista desce da I Liga",
+            "descricao": "18.º e último lugar na I Liga 2024/25. Primeira descida em campo desde 1959/60. Fim de 11 épocas consecutivas no escalão principal.",
+            "tipo": "sad"
+        },
+        {
+            "data": "2025-06-01",
+            "titulo": "Programa Gerações anunciado",
+            "descricao": "Fundo de apoio à formação anunciado, sem resultados concretos.",
+            "tipo": "governanca"
+        },
+        {
+            "data": "2025-06-25",
+            "titulo": "Boavista falha inscrição na II Liga",
+            "descricao": "'O dinheiro não chegou a tempo.' Clube não apresenta certidões fiscais e fica de fora da Liga 2.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2025-06-30",
+            "titulo": "Liga oficializa exclusão do futebol profissional",
+            "descricao": "Liga de Clubes publica lista de 32 sociedades para 2025/26 — Boavista ausente. Também falha licenciamento para a Liga 3.",
+            "tipo": "sad"
+        },
+        {
+            "data": "2025-07-08",
+            "titulo": "Tribunal declara clube insolvente",
+            "descricao": "Tribunal de Comércio de V.N. de Gaia declara insolvência do Boavista FC. 239 credores, ~166 milhões € em dívidas reconhecidas.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2025-07-10",
+            "titulo": "SAD entra em insolvência",
+            "descricao": "Boavista Futebol SAD declara insolvência com vista a recuperação. Dívida de ~156 milhões €.",
+            "tipo": "sad"
+        },
+        {
+            "data": "2025-07-12",
+            "titulo": "Panteras Negras protestam no Bessa",
+            "descricao": "Vigília de adeptos à porta do estádio. Exigem AG e explicações. 'O Boavista é nosso, só saímos daqui com explicações.'",
+            "tipo": "governanca"
+        },
+        {
+            "data": "2025-07-21",
+            "titulo": "Adeptos criam o Panteras Negras FC",
+            "descricao": "Cisão formal: adeptos fundam clube alternativo por não acreditarem na direcção de Garrido Pereira.",
+            "tipo": "governanca"
+        },
+        {
+            "data": "2025-07-26",
+            "titulo": "AG Extraordinária — plano de recuperação apresentado",
+            "descricao": "Garrido apresenta plano de recuperação aos sócios no Bessa. 600+ sócios presentes. Plano seria rejeitado pelos credores em Setembro.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2025-08-01",
+            "titulo": "Estádio do Bessa interditado",
+            "descricao": "ANEPC interdita o estádio por questões de segurança. Boavista impedido de jogar em casa.",
+            "tipo": "estadio"
+        },
+        {
+            "data": "2025-08-14",
+            "titulo": "SAD cai para os distritais",
+            "descricao": "Boavista SAD falha inscrição na II Liga e Liga 3. Vai jogar na I Divisão Distrital do Porto.",
+            "tipo": "sad"
+        },
+        {
+            "data": "2025-08-22",
+            "titulo": "Equipas jogam fora do Bessa",
+            "descricao": "Clube treina no Inatel, SAD joga em Ramalde. Nenhuma equipa no Estádio do Bessa.",
+            "tipo": "estadio"
+        },
+        {
+            "data": "2025-09-05",
+            "titulo": "Credores votam pela liquidação do clube",
+            "descricao": "Assembleia de credores rejeita plano de recuperação e vota pela liquidação. Comunicado do clube tenta minimizar: 'todos os credores excepto três votaram favoravelmente' — quando o resultado real foi liquidação.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2025-09-17",
+            "titulo": "Direcção do andebol demite-se em bloco",
+            "descricao": "Comunicado denuncia 'ausência de projecto', 'promessas não cumpridas' e 'omissões e mentiras constantes'.",
+            "tipo": "modalidades"
+        },
+        {
+            "data": "2025-09-18",
+            "titulo": "Andebol desiste das competições",
+            "descricao": "Federação Portuguesa de Andebol confirma desistência. Todas as 11 equipas extintas.",
+            "tipo": "modalidades"
+        },
+        {
+            "data": "2025-10-03",
+            "titulo": "Futsal desiste em 2 escalões",
+            "descricao": "Mais equipas extintas no futsal por falta de condições.",
+            "tipo": "modalidades"
+        },
+        {
+            "data": "2025-10-18",
+            "titulo": "Novos FIFA Transfer Bans",
+            "descricao": "Pelo menos 5 bans registados na FIFA impedem inscrição de jogadores na equipa do clube.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2025-10-31",
+            "titulo": "Clube desiste do Campeonato Distrital",
+            "descricao": "Boavista FC (clube) desiste da I Divisão Distrital por não conseguir inscrever jogadores devido a FIFA Bans.",
+            "tipo": "modalidades"
+        },
+        {
+            "data": "2025-11-25",
+            "titulo": "Administradora pede encerramento imediato",
+            "descricao": "Administradora de insolvência requer ao tribunal o encerramento do clube. Direcção 'surpreendida'.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2025-11-30",
+            "titulo": "Manifestação 'O Boavista Não Morre'",
+            "descricao": "Marcha de adeptos pela Avenida da Boavista em protesto contra a direcção.",
+            "tipo": "governanca"
+        },
+        {
+            "data": "2025-12-01",
+            "titulo": "Dívida ao Estado: 20,4 milhões €",
+            "descricao": "Revelada a dimensão da dívida do clube ao Estado português.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2025-12-16",
+            "titulo": "Acordo temporário com credores",
+            "descricao": "Clube evita encerramento com acordo precário. Pagamentos mensais dependem de doações dos sócios.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2025-12-18",
+            "titulo": "Campanha 'Salvar o Boavista'",
+            "descricao": "Clube lança campanha de doações para pagar credores. Sócios financiam sobrevivência mensal (~53.000-96.000€).",
+            "tipo": "financas"
+        },
+        {
+            "data": "2025-12-20",
+            "titulo": "Presidente incontactável",
+            "descricao": "Garrido Pereira descrito como 'incontactável' em momento crítico de pagamento de dívidas.",
+            "tipo": "governanca"
+        },
+        {
+            "data": "2025-12-25",
+            "titulo": "Queco Huerta contratado",
+            "descricao": "Direcção contrata 'conselheiro' espanhol destituído da Associação de Directores Desportivos de Espanha por 'actuações opacas'.",
+            "tipo": "governanca"
+        },
+        {
+            "data": "2026-01-10",
+            "titulo": "Boavista falha pagamento aos credores",
+            "descricao": "Clube não deposita os 149.680€ exigidos. Administradora arranca procedimentos de encerramento. Comunicado de resposta (13 Jan) está datado '2025' por engano.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2026-01-24",
+            "titulo": "Bessa torna-se 'antro de droga'",
+            "descricao": "Jornal de Notícias noticia que imediações do estádio abandonado se tornaram ponto de venda de droga.",
+            "tipo": "estadio"
+        },
+        {
+            "data": "2026-01-26",
+            "titulo": "Credores pedem afastamento da direcção",
+            "descricao": "Credores requerem o afastamento da direcção actual como condição para acordo. Movimento #GarridOut cresce.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2026-02-10",
+            "titulo": "Futsal perde 16-0",
+            "descricao": "Derrota humilhante no futsal reflecte o colapso total das modalidades.",
+            "tipo": "modalidades"
+        }
+    ]
+}
