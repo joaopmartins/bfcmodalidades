@@ -6,7 +6,7 @@ let cronologiaData = null;
 
 // Tab system
 let activeTab = 'modalidades';
-const VALID_TABS = ['modalidades', 'promessas', 'cronologia'];
+const VALID_TABS = ['modalidades', 'promessas', 'cronologia', 'agir'];
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', init);
@@ -24,7 +24,7 @@ async function init() {
 function initReleaseBanner() {
     const banner = document.getElementById('release-banner');
     if (!banner) return;
-    if (localStorage.getItem('bfc-banner-v2-dismissed')) {
+    if (localStorage.getItem('bfc-banner-v3-dismissed')) {
         banner.remove();
     }
 }
@@ -38,7 +38,7 @@ function dismissBanner() {
         banner.style.overflow = 'hidden';
         setTimeout(() => banner.remove(), 300);
     }
-    localStorage.setItem('bfc-banner-v2-dismissed', '1');
+    localStorage.setItem('bfc-banner-v3-dismissed', '1');
 }
 
 // Tab system
@@ -345,9 +345,9 @@ function getStatusIndicator(atual, anterior) {
         return { icon: '', title: '' };
     }
 
-    // If competition changed, the team moved division — that's worse
+    // If competition changed, the team moved division - that's worse
     if (anterior.competicao && atual.competicao && anterior.competicao !== atual.competicao) {
-        return { icon: '&#128308;', title: `Pior que na época passada — mudou de competição (${anterior.competicao} → ${atual.competicao})` };
+        return { icon: '&#128308;', title: `Pior que na época passada: mudou de competição (${anterior.competicao} → ${atual.competicao})` };
     }
 
     const diff = anterior.posicaoFinal - atual.posicao;
