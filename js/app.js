@@ -274,11 +274,11 @@ function getZonaIndicator(zona) {
         case 'titulo':
             return '<span class="text-lg" title="Zona de título">&#127942;</span>';
         case 'subida':
-            return '<span class="text-lg" title="Zona de subida">&#9650;</span>';
+            return '<span class="text-lg" title="Em zona de subida (época em curso)">&#9650;</span>';
         case 'playoff':
             return '<span class="text-lg text-yellow-500" title="Zona de playoff">&#9679;</span>';
         case 'descida':
-            return '<span class="text-lg text-red-500" title="Zona de descida">&#128680;</span>';
+            return '<span class="text-lg text-red-500" title="Em zona de descida (época em curso)">&#128680;</span>';
         default:
             return '';
     }
