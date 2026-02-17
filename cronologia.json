@@ -2,8 +2,8 @@
     "eventos": [
         {
             "data": "2025-01-18",
-            "titulo": "Garrido Pereira toma posse",
-            "descricao": "Eleito presidente do Boavista FC com ~80% dos votos.",
+            "titulo": "Garrido Pereira toma posse e imediatamente o Presidente da Assembleia Geral se demite.",
+            "descricao": "Eleito presidente do Boavista FC com ~80% dos votos. Presidente da Assembleia Geral Fábio Miguel Lixa Barbosa toma posse e abdica, sem ser comunicado aos sócios",
             "tipo": "governanca"
         },
         {
