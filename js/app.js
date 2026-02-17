@@ -4,12 +4,115 @@ let appData = null;
 let promessasData = null;
 let cronologiaData = null;
 
+// Tab system
+let activeTab = 'modalidades';
+const VALID_TABS = ['modalidades', 'promessas', 'cronologia'];
+
 // Initialize the app
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
     setupEventListeners();
+    initTabs();
+    initReleaseBanner();
+    updateStickyOffsets();
+    window.addEventListener('resize', updateStickyOffsets);
     await loadData();
+}
+
+// Release notes banner
+function initReleaseBanner() {
+    const banner = document.getElementById('release-banner');
+    if (!banner) return;
+    if (localStorage.getItem('bfc-banner-v2-dismissed')) {
+        banner.remove();
+    }
+}
+
+function dismissBanner() {
+    const banner = document.getElementById('release-banner');
+    if (banner) {
+        banner.style.transition = 'opacity 0.2s, max-height 0.3s';
+        banner.style.opacity = '0';
+        banner.style.maxHeight = '0';
+        banner.style.overflow = 'hidden';
+        setTimeout(() => banner.remove(), 300);
+    }
+    localStorage.setItem('bfc-banner-v2-dismissed', '1');
+}
+
+// Tab system
+function initTabs() {
+    // Tab button clicks
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tab = btn.dataset.tab;
+            if (tab && VALID_TABS.includes(tab)) {
+                switchTab(tab);
+                history.pushState(null, '', '#' + tab);
+            }
+        });
+    });
+
+    // Hash routing
+    window.addEventListener('hashchange', () => {
+        const hash = location.hash.replace('#', '');
+        if (VALID_TABS.includes(hash)) {
+            switchTab(hash);
+        }
+    });
+
+    // Read initial hash
+    const hash = location.hash.replace('#', '');
+    if (VALID_TABS.includes(hash)) {
+        activeTab = hash;
+    }
+    switchTab(activeTab);
+}
+
+function switchTab(tabName) {
+    if (!VALID_TABS.includes(tabName)) return;
+    activeTab = tabName;
+
+    // Update buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        const isActive = btn.dataset.tab === tabName;
+        btn.setAttribute('aria-selected', isActive);
+        if (isActive) {
+            btn.classList.add('bg-gray-900', 'text-white', 'shadow-sm');
+            btn.classList.remove('bg-white', 'text-gray-500', 'border', 'border-gray-300');
+        } else {
+            btn.classList.remove('bg-gray-900', 'text-white', 'shadow-sm');
+            btn.classList.add('bg-white', 'text-gray-500', 'border', 'border-gray-300');
+        }
+    });
+
+    // Update panels
+    VALID_TABS.forEach(tab => {
+        const panel = document.getElementById('tab-' + tab);
+        if (!panel) return;
+        if (tab === tabName) {
+            panel.classList.remove('hidden');
+        } else {
+            panel.classList.add('hidden');
+        }
+    });
+
+    // Scroll to top of content if tab bar is below viewport
+    const tabBar = document.getElementById('tab-bar');
+    if (tabBar) {
+        const rect = tabBar.getBoundingClientRect();
+        if (rect.top < 0) {
+            tabBar.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+}
+
+function updateStickyOffsets() {
+    const header = document.querySelector('header');
+    if (header) {
+        document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+    }
 }
 
 // Event listeners
@@ -68,6 +171,7 @@ async function loadData() {
         hideLoading();
         showIntro();
         showCards();
+        switchTab(activeTab);
     } catch (error) {
         console.error('Error loading data:', error);
         hideLoading();
@@ -481,28 +585,38 @@ function updateSummaryStats() {
 }
 
 // Cronologia rendering
+const cronologiaTypeConfig = {
+    governanca: { color: 'bg-gray-400', label: 'Governança' },
+    financas: { color: 'bg-red-500', label: 'Finanças' },
+    modalidades: { color: 'bg-orange-500', label: 'Modalidades' },
+    estadio: { color: 'bg-yellow-500', label: 'Estádio' },
+    sad: { color: 'bg-purple-500', label: 'SAD' },
+    positivo: { color: 'bg-green-500', label: 'Positivo' }
+};
+
 function renderCronologia() {
     if (!cronologiaData || !cronologiaData.eventos) return;
 
     const content = document.getElementById('cronologia-content');
     if (!content) return;
 
-    const typeConfig = {
-        governanca: { color: 'bg-gray-400', label: 'Governança' },
-        financas: { color: 'bg-red-500', label: 'Finanças' },
-        modalidades: { color: 'bg-orange-500', label: 'Modalidades' },
-        estadio: { color: 'bg-yellow-500', label: 'Estádio' },
-        sad: { color: 'bg-purple-500', label: 'SAD' },
-        positivo: { color: 'bg-green-500', label: 'Positivo' }
-    };
-
     const eventos = cronologiaData.eventos.sort((a, b) => a.data.localeCompare(b.data));
+
+    // Render timeline with all events
+    renderCronologiaTimeline(content, eventos);
+
+    // Setup filter pills
+    setupCronologiaFilters(eventos);
+}
+
+function renderCronologiaTimeline(container, eventos) {
+    container.innerHTML = '';
 
     const timeline = document.createElement('div');
     timeline.className = 'relative pl-6 border-l-2 border-gray-200 space-y-4';
 
     eventos.forEach(evento => {
-        const cfg = typeConfig[evento.tipo] || typeConfig.governanca;
+        const cfg = cronologiaTypeConfig[evento.tipo] || cronologiaTypeConfig.governanca;
         const date = new Date(evento.data);
         const dateStr = date.toLocaleDateString('pt-PT', { day: 'numeric', month: 'short', year: 'numeric' });
 
@@ -517,17 +631,50 @@ function renderCronologia() {
         timeline.appendChild(item);
     });
 
-    content.appendChild(timeline);
+    container.appendChild(timeline);
+}
 
-    // Toggle
-    const toggle = document.getElementById('cronologia-toggle');
-    const chevron = document.getElementById('cronologia-chevron');
-    if (toggle) {
-        toggle.addEventListener('click', () => {
-            content.classList.toggle('hidden');
-            chevron.classList.toggle('rotate-180');
+function setupCronologiaFilters(eventos) {
+    const filtersContainer = document.getElementById('cronologia-filters');
+    if (!filtersContainer) return;
+
+    // Get unique types from events
+    const types = [...new Set(eventos.map(e => e.tipo))];
+
+    filtersContainer.innerHTML = '';
+
+    // "Todos" pill
+    const allBtn = document.createElement('button');
+    allBtn.className = 'cronologia-filter active px-3 py-1 text-xs font-medium rounded-full border border-gray-300 transition-colors';
+    allBtn.textContent = 'Todos';
+    allBtn.addEventListener('click', () => {
+        setActiveFilter(filtersContainer, allBtn);
+        renderCronologiaTimeline(document.getElementById('cronologia-content'), eventos);
+    });
+    filtersContainer.appendChild(allBtn);
+
+    // Per-type pills
+    types.forEach(type => {
+        const cfg = cronologiaTypeConfig[type] || cronologiaTypeConfig.governanca;
+        const btn = document.createElement('button');
+        btn.className = 'cronologia-filter px-3 py-1 text-xs font-medium rounded-full border border-gray-300 text-gray-600 hover:border-gray-400 transition-colors';
+        btn.textContent = cfg.label;
+        btn.addEventListener('click', () => {
+            setActiveFilter(filtersContainer, btn);
+            const filtered = eventos.filter(e => e.tipo === type);
+            renderCronologiaTimeline(document.getElementById('cronologia-content'), filtered);
         });
-    }
+        filtersContainer.appendChild(btn);
+    });
+}
+
+function setActiveFilter(container, activeBtn) {
+    container.querySelectorAll('.cronologia-filter').forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.add('text-gray-600');
+    });
+    activeBtn.classList.add('active');
+    activeBtn.classList.remove('text-gray-600');
 }
 
 // Promessas rendering
@@ -589,18 +736,8 @@ function renderPromessas() {
         `;
     }
 
-    // Toggle
-    const toggle = document.getElementById('promessas-toggle');
+    // Render categories (always open, no toggle)
     const content = document.getElementById('promessas-content');
-    const chevron = document.getElementById('promessas-chevron');
-    if (toggle && content) {
-        toggle.addEventListener('click', () => {
-            content.classList.toggle('hidden');
-            chevron.classList.toggle('rotate-180');
-        });
-    }
-
-    // Render categories
     if (!content) return;
     content.innerHTML = '';
 

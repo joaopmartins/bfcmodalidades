@@ -1,5 +1,13 @@
 /* BFC Modalidades - Custom Styles */
 
+/* Tab system */
+:root { --header-height: 58px; }
+#tab-bar { top: var(--header-height); }
+.tab-panel.hidden { display: none; }
+.tab-panel { animation: tabFadeIn 0.15s ease-out; }
+@keyframes tabFadeIn { from { opacity: 0; } to { opacity: 1; } }
+.cronologia-filter.active { background-color: #1a1a1a; color: white; border-color: #1a1a1a; }
+
 /* Card body animation */
 .card-body {
     max-height: 1000px;
