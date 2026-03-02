@@ -39,7 +39,7 @@
         {
             "data": "2025-06-30",
             "titulo": "Liga oficializa exclusão do futebol profissional",
-            "descricao": "Liga de Clubes publica lista de 32 sociedades para 2025/26 — Boavista ausente. Também falha licenciamento para a Liga 3.",
+            "descricao": "Liga de Clubes publica lista de 32 sociedades para 2025/26. Boavista ausente. Também falha licenciamento para a Liga 3.",
             "tipo": "sad"
         },
         {
@@ -68,7 +68,7 @@
         },
         {
             "data": "2025-07-26",
-            "titulo": "AG Extraordinária — plano de recuperação apresentado",
+            "titulo": "AG Extraordinária: plano de recuperação apresentado",
             "descricao": "Garrido apresenta plano de recuperação aos sócios no Bessa. 600+ sócios presentes. Plano seria rejeitado pelos credores em Setembro.",
             "tipo": "financas"
         },
@@ -93,7 +93,7 @@
         {
             "data": "2025-09-05",
             "titulo": "Credores votam pela liquidação do clube",
-            "descricao": "Assembleia de credores rejeita plano de recuperação e vota pela liquidação. Comunicado do clube tenta minimizar: 'todos os credores excepto três votaram favoravelmente' — quando o resultado real foi liquidação.",
+            "descricao": "Assembleia de credores rejeita plano de recuperação e vota pela liquidação. Comunicado do clube tenta minimizar: 'todos os credores excepto três votaram favoravelmente', quando o resultado real foi liquidação.",
             "tipo": "financas"
         },
         {
@@ -191,6 +191,30 @@
             "titulo": "Futsal perde 16-0",
             "descricao": "Derrota humilhante no futsal reflecte o colapso total das modalidades.",
             "tipo": "modalidades"
+        },
+        {
+            "data": "2026-02-10",
+            "titulo": "Direção falha pagamentos de Fevereiro",
+            "descricao": "Direção não deposita os 96.000€ da prestação aos credores nem os 54.180€ das despesas correntes de Fevereiro. Administradora de insolvência retoma diligências de encerramento.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2026-02-12",
+            "titulo": "Gérard López intervém para pagar despesas",
+            "descricao": "Advogada de Gérard López contacta a Administradora de Insolvência e oferece donativos (com carácter liberatório) de 50.000-55.000€/mês para assegurar despesas correntes do clube e manutenção das modalidades amadoras. Depósito de 54.180€ confirmado.",
+            "tipo": "financas"
+        },
+        {
+            "data": "2026-02-18",
+            "titulo": "Administradora afasta Direção da gestão do clube",
+            "descricao": "Administradora de Insolvência comunica à Direção a cessação das suas funções de coadjuvação na gestão do clube (Art. 55.º n.º 3 do CIRE). Gestão passa a ser assegurada pela AI e pessoa a indicar, com acordo da Comissão de Credores.",
+            "tipo": "governanca"
+        },
+        {
+            "data": "2026-02-24",
+            "titulo": "Requerimento documenta falhas e mudança de gestão",
+            "descricao": "Administradora de Insolvência apresenta requerimento ao Tribunal de Comércio de V.N. de Gaia documentando os incumprimentos da Direção, a intervenção de Gérard López e o afastamento da Direção da gestão.",
+            "tipo": "financas"
         }
     ]
 }

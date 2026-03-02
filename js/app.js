@@ -24,7 +24,7 @@ async function init() {
 function initReleaseBanner() {
     const banner = document.getElementById('release-banner');
     if (!banner) return;
-    if (localStorage.getItem('bfc-banner-v3-dismissed')) {
+    if (localStorage.getItem('bfc-banner-v4-dismissed')) {
         banner.remove();
     }
 }
@@ -38,7 +38,7 @@ function dismissBanner() {
         banner.style.overflow = 'hidden';
         setTimeout(() => banner.remove(), 300);
     }
-    localStorage.setItem('bfc-banner-v3-dismissed', '1');
+    localStorage.setItem('bfc-banner-v4-dismissed', '1');
 }
 
 // Tab system
