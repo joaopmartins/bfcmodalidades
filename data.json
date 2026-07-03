@@ -1,559 +1,563 @@
 {
-    "meta": {
-        "lastUpdated": "2026-02-17",
-        "currentSeason": "2025-26",
-        "previousSeason": "2024-25"
-    },
-    "modalidades": [
+  "meta": {
+    "lastUpdated": "2026-07-03",
+    "currentSeason": "2025-26",
+    "previousSeason": "2024-25"
+  },
+  "modalidades": [
+    {
+      "id": "futebol",
+      "nome": "Futebol Masculino",
+      "icon": "⚽",
+      "categoria": "futebol",
+      "escaloes": [
         {
-            "id": "futebol",
-            "nome": "Futebol Masculino",
-            "icon": "⚽",
-            "categoria": "futebol",
-            "escaloes": [
-                {
-                    "id": "senior-masc",
-                    "nome": "Sénior (SAD)",
-                    "tipo": "senior",
-                    "atual": {
-                        "competicao": "Liga Hyundai Liga Pro",
-                        "posicao": 18,
-                        "jogos": 21,
-                        "vitorias": 2,
-                        "empates": 3,
-                        "derrotas": 16,
-                        "golosMarcados": 21,
-                        "golosSofridos": 53,
-                        "pontos": 9,
-                        "zona": "descida",
-                        "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-hyundai-liga-pro-2025-26/203015"
-                    },
-                    "anterior": {
-                        "competicao": "Liga Portugal",
-                        "posicaoFinal": 18,
-                        "pontosFinal": 24,
-                        "golosMarcados": 24,
-                        "golosSofridos": 60
-                    }
-                },
-                {
-                    "id": "equipa-b",
-                    "nome": "Equipa B (Clube)",
-                    "tipo": "senior",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": null
-                },
-                {
-                    "id": "sub-19",
-                    "nome": "Sub-19 (SAD)",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "II Divisão Sub-19 II Fase Manutenção Série B",
-                        "posicao": 7,
-                        "jogos": 4,
-                        "vitorias": 0,
-                        "empates": 1,
-                        "derrotas": 3,
-                        "golosMarcados": 1,
-                        "golosSofridos": 7,
-                        "pontos": 1,
-                        "zona": "descida",
-                        "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-19-ii-fase-manutencao-serie-b-2025-26/202767"
-                    },
-                    "anterior": {
-                        "competicao": "II Divisão Sub-19 II Fase Manutenção Série B",
-                        "posicaoFinal": 2,
-                        "pontosFinal": 35
-                    }
-                },
-                {
-                    "id": "sub-17",
-                    "nome": "Sub-17",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "II Divisão Sub-17 II Fase Manutenção Série 2",
-                        "posicao": 3,
-                        "jogos": 4,
-                        "vitorias": 2,
-                        "empates": 1,
-                        "derrotas": 1,
-                        "golosMarcados": 7,
-                        "golosSofridos": 7,
-                        "pontos": 7,
-                        "zona": null,
-                        "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-17-ii-fase-manutencao-serie-2-2025-26/202799"
-                    },
-                    "anterior": {
-                        "competicao": "Campeonato Nacional Juvenis I Divisão Sub-17",
-                        "posicaoFinal": 9,
-                        "pontosFinal": 14
-                    }
-                },
-                {
-                    "id": "sub-17B",
-                    "nome": "Sub-17 B",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "AF Porto Juniores B I Divisão Sub-17 Série 2",
-                        "posicao": 8,
-                        "jogos": 20,
-                        "vitorias": 8,
-                        "empates": 4,
-                        "derrotas": 8,
-                        "golosMarcados": 41,
-                        "golosSofridos": 50,
-                        "pontos": 28,
-                        "zona": null,
-                        "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-b-i-divisao-serie-2-2025-26/204514"
-                    },
-                    "anterior": {
-                        "competicao": "AF Porto Juniores B I Divisão Sub-17 Série 1",
-                        "posicaoFinal": 3,
-                        "pontosFinal": 70
-                    }
-                },
-                {
-                    "id": "sub-15",
-                    "nome": "Sub-15",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "II Divisão Sub-15 Fase de Manutenção Série 2",
-                        "posicao": 2,
-                        "jogos": 6,
-                        "vitorias": 4,
-                        "empates": 2,
-                        "derrotas": 0,
-                        "golosMarcados": 21,
-                        "golosSofridos": 7,
-                        "pontos": 14,
-                        "zona": null,
-                        "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-15-ii-fase-manutencao-serie-2-2025-26/202815"
-                    },
-                    "anterior": {
-                        "competicao": "Nacional Juniores C Fase Manutenção e Descida",
-                        "posicaoFinal": 9,
-                        "pontosFinal": 21
-                    }
-                },
-                {
-                    "id": "sub-15b",
-                    "nome": "Sub-15 B",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "AF Porto Juniores C I Divisão Sub-15 Série 2",
-                        "posicao": 12,
-                        "jogos": 20,
-                        "vitorias": 7,
-                        "empates": 6,
-                        "derrotas": 7,
-                        "golosMarcados": 27,
-                        "golosSofridos": 28,
-                        "pontos": 14,
-                        "zona": "descida",
-                        "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-jun-c-1-divisao-serie-2-2025-26/204524"
-                    },
-                    "anterior": {
-                        "competicao": "AF Porto Juniores C I Divisão Sub-15 Série 1",
-                        "posicaoFinal": 4,
-                        "pontosFinal": 60
-                    }
-                },
-                {
-                    "id": "sub-15c",
-                    "nome": "Sub-15 C",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "AF Porto Juniores C II Divisão Sub-15",
-                        "posicao": 2,
-                        "jogos": 12,
-                        "vitorias": 9,
-                        "empates": 1,
-                        "derrotas": 2,
-                        "golosMarcados": 58,
-                        "golosSofridos": 12,
-                        "pontos": 28,
-                        "zona": "subida",
-                        "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-c-2-divisao-serie-12-2025-26/205281"
-                    },
-                    "anterior": {
-                        "competicao": "AF Porto Juniores C II Divisão Série 3 Sub-15",
-                        "posicaoFinal": 5,
-                        "pontosFinal": 67
-                    }
-                },
-                {
-                    "id": "sub-14",
-                    "nome": "Sub-14",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "Campeonato Distrital Iniciados",
-                        "posicao": 3,
-                        "jogos": 14,
-                        "vitorias": 10,
-                        "empates": 2,
-                        "derrotas": 2,
-                        "golosMarcados": 40,
-                        "golosSofridos": 15,
-                        "pontos": 32,
-                        "zona": "subida",
-                        "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-jun-d-1-divisao-s2-2025-26/204534"
-                    },
-                    "anterior": {
-                        "competicao": "Campeonato Distrital Iniciados",
-                        "posicaoFinal": 4,
-                        "pontosFinal": 35
-                    }
-                },
-                {
-                    "id": "sub-13",
-                    "nome": "Sub-13",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "Campeonato Distrital Infantis",
-                        "posicao": 2,
-                        "jogos": 12,
-                        "vitorias": 9,
-                        "empates": 2,
-                        "derrotas": 1,
-                        "golosMarcados": 38,
-                        "golosSofridos": 12,
-                        "pontos": 29,
-                        "zona": "subida",
-                        "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-d-2-divisao-serie-7-2025-26/205104"
-                    },
-                    "anterior": {
-                        "competicao": "Campeonato Distrital Infantis",
-                        "posicaoFinal": 3,
-                        "pontosFinal": 32
-                    }
-                }
-            ]
+          "id": "senior-masc",
+          "nome": "Sénior (SAD)",
+          "tipo": "senior",
+          "atual": {
+            "competicao": "Liga Hyundai Liga Pro",
+            "posicao": 17,
+            "jogos": 34,
+            "vitorias": 3,
+            "empates": 5,
+            "derrotas": 26,
+            "golosMarcados": 36,
+            "golosSofridos": 85,
+            "pontos": 14,
+            "zona": "descida",
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-hyundai-liga-pro-2025-26/203015"
+          },
+          "anterior": {
+            "competicao": "Liga Portugal",
+            "posicaoFinal": 18,
+            "pontosFinal": 24,
+            "golosMarcados": 24,
+            "golosSofridos": 60
+          }
         },
         {
-            "id": "futebol-feminino",
-            "nome": "Futebol Feminino",
-            "icon": "⚽",
-            "categoria": "futebol",
-            "escaloes": [
-                {
-                    "id": "senior-fem",
-                    "nome": "Sénior",
-                    "tipo": "feminino",
-                    "atual": {
-                        "competicao": "III Divisão Feminina Serie Norte",
-                        "posicao": 6,
-                        "jogos": 10,
-                        "vitorias": 1,
-                        "empates": 2,
-                        "derrotas": 7,
-                        "golosMarcados": 6,
-                        "golosSofridos": 25,
-                        "pontos": 5,
-                        "zona": "descida",
-                        "competicaoLink": "https://www.zerozero.pt/edicao/iii-divisao-feminina-serie-norte-2025-26/206056"
-                    },
-                    "anterior": {
-                        "competicao": "II Divisão Feminina Manutenção Serie Norte",
-                        "posicaoFinal": 8,
-                        "pontosFinal": 1
-                    }
-                },
-                {
-                    "id": "fem-sub-19",
-                    "nome": "Sub-19",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "II Divisão Feminina Sub-19",
-                        "posicao": 9,
-                        "jogos": 4,
-                        "vitorias": 0,
-                        "empates": 0,
-                        "derrotas": 4,
-                        "pontos": 0,
-                        "golosMarcados": 3,
-                        "golosSofridos": 14,
-                        "zona": null,
-                        "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-feminina-sub-19-ii-fase-serie-norte-2025-26/211134"
-                    },
-                    "anterior": {
-                        "competicao": " Nacional feminino Juniores A II Divisão Serie Norte",
-                        "posicaoFinal": 6,
-                        "pontosFinal": 8
-                    }
-                }
-            ]
+          "id": "equipa-b",
+          "nome": "Equipa B (Clube)",
+          "tipo": "senior",
+          "status": "extinta",
+          "atual": null,
+          "anterior": null
         },
         {
-            "id": "andebol",
-            "nome": "Andebol",
-            "icon": "🤾",
-            "categoria": "pavilhao",
-            "escaloes": [
-                {
-                    "id": "andebol-senior",
-                    "nome": "Sénior",
-                    "tipo": "senior",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": {
-                        "competicao": "Campeonato Nacional",
-                        "posicaoFinal": 6,
-                        "pontosFinal": 18
-                    }
-                },
-                {
-                    "id": "andebol-senior-b",
-                    "nome": "Sénior B",
-                    "tipo": "senior",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": null
-                },
-                {
-                    "id": "andebol-s20",
-                    "nome": "Sub-20",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": null
-                },
-                {
-                    "id": "andebol-s18",
-                    "nome": "Sub-18",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": {
-                        "competicao": "Campeonato Nacional",
-                        "posicaoFinal": 3,
-                        "pontosFinal": 26
-                    }
-                },
-                {
-                    "id": "andebol-s18b",
-                    "nome": "Sub-18 B",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": null
-                },
-                {
-                    "id": "andebol-s16",
-                    "nome": "Sub-16",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": {
-                        "competicao": "Campeonato Regional",
-                        "posicaoFinal": 2,
-                        "pontosFinal": 24
-                    }
-                },
-                {
-                    "id": "andebol-s16b",
-                    "nome": "Sub-16 B",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": null
-                },
-                {
-                    "id": "andebol-s16c",
-                    "nome": "Sub-16 C",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": null
-                },
-                {
-                    "id": "andebol-s14",
-                    "nome": "Sub-14",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": {
-                        "competicao": "Campeonato Regional",
-                        "posicaoFinal": 1,
-                        "pontosFinal": 20
-                    }
-                },
-                {
-                    "id": "andebol-s14b",
-                    "nome": "Sub-14 B",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": null
-                },
-                {
-                    "id": "andebol-s12",
-                    "nome": "Sub-12",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": null
-                }
-            ]
+          "id": "sub-19",
+          "nome": "Sub-19 (SAD)",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "II Divisão Sub-19 II Fase Manutenção Série B",
+            "posicao": 4,
+            "jogos": 12,
+            "vitorias": 5,
+            "empates": 2,
+            "derrotas": 5,
+            "golosMarcados": 12,
+            "golosSofridos": 16,
+            "pontos": 17,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-19-ii-fase-manutencao-serie-b-2025-26/202767"
+          },
+          "anterior": {
+            "competicao": "II Divisão Sub-19 II Fase Manutenção Série B",
+            "posicaoFinal": 2,
+            "pontosFinal": 35
+          }
         },
         {
-            "id": "voleibol",
-            "nome": "Voleibol Feminino",
-            "icon": "🏐",
-            "categoria": "pavilhao",
-            "escaloes": [
-                {
-                    "id": "volei-senior",
-                    "nome": "Sénior",
-                    "tipo": "feminino",
-                    "atual": {
-                        "competicao": "Campeonato Nacional Feminino II Divisao",
-                        "posicao": 9,
-                        "jogos": 21,
-                        "vitorias": 7,
-                        "derrotas": 14,
-                        "pontos": 22,
-                        "zona": null
-                    },
-                    "anterior": {
-                        "competicao": "Campeonato Nacional II Feminino Divisao",
-                        "posicaoFinal": 8,
-                        "pontosFinal": 22
-                    }
-                },
-                {
-                    "id": "volei-s19",
-                    "nome": "Sub-19",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "Campeonato Nacional Feminino Juniores II Fase Serie A",
-                        "posicao": 5,
-                        "jogos": 10,
-                        "vitorias": 2,
-                        "derrotas": 8,
-                        "pontos": 7,
-                        "zona": "descida"
-                    },
-                    "anterior": {
-                        "competicao": "Campeonato Nacional Feminino Juniores II Fase Serie A",
-                        "posicaoFinal": 5,
-                        "pontosFinal": 7
-                    }
-                }
-            ]
+          "id": "sub-17",
+          "nome": "Sub-17",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "II Divisão Sub-17 II Fase Manutenção Série 2",
+            "posicao": 4,
+            "jogos": 14,
+            "vitorias": 6,
+            "empates": 2,
+            "derrotas": 6,
+            "golosMarcados": 21,
+            "golosSofridos": 22,
+            "pontos": 20,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-17-ii-fase-manutencao-serie-2-2025-26/202799"
+          },
+          "anterior": {
+            "competicao": "Campeonato Nacional Juvenis I Divisão Sub-17",
+            "posicaoFinal": 9,
+            "pontosFinal": 14
+          }
         },
         {
-            "id": "futsal",
-            "nome": "Futsal",
-            "icon": "🥅",
-            "categoria": "pavilhao",
-            "escaloes": [
-                {
-                    "id": "futsal-senior",
-                    "nome": "Sénior",
-                    "tipo": "senior",
-                    "atual": {
-                        "competicao": "II Divisão Futsal Manutenção Serie II",
-                        "posicao": 6,
-                        "jogos": 3,
-                        "vitorias": 0,
-                        "empates": 1,
-                        "derrotas": 2,
-                        "golosMarcados": 4,
-                        "golosSofridos": 27,
-                        "pontos": 1,
-                        "zona": "descida",
-                        "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-futsal-manutencao-serie-2-2025-26/211126"
-                    },
-                    "anterior": {
-                        "competicao": "II Divisão Futsal Manutenção Serie II",
-                        "posicaoFinal": 5,
-                        "pontosFinal": 18
-                    }
-                },
-                {
-                    "id": "futsal-s19",
-                    "nome": "Sub-19",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "AF Porto Futsal Juniores A Elite",
-                        "posicao": 11,
-                        "jogos": 18,
-                        "vitorias": 0,
-                        "empates": 0,
-                        "derrotas": 18,
-                        "pontos": 0,
-                        "golosMarcados": 20,
-                        "golosSofridos": 144,
-                        "zona": "descida"
-                    },
-                    "anterior": null
-                },
-                {
-                    "id": "futsal-s17",
-                    "nome": "Sub-17",
-                    "tipo": "formacao",
-                    "atual": {
-                        "competicao": "AF Porto Futsal Juniores B Elite",
-                        "posicao": 11,
-                        "jogos": 19,
-                        "vitorias": 0,
-                        "empates": 0,
-                        "derrotas": 19,
-                        "golosMarcados": 16,
-                        "golosSofridos": 126,
-                        "pontos": 0,
-                        "zona": "descida",
-                        "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-divisao-elite-jun-b-s17-futsal-2025-26/203794"
-                    },
-                    "anterior": {
-                        "competicao": "Campeonato Regional Juvenis",
-                        "posicaoFinal": 3,
-                        "pontosFinal": 22
-                    }
-                },
-                {
-                    "id": "futsal-s15",
-                    "nome": "Sub-15",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": {
-                        "competicao": "Campeonato Regional Iniciados",
-                        "posicaoFinal": 2,
-                        "pontosFinal": 26
-                    }
-                },
-                {
-                    "id": "futsal-s13",
-                    "nome": "Sub-13",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": null,
-                    "anterior": {
-                        "competicao": "Campeonato Regional Infantis",
-                        "posicaoFinal": 4,
-                        "pontosFinal": 18
-                    }
-                },
-                {
-                    "id": "futsal-s11",
-                    "nome": "Sub-11",
-                    "tipo": "formacao",
-                    "status": "extinta",
-                    "atual": {
-                        "competicao": "C.D. Sub-11 Futsal",
-                        "posicao": null,
-                        "jogos": null,
-                        "vitorias": null,
-                        "empates": null,
-                        "derrotas": null,
-                        "pontos": null,
-                        "zona": null
-                    },
-                    "anterior": null
-                }
-            ]
+          "id": "sub-17B",
+          "nome": "Sub-17 B",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "AF Porto Juniores B I Divisão Sub-17 Série 2",
+            "posicao": 10,
+            "jogos": 30,
+            "vitorias": 11,
+            "empates": 5,
+            "derrotas": 14,
+            "golosMarcados": 58,
+            "golosSofridos": 70,
+            "pontos": 38,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-b-i-divisao-serie-2-2025-26/204514"
+          },
+          "anterior": {
+            "competicao": "AF Porto Juniores B I Divisão Sub-17 Série 1",
+            "posicaoFinal": 3,
+            "pontosFinal": 70
+          }
+        },
+        {
+          "id": "sub-15",
+          "nome": "Sub-15",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "II Divisão Sub-15 Fase de Manutenção Série 2",
+            "posicao": 2,
+            "jogos": 14,
+            "vitorias": 10,
+            "empates": 2,
+            "derrotas": 2,
+            "golosMarcados": 41,
+            "golosSofridos": 12,
+            "pontos": 32,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-15-ii-fase-manutencao-serie-2-2025-26/202815"
+          },
+          "anterior": {
+            "competicao": "Nacional Juniores C Fase Manutenção e Descida",
+            "posicaoFinal": 9,
+            "pontosFinal": 21
+          }
+        },
+        {
+          "id": "sub-15b",
+          "nome": "Sub-15 B",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "AF Porto Juniores C I Divisão Sub-15 Série 2",
+            "posicao": 8,
+            "jogos": 30,
+            "vitorias": 12,
+            "empates": 9,
+            "derrotas": 9,
+            "golosMarcados": 47,
+            "golosSofridos": 39,
+            "pontos": 45,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-jun-c-1-divisao-serie-2-2025-26/204524"
+          },
+          "anterior": {
+            "competicao": "AF Porto Juniores C I Divisão Sub-15 Série 1",
+            "posicaoFinal": 4,
+            "pontosFinal": 60
+          }
+        },
+        {
+          "id": "sub-15c",
+          "nome": "Sub-15 C",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "AF Porto Juniores C II Divisão Sub-15",
+            "posicao": 2,
+            "jogos": 22,
+            "vitorias": 19,
+            "empates": 1,
+            "derrotas": 2,
+            "golosMarcados": 112,
+            "golosSofridos": 23,
+            "pontos": 58,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-c-2-divisao-serie-12-2025-26/205281"
+          },
+          "anterior": {
+            "competicao": "AF Porto Juniores C II Divisão Série 3 Sub-15",
+            "posicaoFinal": 5,
+            "pontosFinal": 67
+          }
+        },
+        {
+          "id": "sub-14",
+          "nome": "Sub-14",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "Campeonato Distrital Iniciados",
+            "posicao": 7,
+            "jogos": 28,
+            "vitorias": 12,
+            "empates": 9,
+            "derrotas": 7,
+            "golosMarcados": 39,
+            "golosSofridos": 18,
+            "pontos": 45,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-jun-d-1-divisao-s2-2025-26/204534"
+          },
+          "anterior": {
+            "competicao": "Campeonato Distrital Iniciados",
+            "posicaoFinal": 4,
+            "pontosFinal": 35
+          }
+        },
+        {
+          "id": "sub-13",
+          "nome": "Sub-13",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "Campeonato Distrital Infantis",
+            "posicao": 6,
+            "jogos": 26,
+            "vitorias": 15,
+            "empates": 4,
+            "derrotas": 7,
+            "golosMarcados": 75,
+            "golosSofridos": 28,
+            "pontos": 49,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-d-2-divisao-serie-7-2025-26/205104"
+          },
+          "anterior": {
+            "competicao": "Campeonato Distrital Infantis",
+            "posicaoFinal": 3,
+            "pontosFinal": 32
+          }
         }
-    ]
+      ]
+    },
+    {
+      "id": "futebol-feminino",
+      "nome": "Futebol Feminino",
+      "icon": "⚽",
+      "categoria": "futebol",
+      "escaloes": [
+        {
+          "id": "senior-fem",
+          "nome": "Sénior",
+          "tipo": "feminino",
+          "atual": {
+            "competicao": "III Divisão Feminina Fase Manutenção",
+            "posicao": 5,
+            "jogos": 10,
+            "vitorias": 3,
+            "empates": 1,
+            "derrotas": 6,
+            "golosMarcados": 15,
+            "golosSofridos": 28,
+            "pontos": 10,
+            "zona": "descida",
+            "competicaoLink": "https://www.zerozero.pt/edicao/iii-divisao-feminina-fase-manutencao-2025-26/212467"
+          },
+          "anterior": {
+            "competicao": "II Divisão Feminina Manutenção Serie Norte",
+            "posicaoFinal": 8,
+            "pontosFinal": 1
+          }
+        },
+        {
+          "id": "fem-sub-19",
+          "nome": "Sub-19",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "II Divisão Feminina Sub-19",
+            "posicao": 9,
+            "jogos": 9,
+            "vitorias": 1,
+            "empates": 2,
+            "derrotas": 6,
+            "pontos": 5,
+            "golosMarcados": 13,
+            "golosSofridos": 31,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-feminina-sub-19-ii-fase-serie-norte-2025-26/211134"
+          },
+          "anterior": {
+            "competicao": " Nacional feminino Juniores A II Divisão Serie Norte",
+            "posicaoFinal": 6,
+            "pontosFinal": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "andebol",
+      "nome": "Andebol",
+      "icon": "🤾",
+      "categoria": "pavilhao",
+      "escaloes": [
+        {
+          "id": "andebol-senior",
+          "nome": "Sénior",
+          "tipo": "senior",
+          "status": "extinta",
+          "atual": null,
+          "anterior": {
+            "competicao": "Campeonato Nacional",
+            "posicaoFinal": 6,
+            "pontosFinal": 18
+          }
+        },
+        {
+          "id": "andebol-senior-b",
+          "nome": "Sénior B",
+          "tipo": "senior",
+          "status": "extinta",
+          "atual": null,
+          "anterior": null
+        },
+        {
+          "id": "andebol-s20",
+          "nome": "Sub-20",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": null
+        },
+        {
+          "id": "andebol-s18",
+          "nome": "Sub-18",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": {
+            "competicao": "Campeonato Nacional",
+            "posicaoFinal": 3,
+            "pontosFinal": 26
+          }
+        },
+        {
+          "id": "andebol-s18b",
+          "nome": "Sub-18 B",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": null
+        },
+        {
+          "id": "andebol-s16",
+          "nome": "Sub-16",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": {
+            "competicao": "Campeonato Regional",
+            "posicaoFinal": 2,
+            "pontosFinal": 24
+          }
+        },
+        {
+          "id": "andebol-s16b",
+          "nome": "Sub-16 B",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": null
+        },
+        {
+          "id": "andebol-s16c",
+          "nome": "Sub-16 C",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": null
+        },
+        {
+          "id": "andebol-s14",
+          "nome": "Sub-14",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": {
+            "competicao": "Campeonato Regional",
+            "posicaoFinal": 1,
+            "pontosFinal": 20
+          }
+        },
+        {
+          "id": "andebol-s14b",
+          "nome": "Sub-14 B",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": null
+        },
+        {
+          "id": "andebol-s12",
+          "nome": "Sub-12",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": null
+        }
+      ]
+    },
+    {
+      "id": "voleibol",
+      "nome": "Voleibol Feminino",
+      "icon": "🏐",
+      "categoria": "pavilhao",
+      "escaloes": [
+        {
+          "id": "volei-senior",
+          "nome": "Sénior",
+          "tipo": "feminino",
+          "atual": {
+            "competicao": "Campeonato Nacional II Divisão - Série dos Últimos",
+            "posicao": 8,
+            "jogos": 14,
+            "vitorias": 1,
+            "derrotas": 14,
+            "pontos": 5,
+            "zona": "descida",
+            "empates": 0,
+            "golosMarcados": 8,
+            "golosSofridos": 42
+          },
+          "anterior": {
+            "competicao": "Campeonato Nacional II Feminino Divisao",
+            "posicaoFinal": 8,
+            "pontosFinal": 22
+          }
+        },
+        {
+          "id": "volei-s19",
+          "nome": "Sub-19",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "Campeonato Nacional Feminino Juniores II Fase Serie A",
+            "posicao": 5,
+            "jogos": 10,
+            "vitorias": 2,
+            "derrotas": 8,
+            "pontos": 7,
+            "zona": null
+          },
+          "anterior": {
+            "competicao": "Campeonato Nacional Feminino Juniores II Fase Serie A",
+            "posicaoFinal": 5,
+            "pontosFinal": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "futsal",
+      "nome": "Futsal",
+      "icon": "🥅",
+      "categoria": "pavilhao",
+      "escaloes": [
+        {
+          "id": "futsal-senior",
+          "nome": "Sénior",
+          "tipo": "senior",
+          "atual": {
+            "competicao": "II Divisão Futsal Manutenção Serie II",
+            "posicao": 8,
+            "jogos": 14,
+            "vitorias": 0,
+            "empates": 1,
+            "derrotas": 13,
+            "golosMarcados": 22,
+            "golosSofridos": 143,
+            "pontos": 1,
+            "zona": "descida",
+            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-futsal-manutencao-serie-2-2025-26/211126"
+          },
+          "anterior": {
+            "competicao": "II Divisão Futsal Manutenção Serie II",
+            "posicaoFinal": 5,
+            "pontosFinal": 18
+          }
+        },
+        {
+          "id": "futsal-s19",
+          "nome": "Sub-19",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "AF Porto Futsal Juniores A - Taça Promoção",
+            "posicao": 9,
+            "jogos": 8,
+            "vitorias": 1,
+            "empates": 0,
+            "derrotas": 7,
+            "pontos": 3,
+            "golosMarcados": 7,
+            "golosSofridos": 32,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao.php?id_edicao=213887"
+          },
+          "anterior": null
+        },
+        {
+          "id": "futsal-s17",
+          "nome": "Sub-17",
+          "tipo": "formacao",
+          "atual": {
+            "competicao": "AF Porto Futsal Juniores B Elite",
+            "posicao": 11,
+            "jogos": 20,
+            "vitorias": 1,
+            "empates": 0,
+            "derrotas": 19,
+            "golosMarcados": 20,
+            "golosSofridos": 129,
+            "pontos": 3,
+            "zona": null,
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-divisao-elite-jun-b-s17-futsal-2025-26/203794"
+          },
+          "anterior": {
+            "competicao": "Campeonato Regional Juvenis",
+            "posicaoFinal": 3,
+            "pontosFinal": 22
+          }
+        },
+        {
+          "id": "futsal-s15",
+          "nome": "Sub-15",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": {
+            "competicao": "Campeonato Regional Iniciados",
+            "posicaoFinal": 2,
+            "pontosFinal": 26
+          }
+        },
+        {
+          "id": "futsal-s13",
+          "nome": "Sub-13",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": null,
+          "anterior": {
+            "competicao": "Campeonato Regional Infantis",
+            "posicaoFinal": 4,
+            "pontosFinal": 18
+          }
+        },
+        {
+          "id": "futsal-s11",
+          "nome": "Sub-11",
+          "tipo": "formacao",
+          "status": "extinta",
+          "atual": {
+            "competicao": "C.D. Sub-11 Futsal",
+            "posicao": null,
+            "jogos": null,
+            "vitorias": null,
+            "empates": null,
+            "derrotas": null,
+            "pontos": null,
+            "zona": null
+          },
+          "anterior": null
+        }
+      ]
+    }
+  ]
 }
