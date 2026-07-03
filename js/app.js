@@ -86,7 +86,7 @@ function createCard(modalidade, escaloes) {
             <span class="text-2xl flex-shrink-0">${modalidade.icon}</span>
             <div class="min-w-0">
                 <h2 class="font-bold text-lg uppercase tracking-wide truncate">${modalidade.nome} <span class="text-xs font-normal text-gray-400">(${escaloes.length} ${escaloes.length === 1 ? 'escalão' : 'escalões'})</span></h2>
-                ${resumo ? `<p class="text-xs text-gray-400 font-normal normal-case">${resumo}</p>` : ''}
+                ${resumo ? `<div class="flex flex-wrap gap-1 mt-1 normal-case">${resumo}</div>` : ''}
             </div>
         </div>
         <svg class="w-5 h-5 flex-shrink-0 transition-transform duration-300 card-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,7 +190,7 @@ function createEscalaoRow(escalao, modalidade) {
         : '-';
 
     row.innerHTML = `
-        <div class="w-8 text-center text-lg font-bold ${desfecho.cls}" title="${desfecho.title}">${desfecho.icon}</div>
+        <div class="w-8 flex justify-center" title="${desfecho.title}">${desfechoChip(desfecho)}</div>
         <div class="w-[140px] min-w-[120px] font-medium truncate" title="${escalao.nome}">
             <span>${escalao.nome}</span>
         </div>
@@ -215,32 +215,42 @@ function createEscalaoRow(escalao, modalidade) {
 function getDesfechoIndicator(desfecho) {
     switch (desfecho) {
         case 'desceu':
-            return { icon: '↓', cls: 'text-red-600', title: 'Desceu de divisão' };
+            return { icon: '↓', cls: 'text-red-700', bg: 'bg-red-100', title: 'Desceu de divisão' };
         case 'subiu':
-            return { icon: '↑', cls: 'text-green-600', title: 'Subiu de divisão' };
+            return { icon: '↑', cls: 'text-green-700', bg: 'bg-green-100', title: 'Subiu de divisão' };
         case 'campeao':
-            return { icon: '&#127942;', cls: '', title: 'Campeão' };
+            return { icon: '&#127942;', cls: '', bg: 'bg-yellow-50', title: 'Campeão' };
         case 'manteve':
-            return { icon: '=', cls: 'text-gray-400', title: 'Manteve a divisão' };
+            return { icon: '=', cls: 'text-gray-500', bg: 'bg-gray-100', title: 'Manteve a divisão' };
         default:
-            return { icon: '', cls: '', title: '' };
+            return { icon: '', cls: '', bg: '', title: '' };
     }
+}
+
+// Chip HTML for a desfecho indicator (visible/robust on mobile)
+function desfechoChip(df, size) {
+    if (!df.icon) return '';
+    const dim = size === 'lg' ? 'w-10 h-10 text-xl' : 'w-6 h-6 text-base';
+    return `<span class="inline-flex items-center justify-center rounded-full font-bold leading-none ${dim} ${df.bg} ${df.cls}">${df.icon}</span>`;
 }
 
 // Aggregate the season outcomes of a modalidade's escalões (for the card header)
 function resumoDesfechos(escaloes) {
-    let desceu = 0, subiu = 0, extintas = 0;
+    let desceu = 0, subiu = 0, manteve = 0, extintas = 0;
     escaloes.forEach(e => {
         if (e.status === 'extinta') { extintas++; return; }
         const df = (e.atual || {}).desfecho;
         if (df === 'desceu') desceu++;
         else if (df === 'subiu') subiu++;
+        else if (df === 'manteve') manteve++;
     });
-    const partes = [];
-    if (subiu) partes.push(`${subiu} ${subiu === 1 ? 'subida' : 'subidas'}`);
-    if (desceu) partes.push(`${desceu} ${desceu === 1 ? 'despromoção' : 'despromoções'}`);
-    if (extintas) partes.push(`${extintas} ${extintas === 1 ? 'extinta' : 'extintas'}`);
-    return partes.join(' · ');
+    const pill = (txt, cls) => `<span class="inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-semibold ${cls}">${txt}</span>`;
+    const pills = [];
+    if (subiu) pills.push(pill(`${subiu} ${subiu === 1 ? 'subida' : 'subidas'}`, 'bg-green-100 text-green-700'));
+    if (desceu) pills.push(pill(`${desceu} ${desceu === 1 ? 'despromoção' : 'despromoções'}`, 'bg-red-100 text-red-700'));
+    if (manteve) pills.push(pill(`${manteve} ${manteve === 1 ? 'manteve' : 'mantiveram'}`, 'bg-gray-100 text-gray-600'));
+    if (extintas) pills.push(pill(`${extintas} ${extintas === 1 ? 'extinta' : 'extintas'}`, 'bg-gray-200 text-gray-700'));
+    return pills.join('');
 }
 
 // Show modal with detailed view
@@ -301,8 +311,8 @@ function showModal(escalao, modalidade) {
 
         ${df.icon ? `
             <div class="rounded-lg p-4 text-center bg-gray-50">
-                <span class="text-2xl font-bold ${df.cls}">${df.icon}</span>
-                <p class="${df.cls} font-medium">${df.title}</p>
+                ${desfechoChip(df, 'lg')}
+                <p class="mt-2 ${df.cls} font-medium">${df.title}</p>
             </div>
         ` : ''}
 
