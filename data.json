@@ -188,7 +188,8 @@
             "zona": null,
             "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-c-2-divisao-serie-12-2025-26/205281",
             "totalEquipas": 12,
-            "desfecho": "manteve"
+            "desfecho": "manteve",
+            "semDescida": true
           },
           "anterior": {
             "competicao": "AF Porto Juniores C II Divisão Série 3 Sub-15",
@@ -238,7 +239,8 @@
             "zona": null,
             "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-d-2-divisao-serie-7-2025-26/205104",
             "totalEquipas": 14,
-            "desfecho": "manteve"
+            "desfecho": "manteve",
+            "semDescida": true
           },
           "anterior": {
             "competicao": "Campeonato Distrital Infantis",
@@ -296,7 +298,8 @@
             "zona": null,
             "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-feminina-sub-19-ii-fase-serie-norte-2025-26/211134",
             "totalEquipas": 10,
-            "desfecho": "manteve"
+            "desfecho": "manteve",
+            "semDescida": true
           },
           "anterior": {
             "competicao": " Nacional feminino Juniores A II Divisão Serie Norte",

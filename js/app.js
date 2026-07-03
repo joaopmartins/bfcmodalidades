@@ -176,6 +176,13 @@ function createEscalaoRow(escalao, modalidade) {
     }
 
     const desfecho = getDesfechoIndicator(atual.desfecho);
+    // Escalões que já são a última divisão (não há divisão abaixo para descer)
+    const desfechoTitle = (atual.semDescida && atual.desfecho === 'manteve')
+        ? 'Última divisão: já não há divisão abaixo para descer'
+        : desfecho.title;
+    const ultimaTag = atual.semDescida
+        ? '<div class="text-[10px] text-gray-400 italic mt-0.5" title="Já não há divisão abaixo para descer">última divisão · sem descida</div>'
+        : '';
 
     // Competition name (with optional link)
     const competicaoNome = atual.competicao || '-';
@@ -190,11 +197,11 @@ function createEscalaoRow(escalao, modalidade) {
         : '-';
 
     row.innerHTML = `
-        <div class="w-8 flex justify-center" title="${desfecho.title}">${desfechoChip(desfecho)}</div>
+        <div class="w-8 flex justify-center" title="${desfechoTitle}">${desfechoChip(desfecho)}</div>
         <div class="w-[140px] min-w-[120px] font-medium truncate" title="${escalao.nome}">
             <span>${escalao.nome}</span>
         </div>
-        <div class="flex-1 min-w-[150px] text-xs text-gray-500">${competicaoHtml}</div>
+        <div class="flex-1 min-w-[150px] text-xs text-gray-500">${competicaoHtml}${ultimaTag}</div>
         <div class="w-14 text-center font-bold">${atual.posicao ? (atual.totalEquipas ? `${atual.posicao}<span class="text-gray-400 font-normal text-xs">/${atual.totalEquipas}</span>` : `${atual.posicao}º`) : '-'}</div>
         <div class="w-10 text-center font-semibold">${atual.pontos !== undefined ? atual.pontos : '-'}</div>
         <div class="w-8 text-center text-gray-600">${atual.jogos !== undefined ? atual.jogos : '-'}</div>
