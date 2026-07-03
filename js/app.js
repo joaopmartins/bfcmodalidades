@@ -1,118 +1,13 @@
 // BFC Modalidades - Main Application
 
 let appData = null;
-let promessasData = null;
-let cronologiaData = null;
-
-// Tab system
-let activeTab = 'modalidades';
-const VALID_TABS = ['modalidades', 'promessas', 'cronologia', 'agir'];
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
     setupEventListeners();
-    initTabs();
-    initReleaseBanner();
-    updateStickyOffsets();
-    window.addEventListener('resize', updateStickyOffsets);
     await loadData();
-}
-
-// Release notes banner
-function initReleaseBanner() {
-    const banner = document.getElementById('release-banner');
-    if (!banner) return;
-    if (localStorage.getItem('bfc-banner-v4-dismissed')) {
-        banner.remove();
-    }
-}
-
-function dismissBanner() {
-    const banner = document.getElementById('release-banner');
-    if (banner) {
-        banner.style.transition = 'opacity 0.2s, max-height 0.3s';
-        banner.style.opacity = '0';
-        banner.style.maxHeight = '0';
-        banner.style.overflow = 'hidden';
-        setTimeout(() => banner.remove(), 300);
-    }
-    localStorage.setItem('bfc-banner-v4-dismissed', '1');
-}
-
-// Tab system
-function initTabs() {
-    // Tab button clicks
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const tab = btn.dataset.tab;
-            if (tab && VALID_TABS.includes(tab)) {
-                switchTab(tab);
-                history.pushState(null, '', '#' + tab);
-            }
-        });
-    });
-
-    // Hash routing
-    window.addEventListener('hashchange', () => {
-        const hash = location.hash.replace('#', '');
-        if (VALID_TABS.includes(hash)) {
-            switchTab(hash);
-        }
-    });
-
-    // Read initial hash
-    const hash = location.hash.replace('#', '');
-    if (VALID_TABS.includes(hash)) {
-        activeTab = hash;
-    }
-    switchTab(activeTab);
-}
-
-function switchTab(tabName) {
-    if (!VALID_TABS.includes(tabName)) return;
-    activeTab = tabName;
-
-    // Update buttons
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        const isActive = btn.dataset.tab === tabName;
-        btn.setAttribute('aria-selected', isActive);
-        if (isActive) {
-            btn.classList.add('bg-gray-900', 'text-white', 'shadow-sm');
-            btn.classList.remove('bg-white', 'text-gray-500', 'border', 'border-gray-300');
-        } else {
-            btn.classList.remove('bg-gray-900', 'text-white', 'shadow-sm');
-            btn.classList.add('bg-white', 'text-gray-500', 'border', 'border-gray-300');
-        }
-    });
-
-    // Update panels
-    VALID_TABS.forEach(tab => {
-        const panel = document.getElementById('tab-' + tab);
-        if (!panel) return;
-        if (tab === tabName) {
-            panel.classList.remove('hidden');
-        } else {
-            panel.classList.add('hidden');
-        }
-    });
-
-    // Scroll to top of content if tab bar is below viewport
-    const tabBar = document.getElementById('tab-bar');
-    if (tabBar) {
-        const rect = tabBar.getBoundingClientRect();
-        if (rect.top < 0) {
-            tabBar.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-}
-
-function updateStickyOffsets() {
-    const header = document.querySelector('header');
-    if (header) {
-        document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
-    }
 }
 
 // Event listeners
@@ -146,32 +41,9 @@ async function loadData() {
         updateTimestamp();
         updateSummaryStats();
 
-        // Load cronologia
-        try {
-            const cronologiaResponse = await fetch('cronologia.json');
-            if (cronologiaResponse.ok) {
-                cronologiaData = await cronologiaResponse.json();
-                renderCronologia();
-            }
-        } catch (e) {
-            console.error('Error loading cronologia:', e);
-        }
-
-        // Load promessas
-        try {
-            const promessasResponse = await fetch('promessas.json');
-            if (promessasResponse.ok) {
-                promessasData = await promessasResponse.json();
-                renderPromessas();
-            }
-        } catch (e) {
-            console.error('Error loading promessas:', e);
-        }
-
         hideLoading();
         showIntro();
         showCards();
-        switchTab(activeTab);
     } catch (error) {
         console.error('Error loading data:', error);
         hideLoading();
@@ -285,9 +157,9 @@ function createEscalaoRow(escalao, modalidade) {
     // Check if team is extinct
     if (escalao.status === 'extinta') {
         row.innerHTML = `
-            <div class="w-8 text-center text-lg" title="Extinta, obrigado Garrido">&#128683;</div>
+            <div class="w-8 text-center text-lg" title="Equipa extinta">&#128683;</div>
             <div class="w-[140px] min-w-[120px] font-medium text-gray-400 line-through">${escalao.nome}</div>
-            <div class="flex-1 min-w-[150px] text-xs text-red-500 italic">Extinta no mandato de Garrido Pereira</div>
+            <div class="flex-1 min-w-[150px] text-xs text-red-500 italic">Equipa extinta</div>
             <div class="w-10"></div>
             <div class="w-10"></div>
             <div class="w-8"></div>
@@ -300,7 +172,6 @@ function createEscalaoRow(escalao, modalidade) {
         return row;
     }
 
-    const diff = calculateDiff(atual, anterior);
     const zona = getZonaIndicator(atual.zona);
     const statusIndicator = getStatusIndicator(atual, anterior);
 
@@ -530,7 +401,6 @@ function updateSummaryStats() {
     let igual = 0;
     let pior = 0;
     let extintas = 0;
-    let emRisco = 0;
 
     appData.modalidades.forEach(modalidade => {
         modalidade.escaloes.forEach(escalao => {
@@ -543,11 +413,6 @@ function updateSummaryStats() {
 
             const atual = escalao.atual || {};
             const anterior = escalao.anterior || {};
-
-            // Count teams in descida zone
-            if (atual.zona === 'descida') {
-                emRisco++;
-            }
 
             if (!anterior.posicaoFinal || !atual.posicao) {
                 return;
@@ -576,212 +441,4 @@ function updateSummaryStats() {
     document.getElementById('stat-igual').textContent = igual;
     document.getElementById('stat-pior').textContent = pior;
     document.getElementById('stat-extintas').textContent = extintas;
-
-    // Update Boavistómetro counters
-    const elExtintas = document.getElementById('equipas-extintas');
-    if (elExtintas) elExtintas.textContent = extintas;
-    const elRisco = document.getElementById('equipas-risco');
-    if (elRisco) elRisco.textContent = emRisco;
-}
-
-// Cronologia rendering
-const cronologiaTypeConfig = {
-    governanca: { color: 'bg-gray-400', label: 'Governança' },
-    financas: { color: 'bg-red-500', label: 'Finanças' },
-    modalidades: { color: 'bg-orange-500', label: 'Modalidades' },
-    estadio: { color: 'bg-yellow-500', label: 'Estádio' },
-    sad: { color: 'bg-purple-500', label: 'SAD' },
-    positivo: { color: 'bg-green-500', label: 'Positivo' }
-};
-
-function renderCronologia() {
-    if (!cronologiaData || !cronologiaData.eventos) return;
-
-    const content = document.getElementById('cronologia-content');
-    if (!content) return;
-
-    const eventos = cronologiaData.eventos.sort((a, b) => a.data.localeCompare(b.data));
-
-    // Render timeline with all events
-    renderCronologiaTimeline(content, eventos);
-
-    // Setup filter pills
-    setupCronologiaFilters(eventos);
-}
-
-function renderCronologiaTimeline(container, eventos) {
-    container.innerHTML = '';
-
-    const timeline = document.createElement('div');
-    timeline.className = 'relative pl-6 border-l-2 border-gray-200 space-y-4';
-
-    eventos.forEach(evento => {
-        const cfg = cronologiaTypeConfig[evento.tipo] || cronologiaTypeConfig.governanca;
-        const date = new Date(evento.data);
-        const dateStr = date.toLocaleDateString('pt-PT', { day: 'numeric', month: 'short', year: 'numeric' });
-
-        const item = document.createElement('div');
-        item.className = 'relative';
-        item.innerHTML = `
-            <div class="absolute -left-[25px] top-1 w-3 h-3 rounded-full ${cfg.color} border-2 border-white"></div>
-            <div class="text-xs text-gray-400">${dateStr}</div>
-            <div class="text-sm font-semibold text-gray-800">${evento.titulo}</div>
-            <div class="text-xs text-gray-500 mt-0.5">${evento.descricao}</div>
-        `;
-        timeline.appendChild(item);
-    });
-
-    container.appendChild(timeline);
-}
-
-function setupCronologiaFilters(eventos) {
-    const filtersContainer = document.getElementById('cronologia-filters');
-    if (!filtersContainer) return;
-
-    // Get unique types from events
-    const types = [...new Set(eventos.map(e => e.tipo))];
-
-    filtersContainer.innerHTML = '';
-
-    // "Todos" pill
-    const allBtn = document.createElement('button');
-    allBtn.className = 'cronologia-filter active px-3 py-1 text-xs font-medium rounded-full border border-gray-300 transition-colors';
-    allBtn.textContent = 'Todos';
-    allBtn.addEventListener('click', () => {
-        setActiveFilter(filtersContainer, allBtn);
-        renderCronologiaTimeline(document.getElementById('cronologia-content'), eventos);
-    });
-    filtersContainer.appendChild(allBtn);
-
-    // Per-type pills
-    types.forEach(type => {
-        const cfg = cronologiaTypeConfig[type] || cronologiaTypeConfig.governanca;
-        const btn = document.createElement('button');
-        btn.className = 'cronologia-filter px-3 py-1 text-xs font-medium rounded-full border border-gray-300 text-gray-600 hover:border-gray-400 transition-colors';
-        btn.textContent = cfg.label;
-        btn.addEventListener('click', () => {
-            setActiveFilter(filtersContainer, btn);
-            const filtered = eventos.filter(e => e.tipo === type);
-            renderCronologiaTimeline(document.getElementById('cronologia-content'), filtered);
-        });
-        filtersContainer.appendChild(btn);
-    });
-}
-
-function setActiveFilter(container, activeBtn) {
-    container.querySelectorAll('.cronologia-filter').forEach(btn => {
-        btn.classList.remove('active');
-        btn.classList.add('text-gray-600');
-    });
-    activeBtn.classList.add('active');
-    activeBtn.classList.remove('text-gray-600');
-}
-
-// Promessas rendering
-function renderPromessas() {
-    if (!promessasData) return;
-
-    const statusConfig = {
-        cumprida: { icon: '✅', label: 'Cumprida', color: 'text-green-600', bg: 'bg-green-500' },
-        parcial: { icon: '🟡', label: 'Parcial', color: 'text-yellow-600', bg: 'bg-yellow-500' },
-        nao_cumprida: { icon: '❌', label: 'Não cumprida', color: 'text-red-600', bg: 'bg-red-500' },
-        oposto: { icon: '💀', label: 'Fez o oposto', color: 'text-gray-900', bg: 'bg-gray-900' }
-    };
-
-    // Count totals
-    let counts = { cumprida: 0, parcial: 0, nao_cumprida: 0, oposto: 0 };
-    let total = 0;
-    promessasData.categorias.forEach(cat => {
-        cat.promessas.forEach(p => {
-            counts[p.status]++;
-            total++;
-        });
-    });
-
-    // Score text
-    const scoreEl = document.getElementById('promessas-score');
-    if (scoreEl) {
-        scoreEl.textContent = `${counts.cumprida} de ${total} cumpridas`;
-    }
-
-    // Progress bar
-    const bar = document.getElementById('promessas-bar');
-    if (bar) {
-        bar.innerHTML = '';
-        const segments = [
-            { key: 'cumprida', count: counts.cumprida },
-            { key: 'parcial', count: counts.parcial },
-            { key: 'nao_cumprida', count: counts.nao_cumprida },
-            { key: 'oposto', count: counts.oposto }
-        ];
-        segments.forEach(seg => {
-            if (seg.count === 0) return;
-            const div = document.createElement('div');
-            const pct = (seg.count / total) * 100;
-            div.style.width = pct + '%';
-            div.className = statusConfig[seg.key].bg;
-            div.title = `${statusConfig[seg.key].label}: ${seg.count}`;
-            bar.appendChild(div);
-        });
-    }
-
-    // Bar legend
-    const legend = document.getElementById('promessas-bar-legend');
-    if (legend) {
-        legend.innerHTML = `
-            <span>${statusConfig.cumprida.icon} ${counts.cumprida} cumpridas</span>
-            <span>${statusConfig.parcial.icon} ${counts.parcial} parciais</span>
-            <span>${statusConfig.nao_cumprida.icon} ${counts.nao_cumprida} não cumpridas</span>
-            <span>${statusConfig.oposto.icon} ${counts.oposto} fez o oposto</span>
-        `;
-    }
-
-    // Render categories (always open, no toggle)
-    const content = document.getElementById('promessas-content');
-    if (!content) return;
-    content.innerHTML = '';
-
-    promessasData.categorias.forEach(cat => {
-        const catDiv = document.createElement('details');
-        catDiv.className = 'bg-white rounded-lg border border-gray-200 overflow-hidden';
-
-        const catCounts = { cumprida: 0, parcial: 0, nao_cumprida: 0, oposto: 0 };
-        cat.promessas.forEach(p => catCounts[p.status]++);
-
-        const summary = document.createElement('summary');
-        summary.className = 'px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors flex items-center justify-between';
-        summary.innerHTML = `
-            <span class="font-medium text-sm">
-                <span class="mr-1">${cat.icon}</span> ${cat.nome}
-                <span class="text-gray-400 text-xs ml-1">(${cat.promessas.length})</span>
-            </span>
-            <span class="flex gap-1 text-xs">
-                ${catCounts.cumprida ? `<span class="bg-green-100 text-green-700 px-1.5 py-0.5 rounded">${catCounts.cumprida} ✅</span>` : ''}
-                ${catCounts.parcial ? `<span class="bg-yellow-100 text-yellow-700 px-1.5 py-0.5 rounded">${catCounts.parcial} 🟡</span>` : ''}
-                ${catCounts.nao_cumprida ? `<span class="bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded">${catCounts.nao_cumprida} ❌</span>` : ''}
-                ${catCounts.oposto ? `<span class="bg-red-100 text-red-700 px-1.5 py-0.5 rounded">${catCounts.oposto} 💀</span>` : ''}
-            </span>
-        `;
-        catDiv.appendChild(summary);
-
-        const list = document.createElement('div');
-        list.className = 'px-4 pb-3 space-y-2';
-
-        cat.promessas.forEach(p => {
-            const cfg = statusConfig[p.status];
-            const item = document.createElement('div');
-            item.className = 'flex items-start gap-2 text-sm';
-            item.innerHTML = `
-                <span class="text-base flex-shrink-0 mt-0.5" title="${cfg.label}">${cfg.icon}</span>
-                <div>
-                    <span class="${cfg.color}">${p.texto}</span>
-                    ${p.nota ? `<p class="text-xs text-gray-400 mt-0.5">${p.nota}</p>` : ''}
-                </div>
-            `;
-            list.appendChild(item);
-        });
-
-        catDiv.appendChild(list);
-        content.appendChild(catDiv);
-    });
 }
