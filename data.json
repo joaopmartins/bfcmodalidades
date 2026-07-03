@@ -26,7 +26,8 @@
             "golosSofridos": 85,
             "pontos": 14,
             "zona": "descida",
-            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-hyundai-liga-pro-2025-26/203015"
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-hyundai-liga-pro-2025-26/203015",
+            "totalEquipas": 18
           },
           "anterior": {
             "competicao": "Liga Portugal",
@@ -59,7 +60,8 @@
             "golosSofridos": 16,
             "pontos": 17,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-19-ii-fase-manutencao-serie-b-2025-26/202767"
+            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-19-ii-fase-manutencao-serie-b-2025-26/202767",
+            "totalEquipas": 8
           },
           "anterior": {
             "competicao": "II Divisão Sub-19 II Fase Manutenção Série B",
@@ -82,7 +84,8 @@
             "golosSofridos": 22,
             "pontos": 20,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-17-ii-fase-manutencao-serie-2-2025-26/202799"
+            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-17-ii-fase-manutencao-serie-2-2025-26/202799",
+            "totalEquipas": 8
           },
           "anterior": {
             "competicao": "Campeonato Nacional Juvenis I Divisão Sub-17",
@@ -105,7 +108,8 @@
             "golosSofridos": 70,
             "pontos": 38,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-b-i-divisao-serie-2-2025-26/204514"
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-b-i-divisao-serie-2-2025-26/204514",
+            "totalEquipas": 16
           },
           "anterior": {
             "competicao": "AF Porto Juniores B I Divisão Sub-17 Série 1",
@@ -128,7 +132,8 @@
             "golosSofridos": 12,
             "pontos": 32,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-15-ii-fase-manutencao-serie-2-2025-26/202815"
+            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-sub-15-ii-fase-manutencao-serie-2-2025-26/202815",
+            "totalEquipas": 8
           },
           "anterior": {
             "competicao": "Nacional Juniores C Fase Manutenção e Descida",
@@ -151,7 +156,8 @@
             "golosSofridos": 39,
             "pontos": 45,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-jun-c-1-divisao-serie-2-2025-26/204524"
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-jun-c-1-divisao-serie-2-2025-26/204524",
+            "totalEquipas": 16
           },
           "anterior": {
             "competicao": "AF Porto Juniores C I Divisão Sub-15 Série 1",
@@ -174,7 +180,8 @@
             "golosSofridos": 23,
             "pontos": 58,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-c-2-divisao-serie-12-2025-26/205281"
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-c-2-divisao-serie-12-2025-26/205281",
+            "totalEquipas": 12
           },
           "anterior": {
             "competicao": "AF Porto Juniores C II Divisão Série 3 Sub-15",
@@ -197,7 +204,8 @@
             "golosSofridos": 18,
             "pontos": 45,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-jun-d-1-divisao-s2-2025-26/204534"
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-jun-d-1-divisao-s2-2025-26/204534",
+            "totalEquipas": 15
           },
           "anterior": {
             "competicao": "Campeonato Distrital Iniciados",
@@ -220,7 +228,8 @@
             "golosSofridos": 28,
             "pontos": 49,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-d-2-divisao-serie-7-2025-26/205104"
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-juniores-d-2-divisao-serie-7-2025-26/205104",
+            "totalEquipas": 14
           },
           "anterior": {
             "competicao": "Campeonato Distrital Infantis",
@@ -251,7 +260,8 @@
             "golosSofridos": 28,
             "pontos": 10,
             "zona": "descida",
-            "competicaoLink": "https://www.zerozero.pt/edicao/iii-divisao-feminina-fase-manutencao-2025-26/212467"
+            "competicaoLink": "https://www.zerozero.pt/edicao/iii-divisao-feminina-fase-manutencao-2025-26/212467",
+            "totalEquipas": 6
           },
           "anterior": {
             "competicao": "II Divisão Feminina Manutenção Serie Norte",
@@ -274,7 +284,8 @@
             "golosMarcados": 13,
             "golosSofridos": 31,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-feminina-sub-19-ii-fase-serie-norte-2025-26/211134"
+            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-feminina-sub-19-ii-fase-serie-norte-2025-26/211134",
+            "totalEquipas": 10
           },
           "anterior": {
             "competicao": " Nacional feminino Juniores A II Divisão Serie Norte",
@@ -416,31 +427,13 @@
             "zona": "descida",
             "empates": 0,
             "golosMarcados": 8,
-            "golosSofridos": 42
+            "golosSofridos": 42,
+            "totalEquipas": 8
           },
           "anterior": {
             "competicao": "Campeonato Nacional II Feminino Divisao",
             "posicaoFinal": 8,
             "pontosFinal": 22
-          }
-        },
-        {
-          "id": "volei-s19",
-          "nome": "Sub-19",
-          "tipo": "formacao",
-          "atual": {
-            "competicao": "Campeonato Nacional Feminino Juniores II Fase Serie A",
-            "posicao": 5,
-            "jogos": 10,
-            "vitorias": 2,
-            "derrotas": 8,
-            "pontos": 7,
-            "zona": null
-          },
-          "anterior": {
-            "competicao": "Campeonato Nacional Feminino Juniores II Fase Serie A",
-            "posicaoFinal": 5,
-            "pontosFinal": 7
           }
         }
       ]
@@ -466,7 +459,8 @@
             "golosSofridos": 143,
             "pontos": 1,
             "zona": "descida",
-            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-futsal-manutencao-serie-2-2025-26/211126"
+            "competicaoLink": "https://www.zerozero.pt/edicao/ii-divisao-futsal-manutencao-serie-2-2025-26/211126",
+            "totalEquipas": 8
           },
           "anterior": {
             "competicao": "II Divisão Futsal Manutenção Serie II",
@@ -489,7 +483,8 @@
             "golosMarcados": 7,
             "golosSofridos": 32,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao.php?id_edicao=213887"
+            "competicaoLink": "https://www.zerozero.pt/edicao.php?id_edicao=213887",
+            "totalEquipas": 9
           },
           "anterior": null
         },
@@ -508,7 +503,8 @@
             "golosSofridos": 129,
             "pontos": 3,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-divisao-elite-jun-b-s17-futsal-2025-26/203794"
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-divisao-elite-jun-b-s17-futsal-2025-26/203794",
+            "totalEquipas": 12
           },
           "anterior": {
             "competicao": "Campeonato Regional Juvenis",

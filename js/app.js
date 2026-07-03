@@ -84,7 +84,7 @@ function createCard(modalidade, escaloes) {
         <div class="flex items-center gap-2">
             <span class="text-2xl">${modalidade.icon}</span>
             <h2 class="font-bold text-lg uppercase tracking-wide">${modalidade.nome}</h2>
-            <span class="text-xs text-gray-300">(${escaloes.length} escalões)</span>
+            <span class="text-xs text-gray-300">(${escaloes.length} ${escaloes.length === 1 ? 'escalão' : 'escalões'})</span>
         </div>
         <svg class="w-5 h-5 transition-transform duration-300 card-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -113,7 +113,7 @@ function createCard(modalidade, escaloes) {
         <div class="w-8 text-center" title="Estado vs época anterior"></div>
         <div class="w-[140px] min-w-[120px]">Escalão</div>
         <div class="flex-1 min-w-[150px]">Competição</div>
-        <div class="w-10 text-center">Pos</div>
+        <div class="w-14 text-center">Pos</div>
         <div class="w-10 text-center">Pts</div>
         <div class="w-8 text-center">J</div>
         <div class="w-8 text-center">V</div>
@@ -194,7 +194,7 @@ function createEscalaoRow(escalao, modalidade) {
             <span>${escalao.nome}</span>
         </div>
         <div class="flex-1 min-w-[150px] text-xs text-gray-500">${competicaoHtml}</div>
-        <div class="w-10 text-center font-bold">${atual.posicao || '-'}º</div>
+        <div class="w-14 text-center font-bold">${atual.posicao ? (atual.totalEquipas ? `${atual.posicao}<span class="text-gray-400 font-normal text-xs">/${atual.totalEquipas}</span>` : `${atual.posicao}º`) : '-'}</div>
         <div class="w-10 text-center font-semibold">${atual.pontos !== undefined ? atual.pontos : '-'}</div>
         <div class="w-8 text-center text-gray-600">${atual.jogos !== undefined ? atual.jogos : '-'}</div>
         <div class="w-8 text-center text-green-600">${atual.vitorias !== undefined ? atual.vitorias : '-'}</div>
@@ -299,6 +299,7 @@ function showModal(escalao, modalidade) {
                 <div class="space-y-2">
                     ${atual.competicao ? (atual.competicaoLink ? `<p class="text-sm"><a href="${atual.competicaoLink}" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-bfc-gold">${atual.competicao}</a></p>` : `<p class="text-sm">${atual.competicao}</p>`) : ''}
                     <p class="text-3xl font-bold">${atual.posicao || '-'}º lugar</p>
+                    ${atual.totalEquipas ? `<p class="text-xs text-gray-500 -mt-1">em ${atual.totalEquipas} equipas</p>` : ''}
                     <p class="text-lg">${atual.pontos !== undefined ? atual.pontos + ' pontos' : '-'}</p>
                     ${atual.jogos ? `<p class="text-sm text-gray-600">${atual.jogos} jogos</p>` : ''}
                     ${atual.vitorias !== undefined ? `
