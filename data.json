@@ -428,7 +428,8 @@
             "empates": 0,
             "golosMarcados": 8,
             "golosSofridos": 42,
-            "totalEquipas": 8
+            "totalEquipas": 8,
+            "competicaoLink": "https://www.zerozero.pt/equipa/boavista/210995"
           },
           "anterior": {
             "competicao": "Campeonato Nacional II Feminino Divisao",
@@ -493,18 +494,18 @@
           "nome": "Sub-17",
           "tipo": "formacao",
           "atual": {
-            "competicao": "AF Porto Futsal Juniores B Elite",
-            "posicao": 11,
-            "jogos": 20,
+            "competicao": "AF Porto Futsal Juniores B - Taça Promoção",
+            "posicao": 8,
+            "jogos": 8,
             "vitorias": 1,
-            "empates": 0,
-            "derrotas": 19,
-            "golosMarcados": 20,
-            "golosSofridos": 129,
-            "pontos": 3,
+            "empates": 2,
+            "derrotas": 5,
+            "golosMarcados": 17,
+            "golosSofridos": 32,
+            "pontos": 5,
             "zona": null,
-            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-divisao-elite-jun-b-s17-futsal-2025-26/203794",
-            "totalEquipas": 12
+            "competicaoLink": "https://www.zerozero.pt/edicao/af-porto-futsal-jun-b-divisao-elite-taca-promocao-2025-26/213889",
+            "totalEquipas": 9
           },
           "anterior": {
             "competicao": "Campeonato Regional Juvenis",
