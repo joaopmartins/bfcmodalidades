@@ -78,15 +78,18 @@ function createCard(modalidade, escaloes) {
     const card = document.createElement('div');
     card.className = 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300';
 
+    const resumo = resumoDesfechos(escaloes);
     const header = document.createElement('div');
-    header.className = 'px-4 py-3 bg-gray-900 text-white border-b border-gray-700 flex items-center justify-between cursor-pointer hover:bg-gray-800 transition-colors';
+    header.className = 'px-4 py-3 bg-gray-900 text-white border-b border-gray-700 flex items-center justify-between gap-2 cursor-pointer hover:bg-gray-800 transition-colors';
     header.innerHTML = `
-        <div class="flex items-center gap-2">
-            <span class="text-2xl">${modalidade.icon}</span>
-            <h2 class="font-bold text-lg uppercase tracking-wide">${modalidade.nome}</h2>
-            <span class="text-xs text-gray-300">(${escaloes.length} ${escaloes.length === 1 ? 'escalão' : 'escalões'})</span>
+        <div class="flex items-center gap-2 min-w-0">
+            <span class="text-2xl flex-shrink-0">${modalidade.icon}</span>
+            <div class="min-w-0">
+                <h2 class="font-bold text-lg uppercase tracking-wide truncate">${modalidade.nome} <span class="text-xs font-normal text-gray-400">(${escaloes.length} ${escaloes.length === 1 ? 'escalão' : 'escalões'})</span></h2>
+                ${resumo ? `<p class="text-xs text-gray-400 font-normal normal-case">${resumo}</p>` : ''}
+            </div>
         </div>
-        <svg class="w-5 h-5 transition-transform duration-300 card-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-5 h-5 flex-shrink-0 transition-transform duration-300 card-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
     `;
@@ -110,7 +113,7 @@ function createCard(modalidade, escaloes) {
     const headerRow = document.createElement('div');
     headerRow.className = 'px-4 py-2 bg-gray-100 text-xs font-semibold text-gray-600 flex items-center gap-2';
     headerRow.innerHTML = `
-        <div class="w-8 text-center" title="Estado vs época anterior"></div>
+        <div class="w-8 text-center" title="Desfecho da época"></div>
         <div class="w-[140px] min-w-[120px]">Escalão</div>
         <div class="flex-1 min-w-[150px]">Competição</div>
         <div class="w-14 text-center">Pos</div>
@@ -172,8 +175,7 @@ function createEscalaoRow(escalao, modalidade) {
         return row;
     }
 
-    const zona = getZonaIndicator(atual.zona);
-    const statusIndicator = getStatusIndicator(atual, anterior);
+    const desfecho = getDesfechoIndicator(atual.desfecho);
 
     // Competition name (with optional link)
     const competicaoNome = atual.competicao || '-';
@@ -188,9 +190,8 @@ function createEscalaoRow(escalao, modalidade) {
         : '-';
 
     row.innerHTML = `
-        <div class="w-8 text-center text-lg" title="${statusIndicator.title}">${statusIndicator.icon}</div>
-        <div class="w-[140px] min-w-[120px] font-medium truncate flex items-center gap-1" title="${escalao.nome}">
-            ${zona}
+        <div class="w-8 text-center text-lg font-bold ${desfecho.cls}" title="${desfecho.title}">${desfecho.icon}</div>
+        <div class="w-[140px] min-w-[120px] font-medium truncate" title="${escalao.nome}">
             <span>${escalao.nome}</span>
         </div>
         <div class="flex-1 min-w-[150px] text-xs text-gray-500">${competicaoHtml}</div>
@@ -210,65 +211,36 @@ function createEscalaoRow(escalao, modalidade) {
     return row;
 }
 
-// Get status indicator comparing current vs previous season
-function getStatusIndicator(atual, anterior) {
-    if (!anterior || !anterior.posicaoFinal || !atual || !atual.posicao) {
-        return { icon: '', title: '' };
-    }
-
-    // If competition changed, the team moved division - that's worse
-    if (anterior.competicao && atual.competicao && anterior.competicao !== atual.competicao) {
-        return { icon: '&#128308;', title: `Pior que na época passada: mudou de competição (${anterior.competicao} → ${atual.competicao})` };
-    }
-
-    const diff = anterior.posicaoFinal - atual.posicao;
-
-    if (diff > 2) {
-        return { icon: '&#128640;', title: `Muito melhor! Subiu ${diff} posições` };
-    } else if (diff > 0) {
-        return { icon: '&#128994;', title: `Melhor: Subiu ${diff} posições` };
-    } else if (diff < -2) {
-        return { icon: '&#128308;', title: `Muito pior! Desceu ${Math.abs(diff)} posições` };
-    } else if (diff < 0) {
-        return { icon: '&#128992;', title: `Pior: Desceu ${Math.abs(diff)} posições` };
-    }
-    return { icon: '&#128311;', title: 'Igual à época anterior' };
-}
-
-// Calculate difference between current and previous season
-function calculateDiff(atual, anterior) {
-    if (!anterior || !anterior.posicaoFinal) {
-        return { icon: '', class: 'text-gray-400', value: null };
-    }
-
-    if (!atual || !atual.posicao) {
-        return { icon: '', class: 'text-gray-400', value: null };
-    }
-
-    const diff = anterior.posicaoFinal - atual.posicao;
-
-    if (diff > 0) {
-        return { icon: '↑', class: 'text-green-500', value: diff };
-    } else if (diff < 0) {
-        return { icon: '↓', class: 'text-red-500', value: Math.abs(diff) };
-    }
-    return { icon: '→', class: 'text-gray-400', value: null };
-}
-
-// Get zona indicator
-function getZonaIndicator(zona) {
-    switch (zona) {
-        case 'titulo':
-            return '<span class="text-lg" title="Zona de título">&#127942;</span>';
-        case 'subida':
-            return '<span class="text-lg" title="Subiu de divisão">&#9650;</span>';
-        case 'playoff':
-            return '<span class="text-lg text-yellow-500" title="Zona de playoff">&#9679;</span>';
-        case 'descida':
-            return '<span class="text-lg text-red-500" title="Desceu de divisão">&#128680;</span>';
+// Season outcome indicator (desceu / manteve / subiu / campeão)
+function getDesfechoIndicator(desfecho) {
+    switch (desfecho) {
+        case 'desceu':
+            return { icon: '↓', cls: 'text-red-600', title: 'Desceu de divisão' };
+        case 'subiu':
+            return { icon: '↑', cls: 'text-green-600', title: 'Subiu de divisão' };
+        case 'campeao':
+            return { icon: '&#127942;', cls: '', title: 'Campeão' };
+        case 'manteve':
+            return { icon: '=', cls: 'text-gray-400', title: 'Manteve a divisão' };
         default:
-            return '';
+            return { icon: '', cls: '', title: '' };
     }
+}
+
+// Aggregate the season outcomes of a modalidade's escalões (for the card header)
+function resumoDesfechos(escaloes) {
+    let desceu = 0, subiu = 0, extintas = 0;
+    escaloes.forEach(e => {
+        if (e.status === 'extinta') { extintas++; return; }
+        const df = (e.atual || {}).desfecho;
+        if (df === 'desceu') desceu++;
+        else if (df === 'subiu') subiu++;
+    });
+    const partes = [];
+    if (subiu) partes.push(`${subiu} ${subiu === 1 ? 'subida' : 'subidas'}`);
+    if (desceu) partes.push(`${desceu} ${desceu === 1 ? 'despromoção' : 'despromoções'}`);
+    if (extintas) partes.push(`${extintas} ${extintas === 1 ? 'extinta' : 'extintas'}`);
+    return partes.join(' · ');
 }
 
 // Show modal with detailed view
@@ -276,9 +248,9 @@ function showModal(escalao, modalidade) {
     const modal = document.getElementById('modal');
     const content = document.getElementById('modal-content');
 
-    const diff = calculateDiff(escalao.atual, escalao.anterior);
     const atual = escalao.atual || {};
     const anterior = escalao.anterior || {};
+    const df = getDesfechoIndicator(atual.desfecho);
 
     content.innerHTML = `
         <div class="flex items-center justify-between mb-6">
@@ -327,12 +299,10 @@ function showModal(escalao, modalidade) {
             </div>
         </div>
 
-        ${diff.value ? `
-            <div class="bg-${diff.icon === '↑' ? 'green' : 'red'}-50 rounded-lg p-4 text-center">
-                <span class="text-2xl ${diff.class}">${diff.icon}</span>
-                <p class="${diff.class} font-medium">
-                    ${diff.icon === '↑' ? 'Melhorou' : 'Desceu'} ${diff.value} ${diff.value === 1 ? 'posição' : 'posições'} em relação à época anterior
-                </p>
+        ${df.icon ? `
+            <div class="rounded-lg p-4 text-center bg-gray-50">
+                <span class="text-2xl font-bold ${df.cls}">${df.icon}</span>
+                <p class="${df.cls} font-medium">${df.title}</p>
             </div>
         ` : ''}
 
@@ -398,9 +368,9 @@ function updateSummaryStats() {
     if (!appData) return;
 
     let total = 0;
-    let melhor = 0;
-    let igual = 0;
-    let pior = 0;
+    let mantiveram = 0;
+    let desceram = 0;
+    let subiram = 0;
     let extintas = 0;
 
     appData.modalidades.forEach(modalidade => {
@@ -412,34 +382,17 @@ function updateSummaryStats() {
                 return;
             }
 
-            const atual = escalao.atual || {};
-            const anterior = escalao.anterior || {};
-
-            if (!anterior.posicaoFinal || !atual.posicao) {
-                return;
-            }
-
-            // If competition changed, it's worse
-            if (anterior.competicao && atual.competicao && anterior.competicao !== atual.competicao) {
-                pior++;
-                return;
-            }
-
-            const diff = anterior.posicaoFinal - atual.posicao;
-
-            if (diff > 0) {
-                melhor++;
-            } else if (diff < 0) {
-                pior++;
-            } else {
-                igual++;
-            }
+            const df = (escalao.atual || {}).desfecho;
+            if (df === 'desceu') desceram++;
+            else if (df === 'subiu') subiram++;
+            else if (df === 'manteve') mantiveram++;
         });
     });
 
-    document.getElementById('stat-total').textContent = total;
-    document.getElementById('stat-melhor').textContent = melhor;
-    document.getElementById('stat-igual').textContent = igual;
-    document.getElementById('stat-pior').textContent = pior;
-    document.getElementById('stat-extintas').textContent = extintas;
+    const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    set('stat-total', total);
+    set('stat-mantiveram', mantiveram);
+    set('stat-desceram', desceram);
+    set('stat-subiram', subiram);
+    set('stat-extintas', extintas);
 }

@@ -79,7 +79,7 @@
                 <div class="bg-white rounded-xl p-4 mb-4 border border-gray-200">
                     <p class="text-gray-600 text-sm">
                         Dashboard com o estado atual de <strong>algumas</strong> modalidades desportivas do <strong>Boavista Futebol Clube</strong>.
-                        Acompanha a performance de cada escalão e compara com a época anterior.
+                        Acompanha o estado e o desfecho de cada escalão na época 2025-26 (subiu, manteve ou desceu de divisão).
                         Nem todas as equipas e escalões estão representados. Os dados são recolhidos manualmente e podem conter erros.
                         Para mais informações, consulta o <a href="#faq" class="text-bfc-gold hover:underline font-medium">FAQ</a> no final da página.
                     </p>
@@ -89,39 +89,36 @@
                 <div id="summary-stats" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-4">
                     <div class="bg-white rounded-lg p-3 border border-gray-200 text-center">
                         <div class="text-2xl font-bold text-gray-900" id="stat-total">-</div>
-                        <div class="text-xs text-gray-500">Total Equipas</div>
+                        <div class="text-xs text-gray-500">Total equipas</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3 border border-gray-200 text-center">
+                        <div class="text-2xl font-bold text-gray-700" id="stat-mantiveram">-</div>
+                        <div class="text-xs text-gray-500">Mantiveram</div>
                     </div>
                     <div class="bg-green-50 rounded-lg p-3 border border-green-200 text-center">
-                        <div class="text-2xl font-bold text-green-600" id="stat-melhor">-</div>
-                        <div class="text-xs text-green-600">Melhor</div>
-                    </div>
-                    <div class="bg-blue-50 rounded-lg p-3 border border-blue-200 text-center">
-                        <div class="text-2xl font-bold text-blue-600" id="stat-igual">-</div>
-                        <div class="text-xs text-blue-600">Igual</div>
-                    </div>
-                    <div class="bg-orange-50 rounded-lg p-3 border border-orange-200 text-center">
-                        <div class="text-2xl font-bold text-orange-600" id="stat-pior">-</div>
-                        <div class="text-xs text-orange-600">Pior</div>
+                        <div class="text-2xl font-bold text-green-600" id="stat-subiram">-</div>
+                        <div class="text-xs text-green-600">Subiram</div>
                     </div>
                     <div class="bg-red-50 rounded-lg p-3 border border-red-200 text-center">
-                        <div class="text-2xl font-bold text-red-600" id="stat-extintas">-</div>
-                        <div class="text-xs text-red-600">Extintas</div>
+                        <div class="text-2xl font-bold text-red-600" id="stat-desceram">-</div>
+                        <div class="text-xs text-red-600">Desceram</div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-3 border border-gray-200 text-center">
+                        <div class="text-2xl font-bold text-gray-900" id="stat-extintas">-</div>
+                        <div class="text-xs text-gray-600">Extintas</div>
                     </div>
                 </div>
 
                 <!-- Legend -->
                 <div class="bg-gray-100 rounded-lg p-3 border border-gray-200">
-                    <div class="text-xs font-semibold text-gray-600 mb-2">Legenda (comparação com época 2024-25):</div>
+                    <div class="text-xs font-semibold text-gray-600 mb-2">Legenda (desfecho da época 2025-26):</div>
                     <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600">
-                        <span title="Muito melhor que em 2024-25 (subiu 3+ posições na mesma competição)">&#128640; Muito melhor</span>
-                        <span title="Melhor que em 2024-25 (subiu 1-2 posições na mesma competição)">&#128994; Melhor</span>
-                        <span title="Igual a 2024-25 (mesma posição na mesma competição)">&#128311; Igual</span>
-                        <span title="Pior que em 2024-25 (desceu 1-2 posições ou mudou de competição)">&#128992; Pior</span>
-                        <span title="Muito pior que em 2024-25 (desceu 3+ posições ou mudou de competição)">&#128308; Muito pior</span>
+                        <span title="Subiu de divisão"><span class="font-bold text-green-600">&uarr;</span> Subiu</span>
+                        <span title="Manteve a divisão"><span class="font-bold text-gray-400">=</span> Manteve</span>
+                        <span title="Desceu de divisão"><span class="font-bold text-red-600">&darr;</span> Desceu</span>
+                        <span title="Campeão">&#127942; Campeão</span>
                         <span title="Equipa extinta">&#128683; Extinta</span>
-                        <span class="border-l border-gray-300 pl-4" title="Zona de título">&#127942; Título</span>
-                        <span title="Subiu de divisão">&#9650; Subiu</span>
-                        <span title="Desceu de divisão">&#128680; Desceu</span>
+                        <span class="text-gray-400 border-l border-gray-300 pl-4">Posição = Nº / total de equipas da última fase</span>
                     </div>
                 </div>
             </div>
